@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Koach</title>
+    <link rel="icon" type="image/x-icon" href="./assets/small_logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- swiper slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <%- include('./partials/navbar'); %>
+
+        <div class="grid lg:grid-cols-2 p-[45px] grid-cols-1">
+
+            <div class="flex flex-col mr-10 col-span-1">
+                <div class="max-sm:text-4xl  text-5xl text-[#676061] font-black leading-[60px] ">
+                    Revolutionize UPSC Journey with <span class="text-[#6065DA]">AI-Powered</span> Test Series,
+                    Lectures, and Tutors
+                </div>
+                <div class="text-[#B0B0D1] my-10 text-justify">
+                    The education industry is witnessing a revolution with the advent of AI-powered innovative learning
+                    providers that offer affordable, quality solutions for students, teachers, and parents.
+                </div>
+                <div>
+                    <button
+                        class="bg-[#6065DA] text-white font-semibold max-sm:text-base text-lg p-6 rounded-[35px]">Explore
+                        Value proposition</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/main.png" class="md:w-[750px] w-[100%]max-w-none mt-4" />
+            </div>
+        </div>
+
+
+        <!-- Partners -->
+        <section id="partners">
+            <div class="flex items-center w-[90%] mx-auto">
+                <fieldset>
+                    <legend>Our Partners</legend>
+                    <section class="splide" aria-labelledby="Splide Basic HTML Example" data-splide-interval="1000">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide"><img src="./assets/partners/1.png" alt="triumphIAS"></li>
+                                <li class="splide__slide"><img src="./assets/partners/2.png" alt="edenIAS"></li>
+                                <li class="splide__slide"><img src="./assets/partners/3.png" alt="ksgIAS"></li>
+                                <li class="splide__slide"><img src="./assets/partners/4.png" alt="saraswatiIAS"></li>
+                                <li class="splide__slide"><img src="./assets/partners/5.png" alt="TapasyaIAS"></li>
+                            </ul>
+                        </div>
+                    </section>
+                </fieldset>
+            </div>
+        </section>
+
+        <!-- Popular Courses -->
+
+        <section id="popular courses">
+            <div class="flex flex-col sm:p-[60px]">
+                <div class="flex lg:flex-row flex-col items-center justify-between mb-10 items-center">
+                    <h2 class="text-[#575757] text-6xl font-bold text-center">Popular <span
+                            class="text-[#6065DA]">Courses</span></h2>
+                    <div>
+                        <ul
+                            class="font-medium flex p-4 lg:p-0 mt-4 rounded-lg flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-white max-sm:text-[10px]">
+                            <li>
+                                <a href="#"
+                                    class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded lg:bg-transparent lg:text-blue-700 lg:p-0"
+                                    aria-current="page">General Studies</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#575757] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">CSAT</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">Optional</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">Test
+                                    Series</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">Skilled
+                                    Bureaucrat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center">
+
+                    <!-- Course Component -->
+                    <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
+                        <img src="./assets/Popular_Courses/course_1.png" alt="course_1" class="rounded-t-3xl" />
+                        <div class="flex flex-row justify-between items-center mt-3 mx-6">
+                            <div class="flex flex-row items-center">
+                                <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
+                                120+ Lesson
+                            </div>
+                            <div class="text-sm rounded-[20px] p-2"
+                                style="background-color: rgba(218, 218, 247, 0.22);">General Studies</div>
+                        </div>
+                        <div>
+                            <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">Studying diverse art, modern &
+                                world history, post-Independence India, world & Indian geography, and Indian society's
+                                culture and structure.</p>
+                        </div>
+                        <div class="flex flex-row justify-between items-center mt-5 mx-6">
+                            <div class="flex flex-row">
+                                <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
+                                <div class="flex flex-col">
+                                    <div class="font-semibold">Samriti talk</div>
+                                    <div class="text-[#676061] text-sm">Ex Drishti IAS</div>
+                                </div>
+                            </div>
+                            <div class="text-[#676061] font-medium">160+ Student</div>
+                        </div>
+                        <div class="flex flex-row justify-between mx-6 my-5">
+                            <div class="flex flex-row">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                            </div>
+                            <div><a href="" class="text-[#676061]">Details</a></div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
+                        <img src="./assets/Popular_Courses/course_2.png" alt="course_2" class="rounded-t-3xl" />
+                        <div class="flex flex-row justify-between items-center mt-3 mx-6">
+                            <div class="flex flex-row items-center">
+                                <img src="./assets/Popular_Courses/play.svg" alt="play_btn" class="mr-2">
+                                120+ Lesson
+                            </div>
+                            <div class="text-sm rounded-[20px] p-2"
+                                style="background-color: rgba(218, 218, 247, 0.22);">General Studies</div>
+                        </div>
+                        <div>
+                            <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">Studying government, law,
+                                decision-making, equality, rights, fairness, global interactions, relationships,
+                                politics.</p>
+                        </div>
+                        <div class="flex flex-row justify-between items-center mt-5 mx-6">
+                            <div class="flex flex-row">
+                                <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
+                                <div class="flex flex-col">
+                                    <div class="font-semibold">Salman Hyder</div>
+                                    <div class="text-[#676061] text-sm">Ex Drishti IAS</div>
+                                </div>
+                            </div>
+                            <div class="text-[#676061] font-medium">160+ Student</div>
+                        </div>
+                        <div class="flex flex-row justify-between mx-6 my-5">
+                            <div class="flex flex-row">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                            </div>
+                            <div><a href="" class="text-[#676061]">Details</a></div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
+                        <img src="./assets/Popular_Courses/course_3.png" alt="course_3" class="rounded-t-3xl" />
+                        <div class="flex flex-row justify-between items-center mt-3 mx-6">
+                            <div class="flex flex-row items-center">
+                                <img src="./assets/Popular_Courses/play.svg" alt="play_btn" class="mr-2">
+                                120+ Lesson
+                            </div>
+                            <div class="text-sm rounded-[20px] p-2"
+                                style="background-color: rgba(218, 218, 247, 0.22);">General Studies</div>
+                        </div>
+                        <div>
+                            <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">Exploring economic growth,
+                                agriculture, science, environment, security, and disaster management to promote
+                                sustainable development and safety.</p>
+                        </div>
+                        <div class="flex flex-row justify-between items-center mt-5 mx-6">
+                            <div class="flex flex-row">
+                                <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
+                                <div class="flex flex-col">
+                                    <div class="font-semibold">Ananta Shroff</div>
+                                    <div class="text-[#676061] text-sm">Ex Edukemy IAS</div>
+                                </div>
+                            </div>
+                            <div class="text-[#676061] font-medium">200+ Student</div>
+                        </div>
+                        <div class="flex flex-row justify-between mx-6 my-5 items-center">
+                            <div class="flex flex-row">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                            </div>
+                            <div><a href="" class="text-[#676061]">Details</a></div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col  max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
+                        <img src="./assets/Popular_Courses/course_3.png" alt="course_picture" class="rounded-t-3xl" />
+                        <div class="flex flex-row justify-between items-center mt-3 mx-6">
+                            <div class="flex flex-row items-center">
+                                <img src="./assets/Popular_Courses/play.svg" alt="play_btn" class="mr-2">
+                                120+ Lesson
+                            </div>
+                            <div class="text-sm rounded-[20px] p-2"
+                                style="background-color: rgba(218, 218, 247, 0.22);">General Studies</div>
+                        </div>
+                        <div>
+                            <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">Examining ethical principles,
+                                attitudes, and values, illustrated through case studies to promote probity in governance
+                                and decision-making.</p>
+                        </div>
+                        <div class="flex flex-row justify-between items-center mt-5 mx-6">
+                            <div class="flex flex-row">
+                                <img src="./assets/Popular_Courses/person.svg" alt="person_image" class="w-[43px] mr-3">
+                                <div class="flex flex-col">
+                                    <div class="font-semibold">Himanshu Kandpal</div>
+                                    <div class="text-[#676061] text-sm">Ex TestBook</div>
+                                </div>
+                            </div>
+                            <div class="text-[#676061] font-medium">200+ Student</div>
+                        </div>
+                        <div class="flex flex-row justify-between mx-6 my-5 items-center">
+                            <div class="flex flex-row">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                            </div>
+                            <div><a href="" class="text-[#676061]">Details</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center mt-5">
+                    <div><button class="bg-[#6065DA] rounded-[45px] px-[50px] py-4 text-white font-bold">Explore all
+                            Courses</button></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="Our_features">
+            <div class="flex items-center flex-col py-[100px] relative">
+                <div class="absolute left-0 max-md:hidden">
+                    <svg width="49" height="92" viewBox="0 0 49 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.28575 92C28.4849 92 48.9129 71.517 48.9129 46.25C48.9129 20.983 28.4849 0.5 3.28575 0.5C-21.9134 0.5 -42.3414 20.983 -42.3414 46.25C-42.3414 71.517 -21.9134 92 3.28575 92Z"
+                            fill="#1A52B9" />
+                    </svg>
+                </div>
+                <div class="absolute left-[530px] top-0 max-md:hidden">
+                    <svg width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.1046 30.5C24.5043 30.5 31.3136 23.6723 31.3136 15.25C31.3136 6.82766 24.5043 0 16.1046 0C7.70483 0 0.895508 6.82766 0.895508 15.25C0.895508 23.6723 7.70483 30.5 16.1046 30.5Z"
+                            fill="#FF5156" />
+                    </svg>
+
+                </div>
+                <h2 class="text-[#676060] font-bold text-6xl text-center">Most Popular <span
+                        class="text-[#6065DA]">Features</span></h2>
+                <div class="grid md:grid-cols-4 grid-cols-1 px-[70px] pt-[100px] w-[100%] justify-items-center">
+                    <div
+                        class="flex flex-row my-[30px] items-center w-[280px] justify-between lg:col-span-1 md:col-span-2 col-span-1">
+                        <div class="flex flex-row">
+                            <img src="./assets/features/pen.svg" alt="Pen" class="h-[30px] w-[30px]" />
+                            <h4 class="text-[#676061] font-medium text-xl pl-2">AI Evaluator</h4>
+                        </div>
+                        <a href="#" class="">
+                            <img src="./assets/features/arrow.svg" alt="Link" class="bg-[#6065DA] rounded-md" />
+                        </a>
+                    </div>
+                    <div
+                        class="flex flex-row my-[30px] items-center w-[280px] justify-between lg:col-span-1 md:col-span-2 col-span-1">
+                        <div class="flex flex-row">
+                            <img src="./assets/features/layers.svg" alt="Pen" class="h-[30px] w-[30px]" />
+                            <h4 class="text-[#676061] font-medium text-xl pl-2">Community connect</h4>
+                        </div>
+                        <a href="#" class="">
+                            <img src="./assets/features/arrow.svg" alt="Link" class="bg-[#6065DA] rounded-md" />
+                        </a>
+                    </div>
+                    <div
+                        class="flex flex-row my-[30px] items-center w-[280px] justify-between lg:col-span-1 md:col-span-2 col-span-1">
+                        <div class="flex flex-row">
+                            <img src="./assets/features/paper.svg" alt="Pen" class="h-[30px] w-[30px]" />
+                            <h4 class="text-[#676061] font-medium text-xl pl-2">AI PMP</h4>
+                        </div>
+                        <a href="#" class="">
+                            <img src="./assets/features/arrow.svg" alt="Link" class="bg-[#6065DA] rounded-md" />
+                        </a>
+                    </div>
+                    <div
+                        class="flex flex-row my-[30px] items-center w-[280px] justify-between lg:col-span-1 md:col-span-2 col-span-1">
+                        <div class="flex flex-row">
+                            <img src="./assets/features/img_box.svg" alt="Pen" class="h-[30px] w-[30px]" />
+                            <h4 class="text-[#676061] font-medium text-xl pl-2">Skilled Bureaucrat</h4>
+                        </div>
+                        <a href="#" class="">
+                            <img src="./assets/features/arrow.svg" alt="Link" class="bg-[#6065DA] rounded-md" />
+                        </a>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-4 grid-cols-1 px-[70px] w-[100%] justify-items-center">
+                    <div
+                        class="flex flex-row my-[30px] items-center w-[280px] justify-between lg:col-span-1 md:col-span-2 col-span-1">
+                        <div class="flex flex-row">
+                            <img src="./assets/features/database.svg" alt="Pen" class="h-[30px] w-[30px]" />
+                            <h4 class="text-[#676061] font-medium text-xl pl-2">Personalized Notes</h4>
+                        </div>
+                        <a href="#" class="">
+                            <img src="./assets/features/arrow.svg" alt="Link" class="bg-[#6065DA] rounded-md" />
+                        </a>
+                    </div>
+                    <div
+                        class="flex flex-row my-[30px] items-center w-[280px] justify-between lg:col-span-1 md:col-span-2 col-span-1">
+                        <div class="flex flex-row">
+                            <img src="./assets/features/stats.svg" alt="Pen" class="h-[30px] w-[30px]" />
+                            <h4 class="text-[#676061] font-medium text-xl pl-2">AI Curated Stats</h4>
+                        </div>
+                        <a href="#" class="">
+                            <img src="./assets/features/arrow.svg" alt="Link" class="bg-[#6065DA] rounded-md" />
+                        </a>
+                    </div>
+                    <div
+                        class="flex flex-row my-[30px] items-center w-[280px] justify-between lg:col-span-1 md:col-span-2 col-span-1">
+                        <div class="flex flex-row">
+                            <img src="./assets/features/elps.svg" alt="Pen" class="h-[30px] w-[30px]" />
+                            <h4 class="text-[#676061] font-medium text-xl pl-2">ELPS</h4>
+                        </div>
+                        <a href="#" class="">
+                            <img src="./assets/features/arrow.svg" alt="Link" class="bg-[#6065DA] rounded-md" />
+                        </a>
+                    </div>
+                    <div
+                        class="flex flex-row my-[30px] items-center w-[280px] justify-between lg:col-span-1 md:col-span-2 col-span-1">
+                        <div class="flex flex-row">
+                            <img src="./assets/features/music.svg" alt="Pen" class="h-[30px] w-[30px]" />
+                            <h4 class="text-[#676061] font-medium text-xl pl-2">MaatSaab</h4>
+                        </div>
+                        <a href="#" class="">
+                            <img src="./assets/features/arrow.svg" alt="Link" class="bg-[#6065DA] rounded-md" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Difference -->
+        <div
+            class="grid lg:grid-cols-6 grid-cols-1 max-sm:p-[30px] p-[100px] bg-[url('/assets/difference_bg.svg')] relative">
+
+            <div class="absolute right-[60px] top-[-30px] max-sm:hidden">
+                <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M27.4318 1.18078L40.3308 11.3592C41.0155 11.9041 41.8225 12.2742 42.6822 12.4377C43.5418 12.6011 44.4283 12.5529 45.2652 12.2973L60.9597 7.44732C61.9221 7.14775 62.9492 7.12382 63.9245 7.37824C64.8998 7.63266 65.7843 8.15524 66.4777 8.88674C67.1711 9.61825 67.6457 10.5294 67.8477 11.5169C68.0496 12.5044 67.9708 13.5287 67.6203 14.4737L61.9166 29.8774C61.6123 30.698 61.5122 31.5802 61.625 32.4481C61.7378 33.3159 62.06 34.1432 62.5639 34.8588L72.0294 48.2924C72.6098 49.1152 72.9484 50.0839 73.0068 51.0891C73.0651 52.0943 72.841 53.0957 72.3598 53.9802C71.8785 54.8646 71.1593 55.5966 70.2836 56.0935C69.4079 56.5904 68.4106 56.8322 67.4045 56.7917L50.9877 56.135C50.1125 56.099 49.2418 56.2766 48.4507 56.6526C47.6597 57.0285 46.972 57.5914 46.4472 58.2926L36.5971 71.4261C35.9921 72.2243 35.1767 72.8383 34.2424 73.1993C33.3081 73.5602 32.2918 73.6539 31.3072 73.4699C30.3227 73.2858 29.4088 72.8313 28.668 72.1572C27.9272 71.4831 27.3887 70.616 27.1129 69.6531L22.6381 53.7991C22.3997 52.9575 21.9612 52.186 21.3601 51.5506C20.759 50.9151 20.013 50.4346 19.1859 50.1499L3.66026 44.8871C2.70632 44.5633 1.86213 43.9788 1.2233 43.1999C0.584469 42.4209 0.176529 41.4787 0.0456909 40.4798C-0.0851473 39.481 0.0663441 38.4654 0.483005 37.5482C0.899666 36.631 1.56484 35.8489 2.4032 35.2903L16.0714 26.1719C16.8003 25.6879 17.4001 25.0333 17.8186 24.265C18.2371 23.4966 18.4617 22.6377 18.4729 21.7628L18.6699 5.33658C18.6807 4.32563 18.9754 3.33807 19.5204 2.48651C20.0653 1.63495 20.8387 0.953695 21.7521 0.520433C22.6656 0.0871719 23.6824 -0.0806646 24.6867 0.0360929C25.6909 0.15285 26.6421 0.549504 27.4318 1.18078Z"
+                        fill="#FFD550" />
+                </svg>
+            </div>
+
+            <div class="lg:col-span-2 col-span-1">
+                <img src="./assets/difference.svg" alt="difference" class="h-[500px] w-[500px] mx-auto" />
+            </div>
+            <div class="flex flex-col ml-0 lg:ml-[100px] lg:col-span-4 col-span-1">
+                <h2 class="font-bold text-[#575757] text-6xl max-lg:text-center">What is our <span
+                        class="text-[#6065DA]">difference</span></h2>
+                <p class="text-[#525252] text-xl font-medium mt-5">AI-Koach's educational platform stands out from
+                    others because it offers cutting-edge features that utilize artificial intelligence to enhance the
+                    learning experience for students. These features include AI-based evaluation and test series, which
+                    can provide more accurate and objective assessments of students' knowledge and skills, as well as
+                    personalized content and lectures that can be tailored to individual learning needs and preferences.
+
+                    <br />
+                    <br />
+                    Additionally, AI-Koach's platform offers market-relevant skill development opportunities that can
+                    help students acquire the practical knowledge and expertise they need to succeed in today's rapidly
+                    evolving job market. Overall, AI-Koach's platform is differentiated by its innovative approach to
+                    education, which leverages advanced technologies to provide students with a more effective and
+                    engaging learning experience.
+                </p>
+                <div class="flex sm:flex-row flex-col justify-between sm:items-center mt-4">
+                    <div class="flex flex-row items-center mt-3">
+                        <img src="./assets/Instructor.svg" alt="Instructors" class="h-[70px] w-[70px]" />
+                        <div class="flex flex-col ml-3">
+                            <h3 class="font-bold text-xl text-[#575757]">300</h3>
+                            <p class="text-[#9D9D9D]">Instructor</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row items-center mt-3">
+                        <img src="./assets/student.svg" alt="Students" class="h-[70px] w-[70px]" />
+                        <div class="flex flex-col ml-3">
+                            <h3 class="font-bold text-xl text-[#575757]">20,000+</h3>
+                            <p class="text-[#9D9D9D]">Student</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row items-center mt-3">
+                        <img src="./assets/video.svg" alt="video_lecture" class="h-[70px] w-[70px]" />
+                        <div class="flex flex-col ml-3">
+                            <h3 class="font-bold text-xl text-[#575757]">30,000+</h3>
+                            <p class="text-[#9D9D9D]">Videos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <section id="testimonials">
+            <div class="flex flex-col py-[100px] items-center relative">
+
+                <div class="absolute md:left-[20%] left-0 max-sm:hidden">
+                    <img src="./assets/testimonials/man1.png" alt="people">
+                </div>
+                <div class="absolute left-[100px] top-[40%] w-[100px] max-lg:hidden">
+                    <img src="./assets/testimonials/man2.png" alt="people">
+                </div>
+                <div class="absolute bottom-[10%] left-[200px] w-[80px] max-md:bottom-[5%] max-sm:hidden">
+                    <img src="./assets/testimonials/man3.png" alt="people">
+                </div>
+                <div class="absolute md:right-[17%] top-[10%] w-[120px] right-[5%] max-sm:hidden">
+                    <img src="./assets/testimonials/man4.png" alt="people">
+                </div>
+                <div class="absolute right-[10%] top-[50%] max-lg:hidden w-[80px]">
+                    <img src="./assets/testimonials/man5.png" alt="people">
+                </div>
+                <div class="absolute bottom-[7%] right-[15%] max-sm:hidden">
+                    <img src="./assets/testimonials/man6.png" alt="people">
+                </div>
+
+
+                <h2 class="text-6xl font-bold text-[#575757] text-center">Testimonials</h2>
+                <div class="flex flex-col bg-[#F3F4FF] text-[#575757] lg:w-[55%] w-[80%] p-7 rounded-2xl mt-[100px]">
+                    <div class="flex flex-row justify-between items-center">
+                        <div class="flex flex-row items-center">
+                            <img src="./assets/testimonials/person.svg" alt="person_image">
+                            <div class="flex flex-col ml-3">
+                                <div class=" font-medium">Adam Smith</div>
+                                <div>Python Developer</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row">
+                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                        </div>
+                    </div>
+                    <hr class="w-[90%] text-[#DADAF752] mt-6 mb-10">
+                    <div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                        ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur.
+                    </div>
+                    <div class="flex flex-row justify-end my-5 px-6">
+                        <img src="./assets/testimonials/left.svg" alt="left_arrow_key" class="mr-5">
+                        <img src="./assets/testimonials/right.svg" alt="right_arrow_key">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- JOIN US TODAY -->
+        <div class="grid lg:grid-cols-6 grid-cols-1 py-10 lg:px-[100px] px-[50px] justify-items-center"
+            style="background-color: rgba(234, 225, 255, 0.43);">
+
+            <div class="flex flex-col lg:col-span-4 col-span-1 items-center lg:items-start">
+                <div>
+                    <h2 class="text=[#575757] font-bold text-6xl max-lg:text-center">Join our <span
+                            class="text-[#6065DA]">world's largest</span> learning platform today</h2>
+                </div>
+                <div>
+                    <p class="text-2xl font-normal text-[#5A5A5A] mt-10 max-lg:text-center">Start learning by
+                        registering and get 30 days free trail</p>
+                </div>
+            </div>
+            <div class="flex flex-col lg:col-span-2 col-span-1">
+                <div>
+                    <button class="bg-[#FF5156] text-white font-normal px-24 py-4 text-lg max-lg:mt-5 w-[350px]"
+                        style="border-radius: 48px;">Join as Instructor</button>
+                </div>
+                <div>
+                    <button class="bg-[#6065DA] text-white font-normal px-24 py-4 my-10 text-lg w-[350px]"
+                        style="border-radius: 48px;">Join as Student</button>
+                </div>
+                <div>
+                    <button class="bg-[#0D0F44] text-white font-normal px-24 py-4 text-lg w-[350px]"
+                        style="border-radius: 48px;">Join as Institute</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <%- include('./partials/footer'); %>
+        </footer>
+        <!-- swiper -->
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <script src="./main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+</body>
+
+</html>
