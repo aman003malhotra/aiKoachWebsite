@@ -19,7 +19,7 @@
     <!-- NAVBAR -->
     <%- include('./partials/navbar'); %>
 
-        <div class="grid lg:grid-cols-2 p-[45px] grid-cols-1">
+        <div class="grid lg:grid-cols-2 p-[45px] max-md:p-[30px] grid-cols-1">
 
             <div class="flex flex-col mr-10 col-span-1">
                 <div class="max-sm:text-4xl  text-5xl text-[#676061] font-black inline-block">
@@ -45,7 +45,10 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <img src="./assets/main.png" class="md:w-[750px] w-[100%]max-w-none mt-4" />
+                <video height="auto" autoplay loop muted class="md:w-[650px] w-[100%] max-w-none max-md:mt-4">
+                    <source src="https://res.cloudinary.com/dqemlno5f/video/upload/c_scale,q_auto:good,vc_h264,w_928/v1684064766/a_koch_1_ltxv4l.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
             </div>
         </div>
 
