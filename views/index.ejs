@@ -122,7 +122,7 @@
                 <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center" id="course_info">
 
                     <!-- Course Component -->
-                    <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
+                    <!-- <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
                         <img src="./assets/Popular_Courses/course_1.png" alt="course_1" class="rounded-t-3xl" />
                         <div class="flex flex-row justify-between items-center mt-3 mx-6">
                             <div class="flex flex-row items-center">
@@ -156,7 +156,7 @@
                             </div>
                             <div><a href="" class="text-[#676061]">Details</a></div>
                         </div>
-                    </div>
+                    </div> -->
 
 
 
@@ -545,7 +545,7 @@
         <script>
             let course_data = null;
             if(!course_data){
-            fetch(`http://localhost:8000/courses/general_studies`)
+            fetch(`https://aikoachwebsite.onrender.com/courses/general_studies`)
                 .then(response => {
                     if (response.ok) {
                     return response.json();
@@ -603,7 +603,7 @@
             }
             function courseChange(course_name){
                 // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
-                fetch(`http://localhost:8000/courses/${course_name}`)
+                fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
                 .then(response => {
                     if (response.ok) {
                     return response.json();
