@@ -300,58 +300,38 @@
         <section id="testimonials">
             <div class="flex flex-col py-[100px] items-center relative">
 
-                <div class="absolute md:left-[20%] left-0 max-sm:hidden">
-                    <img src="./assets/testimonials/man1.png" alt="people">
-                </div>
-                <div class="absolute left-[100px] top-[40%] w-[100px] max-lg:hidden">
-                    <img src="./assets/testimonials/man2.png" alt="people">
-                </div>
-                <div class="absolute bottom-[10%] left-[200px] w-[80px] max-md:bottom-[5%] max-sm:hidden">
+                <div class="absolute bottom-[10%] left-[200px] w-[80px] max-md:bottom-[5%] max-sm:hidden border-solid border-[#6065DA] border-8 rounded-[50%]" id="0">
                     <img src="./assets/testimonials/man3.png" alt="people">
                 </div>
-                <div class="absolute md:right-[17%] top-[10%] w-[120px] right-[5%] max-sm:hidden">
+
+                <div class="absolute left-[100px] top-[40%] w-[100px] max-lg:hidden" id="1">
+                    <img src="./assets/testimonials/man2.png" alt="people">
+                </div> 
+
+                <div class="absolute md:left-[20%] left-0 max-sm:hidden " id="2">
+                    <img src="./assets/testimonials/man1.png" alt="people">
+                </div>
+                
+                
+                <div class="absolute md:right-[17%] top-[10%] w-[120px] right-[5%] max-sm:hidden" id="3">
                     <img src="./assets/testimonials/man4.png" alt="people">
                 </div>
-                <div class="absolute right-[10%] top-[50%] max-lg:hidden w-[80px]">
+                <div class="absolute right-[10%] top-[50%] max-lg:hidden w-[80px]" id="4">
                     <img src="./assets/testimonials/man5.png" alt="people">
                 </div>
-                <div class="absolute bottom-[7%] right-[15%] max-sm:hidden">
+                <div class="absolute bottom-[7%] right-[15%] max-sm:hidden" id="5">
                     <img src="./assets/testimonials/man6.png" alt="people">
                 </div>
 
 
                 <h2 class="text-6xl font-bold text-[#575757] text-center">Testimonials</h2>
-                <div class="flex flex-col bg-[#F3F4FF] text-[#575757] lg:w-[55%] w-[80%] p-7 rounded-2xl mt-[100px]">
-                    <div class="flex flex-row justify-between items-center">
-                        <div class="flex flex-row items-center">
-                            <img src="./assets/testimonials/person.svg" alt="person_image">
-                            <div class="flex flex-col ml-3">
-                                <div class=" font-medium">Adam Smith</div>
-                                <div>Python Developer</div>
-                            </div>
-                        </div>
-                        <div class="flex flex-row">
-                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                            <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                        </div>
+                <section class="splide max-md:w-[90%] max-lg:w-[70%] w-[50%]" aria-label="Basic Structure Example" id="testimonial_carousal">
+                    <div class="splide__track">
+                      <ul class="splide__list"  id="testimonial_box">
+                        
+                      </ul>
                     </div>
-                    <hr class="w-[90%] text-[#DADAF752] mt-6 mb-10">
-                    <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                        ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur.
-                    </div>
-                    <div class="flex flex-row justify-end my-5 px-6">
-                        <img src="./assets/testimonials/left.svg" alt="left_arrow_key" class="mr-5">
-                        <img src="./assets/testimonials/right.svg" alt="right_arrow_key">
-                    </div>
-                </div>
+                </section>
             </div>
         </section>
         <!-- JOIN US TODAY -->
@@ -398,7 +378,7 @@
         <script>
             let course_data = null;
             if(!course_data){
-            fetch(`http://localhost:8000/courses/general_studies`)
+            fetch(`https://aikoachwebsite.onrender.com/courses/general_studies`)
                 .then(response => {
                     if (response.ok) {
                     return response.json();
@@ -407,9 +387,7 @@
                     }
                     })
                     .then(data => {
-                        console.log(data);
                         document.getElementById("course_info").innerHTML = '';
-                        console.log(data.courses.length);
                         if(data.courses.length == 0){
                             document.getElementById("course_info").innerHTML = '<div>No Courses Uploaded yet <br /> Working on it</div>';
                         }
@@ -456,7 +434,7 @@
             }
             function courseChange(course_name){
                 // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
-                fetch(`http://localhost:8000/courses/${course_name}`)
+                fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
                 .then(response => {
                     if (response.ok) {
                     return response.json();
@@ -465,9 +443,7 @@
                     }
                     })
                     .then(data => {
-                        console.log(data);
                         document.getElementById("course_info").innerHTML = '';
-                        console.log(data.courses.length);
                         if(data.courses.length == 0){
                             document.getElementById("course_info").classList.remove('grid');
                             document.getElementById("course_info").innerHTML = '<div class="block text-3xl text-center py-10">No Courses Uploaded yet <br /> Working on it</div>';
@@ -517,6 +493,54 @@
             }          
 
         </script>
+        <script>
+            // Testimonial
+            let splideElem;
+            fetch(`https://aikoachwebsite.onrender.com/testimonials`)
+                .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error('Request failed with status: ' + response.status);
+                        }
+                    })
+                    .then(data => { 
+                        for(const one_test of data.testimonials){
+                            document.getElementById('testimonial_box').innerHTML +=`<li class="splide__slide">
+                            <div class="flex flex-col bg-[#F3F4FF] text-[#575757] p-7 rounded-2xl my-[100px] py-[50px]">
+                                <div class="flex flex-row justify-between items-center">
+                                    <div class="flex flex-row items-center">
+                                        <img src="./assets/testimonials/person.svg" alt="person_image">
+                                        <div class="flex flex-col ml-3">
+                                            <div class=" font-medium">${one_test.name}</div>
+                                            <div>${one_test.Designation}</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row">
+                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
+                                    </div>
+                                </div>
+                                <hr class="w-[90%] text-[#DADAF752] mt-6 mb-10">
+                                <div>${one_test.tesimonial}</div>
+                            </div>
+                        </li>`
+                        }
+                        splideElem = new Splide( '#testimonial_carousal',{
+                            rewind: false,
+                        }).mount();
+                        
+                        splideElem.on('moved', function (newIndex) {
+                            document.getElementById(newIndex).classList.add('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]');
+                            if(newIndex-1 >= -1){
+                                document.getElementById(newIndex-1)?.classList.remove('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]'); 
+                                document.getElementById(newIndex+1)?.classList.remove('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]');   
+                            }
+                        });
+                    })
+        </script>
 </body>
-
 </html>

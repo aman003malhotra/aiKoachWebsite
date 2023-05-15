@@ -90,7 +90,44 @@ const courses = [
     }
 ]
 
-
+testimonials = [
+    {
+        name:"Adam Smith",
+        Designation:"Python Developer",
+        tesimonial:"Testimonial 1  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        rating:4,
+    },
+    {
+        name:"Avadh Ojha",
+        Designation:"Modern World History Professor",
+        tesimonial:"Testimonial 2  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        rating:4,
+    },
+    {
+        name:" Dr. Vikas Divyakirti",
+        Designation:"CEO Drishti IAS",
+        tesimonial:"Testimonial 3  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        rating:4,
+    },
+    {
+        name:"B. Singh Sir",
+        Designation:"Ex. IES",
+        tesimonial:"Testimonial 4  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        rating:4,
+    },
+    {
+        name:"Kapuria Sir",
+        Designation:"Faculty for Indian Economy",
+        tesimonial:"Testimonial 5  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        rating:4,
+    },
+    {
+        name:"Vibhas Jha Sir",
+        Designation:"Assistant Professor at Delhi School of Economics",
+        tesimonial:"Testimonial 6  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        rating:4,
+    }
+]
 
 
 
@@ -130,6 +167,10 @@ app.get('/courses/:course_name', (req,res) => {
             courses:filteredArray
         })
 });
+
+app.get('/testimonials', (req,res)=>{
+    res.send({testimonials})
+})
 
 
 const port = process.env.PORT
