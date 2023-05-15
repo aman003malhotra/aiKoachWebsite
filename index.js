@@ -37,9 +37,65 @@ const menu = [
     }
 ]
 
+const courses = [
+    {
+        subject:"general_studies",
+        thumbnail:"course_1.png",
+        number_of_lessons:"120",
+        about_course:"Studying diverse art, modern &world history, post-Independence India, world & Indian geography, and Indian society's culture and structure.",
+        tutor:"Samriti talk",
+        prev_institude:"Drishti IAS",
+        student_enrolled:"160",
+        rating:"5"
+    },
+    {
+        subject:"general_studies",
+        thumbnail:"course_2.png",
+        number_of_lessons:"120",
+        about_course:"Studying government, law, decision-making, equality, rights, fairness, global interactions, relationships, politics.",
+        tutor:"Salman Hyder",
+        prev_institude:"Drishti IAS",
+        student_enrolled:"160",
+        rating:"5"
+    },
+    {
+        subject:"general_studies",
+        thumbnail:"course_3.png",
+        number_of_lessons:"120",
+        about_course:"Exploring economic growth, agriculture, science, environment, security, and disaster management to promote sustainable development and safety.",
+        tutor:"Ananta Shroff",
+        prev_institude:"Edukemy IAS",
+        student_enrolled:"200",
+        rating:"5"
+    },
+    {
+        subject:"general_studies",
+        thumbnail:"course_1.png",
+        number_of_lessons:"120",
+        about_course:"Examining ethical principles, attitudes, and values, illustrated through case studies to promote probity in governance and decision-making.",
+        tutor:"Himanshu Kandpal",
+        prev_institude:"TestBook",
+        student_enrolled:"200",
+        rating:5
+    },
+    {
+        subject:"CSAT",
+        thumbnail:"course_2.png",
+        number_of_lessons:"120",
+        about_course:"Studying diverse art, modern &world history, post-Independence India, world & Indian geography, and Indian society's culture and structure.",
+        tutor:"Samriti talk",
+        prev_institude:"Ex Drishti IAS",
+        student_enrolled:"160",
+        rating:"5"
+    }
+]
+
+
+
+
 
 app.get('/', function(req, res){
-    res.render('index.ejs', {menu:menu, url:req.url});
+    res.render('index.ejs', {menu:menu, url:req.url, courses:courses});
 });
 
 app.get('/course', function(req, res){
@@ -64,6 +120,15 @@ app.get('/about', function(req, res){
 
 app.get('/contact', function(req, res){
     res.render('contact.ejs', {menu:menu, url:req.url});
+});
+
+app.get('/courses/:course_name', (req,res) => {
+    const filteredArray = courses.filter(obj => obj.subject === req.params.course_name);
+    res.send(
+        {
+            course_name:req.params.course_name,
+            courses:filteredArray
+        })
 });
 
 
