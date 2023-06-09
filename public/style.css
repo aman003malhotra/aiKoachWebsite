@@ -44,8 +44,25 @@ h1, h2, h3, h4, h5, h6{
   }
 }
 
+#course_content {
+  font-family: 'Poppins';
+}
 
+#course_content h2{
+  font-weight: 700;
+  /* font-family: none; */
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
+#course_content ul{
+  list-style: inside  !important; 
+}
+
+#course_content ol{
+  list-style-type: decimal; 
+}
 
 @keyframes moveUp {
   0% {

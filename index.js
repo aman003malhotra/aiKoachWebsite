@@ -159,6 +159,12 @@ app.get('/contact', function(req, res){
     res.render('contact.ejs', {menu:menu, url:req.url});
 });
 
+app.get('/course_detail', (req,res)=>{
+    res.render('course_detail.ejs', {menu:menu, url:req.url})
+})
+
+
+// COURSE DATA LINKS
 app.get('/courses/:course_name', (req,res) => {
     const filteredArray = courses.filter(obj => obj.subject === req.params.course_name);
     res.send(
@@ -172,6 +178,9 @@ app.get('/testimonials', (req,res)=>{
     res.send({testimonials})
 })
 
+app.get('/specific_course',(req,res) => {
+    res.send({message:'ok'})
+})
 
 const port = process.env.PORT
 app.listen(port || 8000, () => {console.log(`server is running on the port ${port}`)})
