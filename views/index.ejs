@@ -395,7 +395,7 @@
                                         <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
                                         <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
                                     </div>
-                                    <div><a href="" class="text-[#676061]">Details</a></div>
+                                    <div><a href="./course_detail" class="text-[#676061]">Details</a></div>
                                 </div>
                             </div>`
                         }
@@ -454,7 +454,7 @@
                                         <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
                                         <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
                                     </div>
-                                    <div><a href="" class="text-[#676061]">Details</a></div>
+                                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
                                 </div>
                             </div>`
                         }
@@ -507,10 +507,10 @@
                         }).mount();
                         
                         splideElem.on('moved', function (newIndex) {
-                            document.getElementById(newIndex).classList.add('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]');
+                            document.getElementById(newIndex).classList.add('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]', 'testi_img');
                             if(newIndex-1 >= -1){
-                                document.getElementById(newIndex-1)?.classList.remove('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]'); 
-                                document.getElementById(newIndex+1)?.classList.remove('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]');   
+                                document.getElementById(newIndex-1)?.classList.remove('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]', 'testi_img'); 
+                                document.getElementById(newIndex+1)?.classList.remove('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]', 'testi_img');   
                             }
                         });
                     })

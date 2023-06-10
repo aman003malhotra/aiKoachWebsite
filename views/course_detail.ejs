@@ -16,6 +16,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <!-- tailwind elements -->
+
+    <link href="/output.css" rel="stylesheet" />
+
     <!-- swiper slider -->
     <link
       rel="stylesheet"
@@ -31,7 +35,7 @@
     <!-- Header  -->
     <header>
       <div
-        class="flex flex-row bg-gradient-to-r from-[#01D5E1] from-0% to-[#6065DA] to-61.98%0] w-[100%] px-[100px] py-9 text-white gap-x-10"
+        class="flex md:flex-row flex-col-reverse max-md:gap-y-5 bg-gradient-to-r from-[#01D5E1] from-0% to-[#6065DA] to-61.98%0] w-[100%] px-[100px] py-9 text-white gap-x-10"
       >
         <div class="flex flex-col">
           <span class="font-bold text-4xl">General Studies</span>
@@ -40,6 +44,14 @@
             India, world & Indian geography, and Indian society's culture and
             structure.
           </p>
+          <div class="flex items-center mt-2">
+            <img src="./assets/course_content/star_yellow.svg" alt="" />
+            <img src="./assets/course_content/star_yellow.svg" alt="" />
+            <img src="./assets/course_content/star_yellow.svg" alt="" />
+            <img src="./assets/course_content/star_yellow.svg" alt="" />
+            <img src="./assets/course_content/star_gray.svg" alt="" />
+            <p class="ml-2 text-sm font-medium text-white">4.95  |  1472 Rating</ap>
+        </div>
           <div class="mt-[100px]">
             <button class="text-white bg-[#6065DA] px-10 py-5 rounded-[45px]">
               Enroll Now
@@ -56,22 +68,23 @@
     </header>
 
     <div
-      class="flex flex-row font-medium gap-x-7 pl-[70px] border-b-2 py-5 text-[#2B2B2B]"
+      class="flex sm:flex-row max-sm:gap-y-4 flex-col font-medium gap-x-7 pl-[70px] border-b-2 py-5 text-[#2B2B2B]"
     >
-      <span class="text-[#6065DA]">Course Outline</span>
-      <span>Syllabus</span>
+      <a href="#course_outline" class="text-[#6065DA]">Course Outline</span>
+      <a href="#syllabus">Syllabus</a>
       <span>Study Material</span>
       <span>Assignment and assessments</span>
     </div>
 
     <!-- Course Content -->
-    <div class="pl-[70px] pr-[100px] my-10 xl:w-[70%]">
+    <div class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
       <h2 class="font-bold text-3xl my-5">About this Course</h2>
       <span> 39888 recent views</span>
       <div id="course_content" class="my-5"></div>
     </div>
 
     <!-- Syllabus -->
+
     <section
       id="syllabus"
       class="flex flex-col text-center justify-items-center"
@@ -79,10 +92,11 @@
       <h2 class="text-3xl my-10">
         Syllabus - What you will learn from this course
       </h2>
-      <div class="flex flex-row items-center gap-x-10 justify-center">
-        <div class="flex flex-col text-3xl">
+      <% for (let i = 0; i < syllabusData.length; i++) { %>
+      <div class="flex flex-row items-center gap-x-10 justify-center max-md:flex-col max-md:gap-y-10 max-lg:px-10">
+        <div class="flex flex-col text-3xl max-md:flex-row max-md:gap-x-2">
           <div><p class="">Week</p></div>
-          <div><p>1</p></div>
+          <div><p><%= syllabusData[i].weekNumber %></p></div>
         </div>
         <div class="flex flex-col">
           <div class="flex flex-row items-center">
@@ -95,130 +109,93 @@
               >4 hours to complete</span
             >
           </div>
-          <div>
+          <div class="text-left">
             <p>
               Studying diverse art, modern & world history, post-Independence
               India, world & Indian geography, and Indian society's culture and
               structure.
             </p>
           </div>
-          <div class="flex flex-row font-medium">
+          <% if (syllabusData[i].readings.length > 0 || syllabusData[i].videos.length > 0 || syllabusData[i].readings.length > 0) {%>
+          <div class="flex flex-row font-medium gap-x-3 items-center mt-2">
+            <img src="./assets/course_content/syllabus.svg" alt="syllabus" class="w-[25px] h-[25px]">
+            <% if (syllabusData[i].readings.length > 0) {%>
+            <p><%= syllabusData[i].readings.length %> Resources,</p>
+            <% }%> 
+            <% if (syllabusData[i].videos.length > 0) {%>
+            <p><%= syllabusData[i].videos.length %> Videos,</p>
+            <% }%>
+            <% if (syllabusData[i].tests.length > 0) {%>
+            <p><%= syllabusData[i].tests.length %> tests,</p>
+            <% }%>
             <div>
-              <p>14 videos (Total 126 min), 7 Resources, 8 Test</p>
-            </div>
-            <div>
-              <a href="#" class="text-decoration-none text-[#6065DA]"
-                >&nbsp;see all</a
-              >
-              <a
-                class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                data-te-collapse-init
-                data-te-ripple-init
-                data-te-ripple-color="light"
-                href="#collapseWithScrollbar"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseWithScrollbar"
-              >
-                Longer content
-              </a>
-              <div
-                class="!visible mt-4 hidden max-h-24 overflow-y-auto"
-                data-te-collapse-item
-                id="collapseWithScrollbar"
-                style="max-width: 500px"
-              >
-                <p>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. Nihil anim keffiyeh
-                  helvetica, craft beer labore wes anderson cred nesciunt
-                  sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                  Leggings occaecat craft beer farm-to-table, raw denim
-                  aesthetic synth nesciunt you probably haven't heard of them
-                  accusamus labore sustainable VHS. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et.
-                </p>
-              </div>
+              <button class="toggle-button text-[#6065DA]">see more</button>
             </div>
           </div>
-        </div>
-      </div>
-      <hr class="md:w-[50%] text-center my-10" />
-      <div class="flex flex-row items-center gap-x-10 justify-center">
-        <div class="flex flex-col text-3xl">
-          <div><p class="">Week</p></div>
-          <div><p>2</p></div>
-        </div>
-        <div class="flex flex-col">
-          <div class="flex flex-row items-center">
-            <img
-              src="./assets/course_content/ri_time-line.svg"
-              alt="timer"
-              class="w-[50px] h-[50px]"
-            />
-            <span class="text-[#676061] text-2xl ml-5"
-              >4 hours to complete</span
-            >
-          </div>
-          <div>
-            <p>
-              Studying diverse art, modern & world history, post-Independence
-              India, world & Indian geography, and Indian society's culture and
-              structure.
-            </p>
-          </div>
-          <div class="flex flex-row font-medium">
-            <div>
-              <p>14 videos (Total 126 min), 7 Resources, 8 Test</p>
+          <hr class="text-center mt-10" />
+          <div class="expandable-content">
+            <% if (syllabusData[i].videos.length > 0) {%>
+            <div class="content flex flex-col my-3 text-left gap-y-2">
+                <div class="flex flex-row gap-x-2 items-center">
+                    <img src="./assets/course_content/video.svg" alt="video" class="w-[25px] h-[25px]">
+                    <p class="font-bold "><%= syllabusData[i].videos.length %> Videos</p>
+                </div>
+                <% for (let j = 0; j < syllabusData[i].videos.length; j++) { %>
+                    <div><%= syllabusData[i].videos[j].title %> <%= syllabusData[i].videos[j].time %></div>
+                <% } %>
+                <hr class="my-2"/>
             </div>
-            <div>
-              <a href="#" class="text-decoration-none text-[#6065DA]"
-                >&nbsp;see all</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class="md:w-[50%] text-center my-10" />
+            <% }%>
 
-      <div class="flex flex-row items-center gap-x-10 justify-center">
-        <div class="flex flex-col text-3xl">
-          <div><p class="">Week</p></div>
-          <div><p>3</p></div>
-        </div>
-        <div class="flex flex-col">
-          <div class="flex flex-row items-center">
-            <img
-              src="./assets/course_content/ri_time-line.svg"
-              alt="timer"
-              class="w-[50px] h-[50px]"
-            />
-            <span class="text-[#676061] text-2xl ml-5"
-              >4 hours to complete</span
-            >
+            <% if (syllabusData[i].readings.length > 0) {%>
+                <div class="content flex flex-col my-3 text-left gap-y-2">
+                    <div class="flex flex-row gap-x-2 items-center">
+                        <img src="./assets/course_content/notes.svg" alt="video" class="w-[25px] h-[25px]">
+                        <p class="font-bold "><%= syllabusData[i].readings.length %> Notes</p>
+                    </div>
+                    <% for (let j = 0; j < syllabusData[i].readings.length; j++) { %>
+                        <div><%= syllabusData[i].readings[j].title %> <%= syllabusData[i].readings[j].time %></div>
+                    <% } %>
+                    <hr class="my-2"/>
+                </div>
+            <% }%>
+            
+            <% if (syllabusData[i].tests.length > 0) {%>
+                <div class="content flex flex-col my-3 text-left gap-y-2">
+                    <div class="flex flex-row gap-x-2 items-center">
+                        <img src="./assets/course_content/tests.svg" alt="video" class="w-[25px] h-[25px]">
+                        <p class="font-bold "><%= syllabusData[i].tests.length %> Test</p>
+                    </div>
+                    <% for (let j = 0; j < syllabusData[i].tests.length; j++) { %>
+                        <div><%= syllabusData[i].tests[j].title %> <%= syllabusData[i].tests[j].time %></div>
+                    <% } %>
+                    <hr class="my-2"/>
+                </div>
+            <% }%>
           </div>
-          <div>
-            <p>
-              Studying diverse art, modern & world history, post-Independence
-              India, world & Indian geography, and Indian society's culture and
-              structure.
-            </p>
-          </div>
-          <div class="flex flex-row font-medium">
-            <div>
-              <p>14 videos (Total 126 min), 7 Resources, 8 Test</p>
-            </div>
-            <div>
-              <a href="#" class="text-decoration-none text-[#6065DA]"
-                >&nbsp;see all</a
-              >
-            </div>
-          </div>
+          <script>
+            let toggleButton = document.querySelector(".toggle-button");
+            let expandableContent = document.querySelector(".expandable-content");
+      
+            toggleButton.addEventListener("click", function () {
+              expandableContent.classList.toggle("show");
+      
+              if (expandableContent.classList.contains("show")) {
+                expandableContent.style.maxHeight =
+                  expandableContent.scrollHeight + "px";
+                  toggleButton.innerHTML = 'see less'
+              } else {
+                expandableContent.style.maxHeight = "0";
+                toggleButton.innerHTML = 'see more'
+
+              }
+            });
+        </script>
+          <% } %>
+
         </div>
       </div>
+      <% } %>
     </section>
 
     <!-- Related Courses -->
@@ -246,7 +223,7 @@
     <script>
       let course_data = null;
       if (!course_data) {
-        fetch(`https://aikoachwebsite.onrender.com/courses/general_studies`)
+        fetch(`http://localhost:8000/courses/general_studies`)
           .then((response) => {
             if (response.ok) {
               return response.json();
@@ -293,7 +270,7 @@
                                         <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
                                         <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
                                     </div>
-                                    <div><a href="" class="text-[#676061]">Details</a></div>
+                                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
                                 </div>
                             </div>`;
             }
@@ -304,7 +281,7 @@
       }
       function courseChange(course_name) {
         // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
-        fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
+        fetch(`http://localhost:8000/courses/${course_name}`)
           .then((response) => {
             if (response.ok) {
               return response.json();
@@ -354,7 +331,7 @@
                                         <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
                                         <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
                                     </div>
-                                    <div><a href="" class="text-[#676061]">Details</a></div>
+                                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
                                 </div>
                             </div>`;
             }
@@ -555,5 +532,20 @@
       const markup = parser.parse(data);
       document.getElementById("course_content").innerHTML += markup;
     </script>
+    <!-- <script>
+      const toggleButton = document.querySelector(".toggle-button");
+      const expandableContent = document.querySelector(".expandable-content");
+
+      toggleButton.addEventListener("click", function () {
+        expandableContent.classList.toggle("show");
+
+        if (expandableContent.classList.contains("show")) {
+          expandableContent.style.maxHeight =
+            expandableContent.scrollHeight + "px";
+        } else {
+          expandableContent.style.maxHeight = "0";
+        }
+      });
+    </script> -->
   </body>
 </html>

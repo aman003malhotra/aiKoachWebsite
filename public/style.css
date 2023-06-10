@@ -156,3 +156,40 @@ h1, h2, h3, h4, h5, h6{
     transform: translateY(0);
   }
 }
+
+
+
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.testi_img{
+  animation: upAndDown 2.7s infinite
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.content {
+  margin-bottom: 10px;
+}
+
+.show {
+  max-height: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}

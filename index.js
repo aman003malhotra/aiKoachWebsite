@@ -159,8 +159,12 @@ app.get('/contact', function(req, res){
     res.render('contact.ejs', {menu:menu, url:req.url});
 });
 
+const syllabusData = [{"weekNumber":"1","readings":[{"title":"handouts 1","time":"120m"},{"title":"topic pdf ","time":"2h"}],"videos":[{"title":"topic lecture ","time":"2h"},{"title":"spefic topic lecture 2","time":"3h"}],"tests":[{"title":"MCQ test ","time":"20m"},{"title":"Subjective test ","time":"2h"}]},{"weekNumber":"2","readings":[{"title":"handouts 1","time":"120m"},{"title":"topic pdf ","time":"2h"}],"videos":[],"tests":[]}];
+
+
+
 app.get('/course_detail', (req,res)=>{
-    res.render('course_detail.ejs', {menu:menu, url:req.url})
+    res.render('course_detail.ejs', {menu:menu, url:req.url, syllabusData:syllabusData})
 })
 
 
