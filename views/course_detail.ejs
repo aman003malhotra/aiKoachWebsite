@@ -116,7 +116,7 @@
               structure.
             </p>
           </div>
-          <% if (syllabusData[i].readings.length > 0 || syllabusData[i].videos.length > 0 || syllabusData[i].readings.length > 0) {%>
+          <% if (syllabusData[i].tests.length > 0 || syllabusData[i].videos.length > 0 || syllabusData[i].readings.length > 0) {%>
           <div class="flex flex-row font-medium gap-x-3 items-center mt-2">
             <img src="./assets/course_content/syllabus.svg" alt="syllabus" class="w-[25px] h-[25px]">
             <% if (syllabusData[i].readings.length > 0) {%>
@@ -129,11 +129,11 @@
             <p><%= syllabusData[i].tests.length %> tests,</p>
             <% }%>
             <div>
-              <button class="toggle-button text-[#6065DA]">see more</button>
+              <button class="toggle-button button_<%= syllabusData[i].weekNumber %> text-[#6065DA]" onclick="expand('<%= syllabusData[i].weekNumber %>')">see more</button>
             </div>
           </div>
           <hr class="text-center mt-10" />
-          <div class="expandable-content">
+          <div class="expandable-content content_<%= syllabusData[i].weekNumber %>">
             <% if (syllabusData[i].videos.length > 0) {%>
             <div class="content flex flex-col my-3 text-left gap-y-2">
                 <div class="flex flex-row gap-x-2 items-center">
@@ -173,24 +173,6 @@
                 </div>
             <% }%>
           </div>
-          <script>
-            let toggleButton = document.querySelector(".toggle-button");
-            let expandableContent = document.querySelector(".expandable-content");
-      
-            toggleButton.addEventListener("click", function () {
-              expandableContent.classList.toggle("show");
-      
-              if (expandableContent.classList.contains("show")) {
-                expandableContent.style.maxHeight =
-                  expandableContent.scrollHeight + "px";
-                  toggleButton.innerHTML = 'see less'
-              } else {
-                expandableContent.style.maxHeight = "0";
-                toggleButton.innerHTML = 'see more'
-
-              }
-            });
-        </script>
           <% } %>
 
         </div>
@@ -532,20 +514,21 @@
       const markup = parser.parse(data);
       document.getElementById("course_content").innerHTML += markup;
     </script>
-    <!-- <script>
-      const toggleButton = document.querySelector(".toggle-button");
-      const expandableContent = document.querySelector(".expandable-content");
-
-      toggleButton.addEventListener("click", function () {
+    <script>
+      function expand(expandable_content_class){
+      let toggleButton = document.querySelector(".button_"+expandable_content_class);
+      let expandableContent = document.querySelector(".content_"+expandable_content_class);
         expandableContent.classList.toggle("show");
 
         if (expandableContent.classList.contains("show")) {
           expandableContent.style.maxHeight =
             expandableContent.scrollHeight + "px";
+            toggleButton.innerHTML = 'see less'
         } else {
           expandableContent.style.maxHeight = "0";
+          toggleButton.innerHTML = 'see more'
         }
-      });
-    </script> -->
+      }
+  </script>
   </body>
 </html>
