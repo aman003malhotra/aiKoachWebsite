@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Koach</title>
+    <link rel="icon" type="image/x-icon" href="./assets/small_logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- tailwind elements -->
+
+    <link href="/output.css" rel="stylesheet" />
+
+    <!-- swiper slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="browserParser.js"></script>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <%- include('./partials/navbar'); %>
+
+    <!-- Header  -->
+    <header>
+      <div
+        class="flex md:flex-row flex-col-reverse max-md:gap-y-5 bg-gradient-to-r from-[#01D5E1] from-0% to-[#6065DA] to-61.98%0] w-[100%] px-[100px] py-9 text-white gap-x-10"
+      >
+        <div class="flex flex-col">
+          <span class="font-bold text-4xl">General Studies</span>
+          <p class="mt-7">
+            Studying diverse art, modern & world history, post-Independence
+            India, world & Indian geography, and Indian society's culture and
+            structure.
+          </p>
+          <div class="flex items-center mt-2">
+            <img src="./assets/course_content/star_yellow.svg" alt="" />
+            <img src="./assets/course_content/star_yellow.svg" alt="" />
+            <img src="./assets/course_content/star_yellow.svg" alt="" />
+            <img src="./assets/course_content/star_yellow.svg" alt="" />
+            <img src="./assets/course_content/star_gray.svg" alt="" />
+            <p class="ml-2 text-sm font-medium text-white">4.95  |  1472 Rating</ap>
+        </div>
+          <div class="mt-[100px]">
+            <button class="text-white bg-[#6065DA] px-10 py-5 rounded-[45px]">
+              Enroll Now
+            </button>
+          </div>
+          <span class="mt-7 font-medium">83,000 Students Enrolled</span>
+        </div>
+        <!-- THUMBNAIL -->
+        <div class="flex flex-col">
+          <div>Offered By</div>
+          <span class="text-3xl font-bold">TriumphIAS</span>
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="flex sm:flex-row max-sm:gap-y-4 flex-col font-medium gap-x-7 pl-[70px] border-b-2 py-5 text-[#2B2B2B]"
+    >
+      <a href="#course_outline" class="text-[#6065DA]">Course Outline</span>
+      <a href="#syllabus">Syllabus</a>
+      <span>Study Material</span>
+      <span>Assignment and assessments</span>
+    </div>
+
+    <!-- Course Content -->
+    <div class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+      <h2 class="font-bold text-3xl my-5">About this Course</h2>
+      <span> 39888 recent views</span>
+      <div id="course_content" class="my-5"></div>
+    </div>
+
+    <!-- Syllabus -->
+
+    <section
+      id="syllabus"
+      class="flex flex-col text-center justify-items-center"
+    >
+      <h2 class="text-3xl my-10">
+        Syllabus - What you will learn from this course
+      </h2>
+      <% for (let i = 0; i < syllabusData.length; i++) { %>
+      <div class="flex flex-row items-center gap-x-10 justify-center max-md:flex-col max-md:gap-y-10 max-lg:px-10">
+        <div class="flex flex-col text-3xl max-md:flex-row max-md:gap-x-2">
+          <div><p class="">Week</p></div>
+          <div><p><%= syllabusData[i].weekNumber %></p></div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex flex-row items-center">
+            <img
+              src="./assets/course_content/ri_time-line.svg"
+              alt="timer"
+              class="w-[50px] h-[50px]"
+            />
+            <span class="text-[#676061] text-2xl ml-5"
+              >4 hours to complete</span
+            >
+          </div>
+          <div class="text-left">
+            <p>
+              Studying diverse art, modern & world history, post-Independence
+              India, world & Indian geography, and Indian society's culture and
+              structure.
+            </p>
+          </div>
+          <% if (syllabusData[i].tests.length > 0 || syllabusData[i].videos.length > 0 || syllabusData[i].readings.length > 0) {%>
+          <div class="flex flex-row font-medium gap-x-3 items-center mt-2">
+            <img src="./assets/course_content/syllabus.svg" alt="syllabus" class="w-[25px] h-[25px]">
+            <% if (syllabusData[i].readings.length > 0) {%>
+            <p><%= syllabusData[i].readings.length %> Resources,</p>
+            <% }%> 
+            <% if (syllabusData[i].videos.length > 0) {%>
+            <p><%= syllabusData[i].videos.length %> Videos,</p>
+            <% }%>
+            <% if (syllabusData[i].tests.length > 0) {%>
+            <p><%= syllabusData[i].tests.length %> tests,</p>
+            <% }%>
+            <div>
+              <button class="toggle-button button_<%= syllabusData[i].weekNumber %> text-[#6065DA]" onclick="expand('<%= syllabusData[i].weekNumber %>')">see more</button>
+            </div>
+          </div>
+          <hr class="text-center mt-10" />
+          <div class="expandable-content content_<%= syllabusData[i].weekNumber %>">
+            <% if (syllabusData[i].videos.length > 0) {%>
+            <div class="content flex flex-col my-3 text-left gap-y-2">
+                <div class="flex flex-row gap-x-2 items-center">
+                    <img src="./assets/course_content/video.svg" alt="video" class="w-[25px] h-[25px]">
+                    <p class="font-bold "><%= syllabusData[i].videos.length %> Videos</p>
+                </div>
+                <% for (let j = 0; j < syllabusData[i].videos.length; j++) { %>
+                    <div><%= syllabusData[i].videos[j].title %> <%= syllabusData[i].videos[j].time %></div>
+                <% } %>
+                <hr class="my-2"/>
+            </div>
+            <% }%>
+
+            <% if (syllabusData[i].readings.length > 0) {%>
+                <div class="content flex flex-col my-3 text-left gap-y-2">
+                    <div class="flex flex-row gap-x-2 items-center">
+                        <img src="./assets/course_content/notes.svg" alt="video" class="w-[25px] h-[25px]">
+                        <p class="font-bold "><%= syllabusData[i].readings.length %> Notes</p>
+                    </div>
+                    <% for (let j = 0; j < syllabusData[i].readings.length; j++) { %>
+                        <div><%= syllabusData[i].readings[j].title %> <%= syllabusData[i].readings[j].time %></div>
+                    <% } %>
+                    <hr class="my-2"/>
+                </div>
+            <% }%>
+            
+            <% if (syllabusData[i].tests.length > 0) {%>
+                <div class="content flex flex-col my-3 text-left gap-y-2">
+                    <div class="flex flex-row gap-x-2 items-center">
+                        <img src="./assets/course_content/tests.svg" alt="video" class="w-[25px] h-[25px]">
+                        <p class="font-bold "><%= syllabusData[i].tests.length %> Test</p>
+                    </div>
+                    <% for (let j = 0; j < syllabusData[i].tests.length; j++) { %>
+                        <div><%= syllabusData[i].tests[j].title %> <%= syllabusData[i].tests[j].time %></div>
+                    <% } %>
+                    <hr class="my-2"/>
+                </div>
+            <% }%>
+          </div>
+          <% } %>
+
+        </div>
+      </div>
+      <% } %>
+    </section>
+
+    <!-- Related Courses -->
+    <section id="related_course" class="flex flex-col">
+      <h2 class="font-bold color-[#323232] text-4xl text-center mt-10">
+        Related Course
+      </h2>
+      <div
+        class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 justify-items-center my-10"
+        id="course_info"
+      ></div>
+    </section>
+
+    <!-- JOIN US TODAY -->
+    <%- include('./partials/joinus'); %>
+
+    <!-- Footer -->
+    <footer><%- include('./partials/footer'); %></footer>
+    <!-- swiper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script>
+      let course_data = null;
+      if (!course_data) {
+        fetch(`https://aikoachwebsite.onrender.com/courses/general_studies`)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Request failed with status: " + response.status);
+            }
+          })
+          .then((data) => {
+            document.getElementById("course_info").innerHTML = "";
+            if (data.courses.length == 0) {
+              document.getElementById("course_info").innerHTML =
+                "<div>No Courses Uploaded yet <br /> Working on it</div>";
+            }
+            for (const course of data.courses) {
+              document.getElementById(
+                "course_info"
+              ).innerHTML += `<div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
+                                <img src="./assets/Popular_Courses/${course.thumbnail}" alt="course_1" class="rounded-t-3xl" />
+                                <div class="flex flex-row justify-between items-center mt-3 mx-6">
+                                    <div class="flex flex-row items-center">
+                                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
+                                        ${course.number_of_lessons}+ Lesson
+                                    </div>
+                                    <div class="text-sm rounded-[20px] p-2"
+                                        style="background-color: rgba(218, 218, 247, 0.22);">${course.subject}</div>
+                                </div>
+                                <div>
+                                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">${course.about_course}</p>
+                                </div>
+                                <div class="flex flex-row justify-between items-center mt-5 mx-6">
+                                    <div class="flex flex-row">
+                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
+                                        <div class="flex flex-col">
+                                            <div class="font-semibold">${course.tutor}</div>
+                                            <div class="text-[#676061] text-sm">Ex ${course.prev_institude}</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-[#676061] font-medium">${course.student_enrolled}+ Student</div>
+                                </div>
+                                <div class="flex flex-row justify-between mx-6 my-5">
+                                    <div class="flex flex-row">
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                    </div>
+                                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
+                                </div>
+                            </div>`;
+            }
+          })
+          .catch((error) => {
+            console.log("Request failed:", error);
+          });
+      }
+      function courseChange(course_name) {
+        // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
+        fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Request failed with status: " + response.status);
+            }
+          })
+          .then((data) => {
+            document.getElementById("course_info").innerHTML = "";
+            if (data.courses.length == 0) {
+              document.getElementById("course_info").classList.remove("grid");
+              document.getElementById("course_info").innerHTML =
+                '<div class="block text-3xl text-center py-10">No Courses Uploaded yet <br /> Working on it</div>';
+            } else {
+              document.getElementById("course_info").classList.add("grid");
+            }
+            for (const course of data.courses) {
+              document.getElementById(
+                "course_info"
+              ).innerHTML += `<div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
+                                <img src="./assets/Popular_Courses/${course.thumbnail}" alt="course_1" class="rounded-t-3xl" />
+                                <div class="flex flex-row justify-between items-center mt-3 mx-6">
+                                    <div class="flex flex-row items-center">
+                                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
+                                        ${course.number_of_lessons}+ Lesson
+                                    </div>
+                                    <div class="text-sm rounded-[20px] p-2"
+                                        style="background-color: rgba(218, 218, 247, 0.22);">${course.subject}</div>
+                                </div>
+                                <div>
+                                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">${course.about_course}</p>
+                                </div>
+                                <div class="flex flex-row justify-between items-center mt-5 mx-6">
+                                    <div class="flex flex-row">
+                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
+                                        <div class="flex flex-col">
+                                            <div class="font-semibold">${course.tutor}</div>
+                                            <div class="text-[#676061] text-sm">Ex ${course.prev_institude}</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-[#676061] font-medium">${course.student_enrolled}+ Student</div>
+                                </div>
+                                <div class="flex flex-row justify-between mx-6 my-5">
+                                    <div class="flex flex-row">
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
+                                    </div>
+                                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
+                                </div>
+                            </div>`;
+            }
+          })
+          .catch((error) => {
+            console.log("Request failed:", error);
+          });
+      }
+    </script>
+    <script>
+      const parser = new edjsParser();
+      let data = {
+        time: 1686224681707,
+        blocks: [
+          {
+            id: "8cIVSb3Aa1",
+            type: "paragraph",
+            data: {
+              text: "The Union Public Service Commission (<b>UPSC</b>) is a central agency in India that conducts the Civil Services Examination (CSE), one of the most competitive exams in the country. The CSE is a three-stage examination that tests the candidate's knowledge and aptitude in a variety of subjects.",
+            },
+          },
+          {
+            id: "CDxsvuNfFX",
+            type: "paragraph",
+            data: {
+              text: "The UPSC course outline for the CSE is as follows:",
+            },
+          },
+          {
+            id: "A4UQmKB5Vs",
+            type: "header",
+            data: { text: "Preliminary Examination", level: 2 },
+          },
+          {
+            id: "fJMwliGDIv",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "General Studies Paper I: This paper will test the candidate's general awareness of current events, history, geography, polity, and economics of India and the world.",
+              ],
+            },
+          },
+          {
+            id: "QtC8TqklaA",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "General Studies Paper II: This paper will test the candidate's general awareness of science and technology, environment, and ecology, and international relations.",
+              ],
+            },
+          },
+          {
+            id: "vTQMliyjIJ",
+            type: "header",
+            data: { text: "Main Examination", level: 2 },
+          },
+          {
+            id: "tY08U-apQI",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "Indian Polity and Governance: This paper will test the candidate's knowledge of the Constitution of India, political system, Panchayati Raj, public policy, and rights issues.",
+              ],
+            },
+          },
+          {
+            id: "i_6lRVlxi9",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "Indian Economy: This paper will test the candidate's knowledge of the Indian economy, including its history, structure, problems, and policies.",
+              ],
+            },
+          },
+          {
+            id: "yND8vYTX2N",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "General Studies Paper III: This paper will test the candidate's general awareness of the history, geography, polity, and economics of India and the world.",
+              ],
+            },
+          },
+          {
+            id: "v4THkatGpG",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "General Studies Paper IV: This paper will test the candidate's general awareness of science and technology, environment, and ecology, and international relations.",
+              ],
+            },
+          },
+          {
+            id: "1o2EF18q86",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "Optional Subject: The candidate can choose one of the following subjects as an optional subject:",
+              ],
+            },
+          },
+          {
+            id: "fiO7k44EpM",
+            type: "list",
+            data: {
+              style: "ordered",
+              items: [
+                "History",
+                "Geography<br>",
+                "Political Science and International Relations<br>",
+                "Economics<br>",
+                "Public Administration<br>",
+                "Sociology<br>",
+                "Anthropology<br>",
+                "Philosophy<br>",
+                "Home Science<br>",
+                "Military Science<br>",
+              ],
+            },
+          },
+          {
+            id: "1Hf8ZwcomO",
+            type: "header",
+            data: { text: "Interview", level: 2 },
+          },
+          {
+            id: "DwHSin1DgO",
+            type: "paragraph",
+            data: {
+              text: "The interview is the final stage of the CSE. The interview will test the candidate's personality, aptitude, and suitability for a career in civil services.",
+            },
+          },
+          {
+            id: "keg_rp2v-g",
+            type: "paragraph",
+            data: {
+              text: "The UPSC course outline is comprehensive and covers a wide range of subjects. The CSE is a challenging exam, but it is also a rewarding one. If you are interested in a career in civil services, I encourage you to start preparing for the CSE now.",
+            },
+          },
+          {
+            id: "nkJ-o2xxHX",
+            type: "paragraph",
+            data: {
+              text: "Here are some additional tips for preparing for the UPSC CSE:",
+            },
+          },
+          {
+            id: "C9Ch_EqC4F",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "Start early: The CSE is a long and challenging exam, so it is important to start preparing early.",
+              ],
+            },
+          },
+          {
+            id: "TgJsKeVVEx",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "Join a coaching institute: A coaching institute can provide you with the resources and guidance you need to succeed.",
+              ],
+            },
+          },
+          {
+            id: "kUmRKcYYJQ",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "Take mock tests: Mock tests can help you to identify your strengths and weaknesses and to improve your time management skills.",
+              ],
+            },
+          },
+          {
+            id: "GyyHcr9cgY",
+            type: "list",
+            data: {
+              style: "unordered",
+              items: [
+                "Stay motivated: The CSE is a long and challenging exam, so it is important to stay motivated. Remember why you are taking the exam and keep your goal in mind.",
+              ],
+            },
+          },
+        ],
+        version: "2.27.0",
+      };
+      //   let parsed_data = JSON.parse(data);
+      const markup = parser.parse(data);
+      document.getElementById("course_content").innerHTML += markup;
+    </script>
+    <script>
+      function expand(expandable_content_class){
+      let toggleButton = document.querySelector(".button_"+expandable_content_class);
+      let expandableContent = document.querySelector(".content_"+expandable_content_class);
+        expandableContent.classList.toggle("show");
+
+        if (expandableContent.classList.contains("show")) {
+          expandableContent.style.maxHeight =
+            expandableContent.scrollHeight + "px";
+            toggleButton.innerHTML = 'see less'
+        } else {
+          expandableContent.style.maxHeight = "0";
+          toggleButton.innerHTML = 'see more'
+        }
+      }
+  </script>
+  </body>
+</html>

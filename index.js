@@ -19,14 +19,14 @@ const menu = [
         name: 'Blog',
         url: '/blog'
     },
-    {
-        name: 'Value proposition',
-        url: '/valuepropostion'
-    },
-    {
-        name: 'Team',
-        url: '/team'
-    },
+    // {
+    //     name: 'Value proposition',
+    //     url: '/valuepropostion'
+    // },
+    // {
+    //     name: 'Team',
+    //     url: '/team'
+    // },
     {
         name: 'About',
         url: '/about'
@@ -139,10 +139,31 @@ app.get('/course', function(req, res){
     res.render('course.ejs', {menu:menu, url:req.url});
 });
 
+
+app.get('/course_detail', (req,res)=>{
+    res.render('course_detail.ejs', {menu:menu, url:req.url, syllabusData:syllabusData})
+})
+
+
+// COURSE DATA LINKS
+app.get('/courses/:course_name', (req,res) => {
+    const filteredArray = courses.filter(obj => obj.subject === req.params.course_name);
+    res.send(
+        {
+            course_name:req.params.course_name,
+            courses:filteredArray
+        })
+});
+
+
 app.get('/blog', function(req, res){
     res.render('blog.ejs', {menu:menu, url:req.url});
 });
 
+app.get('/blog/:blog_id', (req,res) => {
+    console.log(req.params);
+    res.render('blog_content.ejs', {menu:menu, url:req.url});
+})
 app.get('/valuepropostion', function(req, res){
     res.render('valueProp.ejs', {menu:menu, url:req.url});
 });
@@ -159,19 +180,18 @@ app.get('/contact', function(req, res){
     res.render('contact.ejs', {menu:menu, url:req.url});
 });
 
-app.get('/courses/:course_name', (req,res) => {
-    const filteredArray = courses.filter(obj => obj.subject === req.params.course_name);
-    res.send(
-        {
-            course_name:req.params.course_name,
-            courses:filteredArray
-        })
-});
+const syllabusData = [{"weekNumber":"1","readings":[{"title":"handouts 1","time":"120m"},{"title":"topic pdf ","time":"2h"}],"videos":[{"title":"topic lecture ","time":"2h"},{"title":"spefic topic lecture 2","time":"3h"}],"tests":[{"title":"MCQ test ","time":"20m"},{"title":"Subjective test ","time":"2h"}]},{"weekNumber":"2","readings":[{"title":"handouts 1","time":"120m"},{"title":"topic pdf ","time":"2h"}],"videos":[],"tests":[]}];
+
+
+
 
 app.get('/testimonials', (req,res)=>{
     res.send({testimonials})
 })
 
+app.get('/specific_course',(req,res) => {
+    res.send({message:'ok'})
+})
 
 const port = process.env.PORT
 app.listen(port || 8000, () => {console.log(`server is running on the port ${port}`)})
