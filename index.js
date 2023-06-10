@@ -160,8 +160,7 @@ app.get('/blog', function(req, res){
     res.render('blog.ejs', {menu:menu, url:req.url});
 });
 
-app.get('/blog_content/:blog_id', (req,res) => {
-    console.log(req.params);
+app.get('/blog_content', (req,res) => {
     res.render('blog_content.ejs', {menu:menu, url:req.url});
 })
 app.get('/valuepropostion', function(req, res){
