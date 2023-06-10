@@ -351,7 +351,7 @@
         <script>
             let course_data = null;
             if(!course_data){
-            fetch(`http://localhost:8000/courses/general_studies`)
+            fetch(`https://aikoachwebsite.onrender.com/courses/general_studies`)
                 .then(response => {
                     if (response.ok) {
                     return response.json();
@@ -407,7 +407,7 @@
             }
             function courseChange(course_name){
                 // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
-                fetch(`http://localhost:8000/courses/${course_name}`)
+                fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
                 .then(response => {
                     if (response.ok) {
                     return response.json();
@@ -469,7 +469,7 @@
         <script>
             // Testimonial
             let splideElem;
-            fetch(`http://localhost:8000/testimonials`)
+            fetch(`https://aikoachwebsite.onrender.com/testimonials`)
                 .then(response => {
                         if (response.ok) {
                             return response.json();
