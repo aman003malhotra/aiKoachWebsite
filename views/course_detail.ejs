@@ -263,7 +263,7 @@
       }
       function courseChange(course_name) {
         // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
-        fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
+        fetch(`https://aikoachwebsite.onrender.com/${course_name}`)
           .then((response) => {
             if (response.ok) {
               return response.json();

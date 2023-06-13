@@ -46,7 +46,7 @@ const courses = [
         tutor:"Samriti talk",
         prev_institude:"Drishti IAS",
         student_enrolled:"160",
-        rating:"5"
+        rating:5
     },
     {
         subject:"general_studies",
@@ -56,7 +56,7 @@ const courses = [
         tutor:"Salman Hyder",
         prev_institude:"Drishti IAS",
         student_enrolled:"160",
-        rating:"5"
+        rating:5
     },
     {
         subject:"general_studies",
@@ -66,7 +66,7 @@ const courses = [
         tutor:"Ananta Shroff",
         prev_institude:"Edukemy IAS",
         student_enrolled:"200",
-        rating:"5"
+        rating:5
     },
     {
         subject:"general_studies",
@@ -86,7 +86,7 @@ const courses = [
         tutor:"Samriti talk",
         prev_institude:"Drishti IAS",
         student_enrolled:"160",
-        rating:"5"
+        rating:5
     }
 ]
 
@@ -136,7 +136,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/course', function(req, res){
-    res.render('course.ejs', {menu:menu, url:req.url});
+    res.render('course.ejs', {menu:menu, url:req.url, courses:courses});
 });
 
 
