@@ -1,91 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Koach</title>
-    <link rel="icon" type="image/x-icon" href="./assets/small_logo.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <!-- swiper slider -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-  </head>
 
-  <body>
-    <!-- NAVBAR -->
-    <%- include('./partials/navbar'); %>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= blog.title %>
+  </title>
+  <meta name="description" content="<%= blog.description %>">
+  <link rel="icon" type="image/x-icon" href="/assets/small_logo.png" />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" /> -->
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/output.css" />
+  <!-- swiper slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <%- include('./partials/navbar'); %>
     <div class="flex justify-center">
       <div class="flex flex-col  sm:w-[60%] w-[90%]">
         <!-- HEADING -->
+
         <div>
-          <span class="text-4xl font-extrabold">
-            It's An Engineering Marvel Of The Ancient World But Is Mostly Unknown
-            Today
+          <h2 class="text-4xl font-extrabold">
+            <%= blog.title %>
+          </h2>
         </div>
         <!-- DESCRIPTION -->
         <div class="text-gray-700 text-justify mt-5 font-semibold">
           <p>
-            This red snake is longer than two of the greatest Roman walls put
-            together and reflects a fear of the civilized world</p>
+            <%= blog.description %>
+          </p>
         </div>
-  
+
         <div>
           <div class="flex sm:flex-row flex-col sm:items-center gap-x-4 mt-4">
-            <img src="./assets/blogs/avatar.jpg" alt="" class="w-[40px] h-[40px]">
+            <img src="/assets/blogs/avatar.jpg" alt="" class="w-[40px] h-[40px]">
             <div class="flex flex-col">
               <div class="flex flex-row gap-x-5">
                 <p>Erik Brown</p>
-                <p class="text-[#6065DA] font-semibold">Follow</p>
+                <!-- <p class="text-[#6065DA] font-semibold">Follow</p> -->
               </div>
               <div class="flex flex-row gap-x-5 font-semibold">
                 <p><span class="text-gray-500">Published </span>in UPSC </p>
-                <p class="text-gray-500"> 5 min read </p>
-                <p class="text-gray-500">1 day ago</p>
+                <p class="text-gray-500">
+                  <%= blog.readTime %> min read
+                </p>
+                <p class="text-gray-500">
+                  <%= getTimeAgo(blog.createdAt) %>
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="flex justify-center text-5xl font-bold my-[200px]">
-          TEXT CONTENT
+        <div class=" my-[50px]">
+          <%- editorJsParse(blog.content) %>
         </div>
 
         <div class="flex flex-row flex-wrap gap-x-4 gap-y-4 my-10">
           <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-              UPSC
+            UPSC
           </div>
           <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-              SSC
+            SSC
           </div>
           <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-              12th
+            12th
           </div>
           <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-              10th
+            10th
           </div>
           <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-              UPSC
+            UPSC
           </div>
         </div>
       </div>
-      
+
     </div>
-    
+
     <div class="flex justify-center bg-gray-100 py-7">
       <div class="flex flex-col sm:w-[60%] w-[90%]">
-        <img src="./assets/blogs/avatar.jpg" alt="" class="w-[50px] h-[50px]">
+        <img src="/assets/blogs/avatar.jpg" alt="" class="w-[50px] h-[50px]">
         <div class="flex flex-row mt-4 md:justify-between md:items-center max-md:flex-col">
           <div class="flex flex-col">
             <p class="text-2xl font-semibold">Written by Erik Brown</p>
@@ -96,13 +97,13 @@
           </div>
           <div class="flex flex-row flex-wrap gap-x-4 gap-y-4 text-white font-semibold  max-md:mt-4">
             <div class="bg-[#6065DA] py-2 px-3 rounded-3xl">
-                Follow
+              Follow
             </div>
             <div class="bg-[#6065DA] py-2 px-3 rounded-3xl">
-                SSC
+              SSC
             </div>
             <div class="bg-[#6065DA] py-2 px-3 rounded-3xl">
-                12th
+              12th
             </div>
           </div>
         </div>
@@ -114,7 +115,8 @@
 
     <footer><%- include('./partials/footer'); %></footer>
     <!-- swiper -->
-    <script src="./main.js"></script>
+    <script src="/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-  </body>
+</body>
+
 </html>

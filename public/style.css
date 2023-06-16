@@ -1,27 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Caladea&display=swap');
-h1, h2, h3, h4, h5, h6{
-    font-family: 'Caladea', serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Caladea', serif;
 }
 
-  fieldset{
-    border: 2px solid rgba(96, 101, 218, 0.07);
-    width: 100%;
-    margin: auto !important;
-    border-radius: 15px;
-    padding: 20px !important;
-  }
+fieldset {
+  border: 2px solid rgba(96, 101, 218, 0.07);
+  width: 100%;
+  margin: auto !important;
+  border-radius: 15px;
+  padding: 20px !important;
+}
 
-  legend{
-    margin-left: 15px;
-    font-weight: 600;
-    font-size: 20px;
-  }
+legend {
+  margin-left: 15px;
+  font-weight: 600;
+  font-size: 20px;
+}
 
-  .splide__slide img{
-    margin: auto !important;
-  }
+.splide__slide img {
+  margin: auto !important;
+}
 
-.text-animate{
+.text-animate {
   display: inline-flex;
   flex-direction: column;
   height: 2.8rem;
@@ -33,13 +39,13 @@ h1, h2, h3, h4, h5, h6{
   animation: moveUp 10s linear infinite;
 }
 
-@media (max-width: 640px){
+@media (max-width: 640px) {
   .text-animate span {
     height: 2.3rem;
     animation: moveUpSmall 10s linear infinite;
   }
 
-  .text-animate{
+  .text-animate {
     height: 2.3rem;
   }
 }
@@ -48,7 +54,7 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Poppins';
 }
 
-#course_content h2{
+#course_content h2 {
   font-weight: 700;
   /* font-family: none; */
   font-size: 24px;
@@ -56,19 +62,19 @@ h1, h2, h3, h4, h5, h6{
   margin-bottom: 10px;
 }
 
-#course_content ul{
-  list-style: inside  !important; 
+#course_content ul {
+  list-style: inside !important;
 }
 
-#course_content ol{
-  list-style-type: decimal; 
+#course_content ol {
+  list-style-type: decimal;
 }
 
 @keyframes moveUp {
   0% {
     transform: translateY(0);
   }
-  
+
   5% {
     transform: translateY(0);
   }
@@ -115,7 +121,7 @@ h1, h2, h3, h4, h5, h6{
   0% {
     transform: translateY(0);
   }
-  
+
   5% {
     transform: translateY(0);
   }
@@ -163,16 +169,18 @@ h1, h2, h3, h4, h5, h6{
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-30px);
   }
+
   100% {
     transform: translateY(0);
   }
 }
 
 
-.testi_img{
+.testi_img {
   animation: upAndDown 2.7s infinite
 }
 
@@ -198,14 +206,98 @@ html {
   outline: none !important;
   border-width: 0px !important;
   border: none !important;
+
   &:hover {
     outline: none !important;
     border-width: 0px !important;
     border: none !important;
   }
+
   &:focus {
     outline: none !important;
     border-width: 0px !important;
     border: none !important;
   }
+}
+
+
+/* Default Heading Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold !important;
+  margin-top: 0 !important;
+  /* margin-bottom: 0.5rem !important; */
+}
+
+/* Specific Heading Styles */
+h1 {
+  font-size: 2rem !important;
+}
+
+h2 {
+  font-size: 1.5rem !important;
+}
+
+h3 {
+  font-size: 1.25rem !important;
+}
+
+h4 {
+  font-size: 1.125rem !important;
+}
+
+h5 {
+  font-size: 1rem !important;
+}
+
+h6 {
+  font-size: 0.875rem !important;
+}
+
+
+* {
+  font-family: sans-serif;
+  /* Change your font family */
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #dddddd;
+}
+
+table tbody tr.active-row {
+  font-weight: bold;
+  color: #258ed8;
 }

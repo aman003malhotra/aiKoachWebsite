@@ -8,11 +8,16 @@
     <title>AI Koach</title>
     <link rel="icon" type="image/x-icon" href="./assets/small_logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" /> -->
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- swiper slider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +28,7 @@
 
             <div class="flex flex-col mr-10 col-span-1">
                 <div class="max-sm:text-4xl  text-5xl text-[#676061] font-black inline-block">
-                    Revolutionize 
+                    Revolutionize
                     <div class="text-animate">
                         <span style="--i: 0">10th</span>
                         <span style="--i: 1">12th</span>
@@ -46,9 +51,11 @@
             </div>
             <div class="col-span-1">
                 <video height="auto" autoplay loop muted class="md:w-[650px] w-[100%] max-w-none max-md:mt-4">
-                    <source src="https://res.cloudinary.com/dqemlno5f/video/upload/c_scale,q_auto:good,vc_h264,w_928/v1684064766/a_koch_1_ltxv4l.mp4" type="video/mp4">
+                    <source
+                        src="https://res.cloudinary.com/dqemlno5f/video/upload/c_scale,q_auto:good,vc_h264,w_928/v1684064766/a_koch_1_ltxv4l.mp4"
+                        type="video/mp4">
                     Your browser does not support the video tag.
-                  </video>
+                </video>
             </div>
         </div>
 
@@ -58,7 +65,8 @@
             <div class="flex items-center w-[90%] mx-auto">
                 <fieldset>
                     <legend>Our Partners</legend>
-                    <section class="splide" id="partner_splide" aria-labelledby="Splide Basic HTML Example" data-splide-interval="1000">
+                    <section class="splide" id="partner_splide" aria-labelledby="Splide Basic HTML Example"
+                        data-splide-interval="1000">
                         <div class="splide__track">
                             <ul class="splide__list">
                                 <li class="splide__slide"><img src="./assets/partners/1.png" alt="triumphIAS"></li>
@@ -83,49 +91,74 @@
                     <div>
                         <ul
                             class="font-medium flex p-4 lg:p-0 mt-4 rounded-lg flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-white max-sm:text-[10px]">
-                            <li>
-                                <a href="#"
-                                    onclick="event.preventDefault();courseChange('general_studies')"
-                                    id="general_studies"
-                                    class="block py-2 pl-3 pr-4  rounded lg:bg-transparent lg:text-gray-900  lg:p-0"
-                                    aria-current="page">General Studies</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    onclick="event.preventDefault();courseChange('CSAT')"
-                                    id="CSAT"
-                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#575757] lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">CSAT</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    onclick="event.preventDefault();courseChange('optional')"
-                                    id="optional"
-                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">Optional</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    onclick="event.preventDefault();courseChange('test_series')"
-                                    id="test_series"
-                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">Test
-                                    Series</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                onclick="event.preventDefault();courseChange('skilled_bureaucrat')"
-                                    id="skilled_bureaucrat"
-                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">Skilled
-                                    Bureaucrat</a>
-                            </li>
+                            <% Object.keys(courses).forEach(course=> { %>
+                                <li>
+                                    <a href="?course=<%= course %>#<%= course %>" id="<%= course %>" class="block py-2 pl-3 pr-4 rounded lg:bg-transparent lg:text-gray-900 lg:p-0 
+                                        <%= currentCourse == course ? 'lg:text-indigo-500' : '' %>">
+                                        <%= course %>
+                                    </a>
+                                </li>
+                                <% }) %>
                         </ul>
                     </div>
                 </div>
                 <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center" id="course_info">
 
-                    <!-- Course Component -->
+                    <% courses[currentCourse].forEach(course=> { %>
+                        <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
+                            <img src="<%= course.thumbnail %>" alt="course_1" class="rounded-t-3xl" />
+                            <div class="flex flex-row justify-between items-center mt-3 mx-6">
+                                <div class="flex flex-row items-center">
+                                    <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
+                                    <%= 999 + course.length %>+ Hrs content
+                                </div>
+                                <div class="text-sm rounded-[20px] p-2"
+                                    style="background-color: rgba(218, 218, 247, 0.22);">
+                                    <%= course.name %>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">
+                                    <%= course.description %>
+                                </p>
+                            </div>
+                            <div class="flex flex-row justify-between items-center mt-5 mx-6">
+                                <div class="flex flex-row">
+                                    <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
+                                    <div class="flex flex-col">
+                                        <div class="font-semibold">
+                                            <!-- <%= course.tutor %> -->
+                                            Samriti talk
+                                        </div>
+                                        <div class="text-[#676061] text-sm">
+                                            <%= course.prev_institude %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-[#676061] font-medium">
+                                    <%= course.student_enrolled %>150 Student
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between mx-6 my-5">
+                                <div class="flex flex-row">
+                                    <% rating=5 %>
+                                        <% for(let j=0;j<rating;j++){ %>
+                                            <img src="./assets/Popular_Courses/Star.png" alt="star"
+                                                class="w-[13px] h-[13px] mr-1">
+                                            <% } %>
+                                </div>
+                                <div><a href="/course_detail/<%= currentCourse %>/1/?id=<%= course.id %>"
+                                        class="text-[#676061]">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                            <!-- Course Component -->
 
                 </div>
                 <div class="flex flex-col items-center mt-5">
-                    <div><a href="/course" class="bg-[#6065DA] rounded-[45px] px-[50px] py-4 text-white font-bold">Explore all
+                    <div><a href="/course"
+                            class="bg-[#6065DA] rounded-[45px] px-[50px] py-4 text-white font-bold">Explore all
                             Courses</a></div>
                 </div>
             </div>
@@ -253,7 +286,7 @@
             <div class="lg:col-span-2 col-span-1">
                 <img src="./assets/difference.svg" alt="difference" class="h-[500px] w-[500px] mx-auto" />
             </div>
-            <div class="flex flex-col ml-0 lg:ml-[100px] lg:col-span-4 col-span-1">
+            <div id="about" class="flex flex-col ml-0 lg:ml-[100px] lg:col-span-4 col-span-1">
                 <h2 class="font-bold text-[#575757] text-6xl max-lg:text-center">What is our <span
                         class="text-[#6065DA]">difference</span></h2>
                 <p class="text-[#525252] text-xl font-medium mt-5">AI-Koach's educational platform stands out from
@@ -300,19 +333,20 @@
         <section id="testimonials">
             <div class="flex flex-col py-[100px] items-center relative">
 
-                <div class="absolute bottom-[10%] left-[200px] w-[80px] max-md:bottom-[5%] max-sm:hidden border-solid border-[#6065DA] border-8 rounded-[50%]" id="0">
+                <div class="absolute bottom-[10%] left-[200px] w-[80px] max-md:bottom-[5%] max-sm:hidden border-solid border-[#6065DA] border-8 rounded-[50%]"
+                    id="0">
                     <img src="./assets/testimonials/man3.png" alt="people">
                 </div>
 
                 <div class="absolute left-[100px] top-[40%] w-[100px] max-lg:hidden" id="1">
                     <img src="./assets/testimonials/man2.png" alt="people">
-                </div> 
+                </div>
 
                 <div class="absolute md:left-[20%] left-0 max-sm:hidden " id="2">
                     <img src="./assets/testimonials/man1.png" alt="people">
                 </div>
-                
-                
+
+
                 <div class="absolute md:right-[17%] top-[10%] w-[120px] right-[5%] max-sm:hidden" id="3">
                     <img src="./assets/testimonials/man4.png" alt="people">
                 </div>
@@ -325,11 +359,12 @@
 
 
                 <h2 class="text-6xl font-bold text-[#575757] text-center">Testimonials</h2>
-                <section class="splide max-md:w-[90%] max-lg:w-[70%] w-[50%]" aria-label="Basic Structure Example" id="testimonial_carousal">
+                <section class="splide max-md:w-[90%] max-lg:w-[70%] w-[50%]" aria-label="Basic Structure Example"
+                    id="testimonial_carousal">
                     <div class="splide__track">
-                      <ul class="splide__list"  id="testimonial_box">
-                        
-                      </ul>
+                        <ul class="splide__list" id="testimonial_box">
+
+                        </ul>
                     </div>
                 </section>
             </div>
@@ -337,149 +372,32 @@
         <!-- JOIN US TODAY -->
         <%- include('./partials/joinus'); %>
 
-        <!-- Footer -->
-        <footer>
-            <%- include('./partials/footer'); %>
-        </footer>
-        <!-- swiper -->
+            <!-- Footer -->
+            <footer>
+                <%- include('./partials/footer'); %>
+            </footer>
+            <!-- swiper -->
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-        <script src="./main.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+            <script src="./main.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
-        <script>
-            let course_data = null;
-            if(!course_data){
-            fetch(`https://aikoachwebsite.onrender.com/courses/general_studies`)
-                .then(response => {
-                    if (response.ok) {
-                    return response.json();
-                    } else {
-                    throw new Error('Request failed with status: ' + response.status);
-                    }
-                    })
-                    .then(data => {
-                        document.getElementById("course_info").innerHTML = '';
-                        if(data.courses.length == 0){
-                            document.getElementById("course_info").innerHTML = '<div>No Courses Uploaded yet <br /> Working on it</div>';
-                        }
-                        for(const course of data.courses){
-                            document.getElementById("course_info").innerHTML += `<div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                                <img src="./assets/Popular_Courses/${course.thumbnail}" alt="course_1" class="rounded-t-3xl" />
-                                <div class="flex flex-row justify-between items-center mt-3 mx-6">
-                                    <div class="flex flex-row items-center">
-                                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                                        ${course.number_of_lessons}+ Lesson
-                                    </div>
-                                    <div class="text-sm rounded-[20px] p-2"
-                                        style="background-color: rgba(218, 218, 247, 0.22);">${course.subject}</div>
-                                </div>
-                                <div>
-                                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">${course.about_course}</p>
-                                </div>
-                                <div class="flex flex-row justify-between items-center mt-5 mx-6">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
-                                        <div class="flex flex-col">
-                                            <div class="font-semibold">${course.tutor}</div>
-                                            <div class="text-[#676061] text-sm">Ex ${course.prev_institude}</div>
-                                        </div>
-                                    </div>
-                                    <div class="text-[#676061] font-medium">${course.student_enrolled}+ Student</div>
-                                </div>
-                                <div class="flex flex-row justify-between mx-6 my-5">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                    </div>
-                                    <div><a href="./course_detail" class="text-[#676061]">Details</a></div>
-                                </div>
-                            </div>`
-                        }
-                        
-                    })
-                    .catch(error => {
-                        console.log('Request failed:', error);
-                    });
-            }
-            function courseChange(course_name){
-                // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
-                fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
-                .then(response => {
-                    if (response.ok) {
-                    return response.json();
-                    } else {
-                    throw new Error('Request failed with status: ' + response.status);
-                    }
-                    })
-                    .then(data => {
-                        document.getElementById("course_info").innerHTML = '';
-                        if(data.courses.length == 0){
-                            document.getElementById("course_info").classList.remove('grid');
-                            document.getElementById("course_info").innerHTML = '<div class="block text-3xl text-center py-10">No Courses Uploaded yet <br /> Working on it</div>';
-                        }else{
-                            document.getElementById("course_info").classList.add('grid');
-                        }
-                        for(const course of data.courses){
-                            document.getElementById("course_info").innerHTML += `<div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                                <img src="./assets/Popular_Courses/${course.thumbnail}" alt="course_1" class="rounded-t-3xl" />
-                                <div class="flex flex-row justify-between items-center mt-3 mx-6">
-                                    <div class="flex flex-row items-center">
-                                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                                        ${course.number_of_lessons}+ Lesson
-                                    </div>
-                                    <div class="text-sm rounded-[20px] p-2"
-                                        style="background-color: rgba(218, 218, 247, 0.22);">${course.subject}</div>
-                                </div>
-                                <div>
-                                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">${course.about_course}</p>
-                                </div>
-                                <div class="flex flex-row justify-between items-center mt-5 mx-6">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
-                                        <div class="flex flex-col">
-                                            <div class="font-semibold">${course.tutor}</div>
-                                            <div class="text-[#676061] text-sm">Ex ${course.prev_institude}</div>
-                                        </div>
-                                    </div>
-                                    <div class="text-[#676061] font-medium">${course.student_enrolled}+ Student</div>
-                                </div>
-                                <div class="flex flex-row justify-between mx-6 my-5">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                    </div>
-                                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
-                                </div>
-                            </div>`
-                        }
-                        
-                    })
-                    .catch(error => {
-                        console.log('Request failed:', error);
-                    });
-            }          
 
-        </script>
-        <script>
-            // Testimonial
-            let splideElem;
-            fetch(`https://aikoachwebsite.onrender.com/testimonials`)
-                .then(response => {
+            <script>
+                // Testimonial
+                let splideElem;
+                fetch(`http://localhost:5500/testimonials`)
+                    .then(response => {
                         if (response.ok) {
                             return response.json();
                         } else {
                             throw new Error('Request failed with status: ' + response.status);
                         }
                     })
-                    .then(data => { 
-                        for(const one_test of data.testimonials){
-                            document.getElementById('testimonial_box').innerHTML +=`<li class="splide__slide">
+                    .then(data => {
+                        for (const one_test of data.testimonials) {
+                            document.getElementById('testimonial_box').innerHTML += `<li class="splide__slide">
                             <div class="flex flex-col bg-[#F3F4FF] text-[#575757] p-7 rounded-2xl my-[100px] py-[50px]">
                                 <div class="flex flex-row justify-between items-center">
                                     <div class="flex flex-row items-center">
@@ -502,18 +420,19 @@
                             </div>
                         </li>`
                         }
-                        splideElem = new Splide( '#testimonial_carousal',{
+                        splideElem = new Splide('#testimonial_carousal', {
                             rewind: false,
                         }).mount();
-                        
+
                         splideElem.on('moved', function (newIndex) {
-                            document.getElementById(newIndex).classList.add('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]', 'testi_img');
-                            if(newIndex-1 >= -1){
-                                document.getElementById(newIndex-1)?.classList.remove('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]', 'testi_img'); 
-                                document.getElementById(newIndex+1)?.classList.remove('border-solid','border-[#6065DA]' ,'border-8' ,'rounded-[50%]', 'testi_img');   
+                            document.getElementById(newIndex).classList.add('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
+                            if (newIndex - 1 >= -1) {
+                                document.getElementById(newIndex - 1)?.classList.remove('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
+                                document.getElementById(newIndex + 1)?.classList.remove('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
                             }
                         });
                     })
-        </script>
+            </script>
 </body>
+
 </html>
