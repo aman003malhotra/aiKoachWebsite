@@ -198,8 +198,16 @@ app.get('/course_detail/:course/:id', async (req, res) => {
     res.render('course_detail.ejs', { menu: menu, url: req.url, syllabusData: syllabusData, CourseOutline, StudyMaterial, })
 })
 
-app.get('/course', function (req, res) {
-    res.render('course.ejs', { menu: menu, url: req.url, courses: courses });
+app.get('/course',  async (req, res) => {
+    let response;
+    let saveData;
+    if (saveData == null) {
+        response = await Client.get('course-categories')
+        saveData = response.data
+        console.log(saveData)
+        // console.log("🚀 ~ file: index.js:161 ~ saveData:", saveData)
+    }
+    res.render('course.ejs', { menu: menu, url: req.url, courses: saveData });
 });
 
 

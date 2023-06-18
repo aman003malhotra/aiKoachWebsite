@@ -220,7 +220,7 @@
       <script>
         let course_data = null;
         if (!course_data) {
-          fetch(`http://localhost:5500/courses/general_studies`)
+          fetch(`https://aikoachwebsite.onrender.com/courses/general_studies`)
             .then((response) => {
               if (response.ok) {
                 return response.json();
@@ -278,7 +278,7 @@
         }
         function courseChange(course_name) {
           // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
-          fetch(`http://localhost:5500/courses/${course_name}`)
+          fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
             .then((response) => {
               if (response.ok) {
                 return response.json();
