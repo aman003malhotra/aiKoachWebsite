@@ -70,58 +70,6 @@ const menu = [
     }
 ]
 
-const courses = [
-    {
-        subject: "General studies 1",
-        thumbnail: "course_1.png",
-        number_of_lessons: "120",
-        about_course: "Studying diverse art, modern &world history, post-Independence India, world & Indian geography, and Indian society's culture and structure.",
-        tutor: "Samriti talk",
-        prev_institude: "Drishti IAS",
-        student_enrolled: "160",
-        rating: 5
-    },
-    {
-        subject: "General studies 1",
-        thumbnail: "course_2.png",
-        number_of_lessons: "120",
-        about_course: "Studying government, law, decision-making, equality, rights, fairness, global interactions, relationships, politics.",
-        tutor: "Salman Hyder",
-        prev_institude: "Drishti IAS",
-        student_enrolled: "160",
-        rating: 5
-    },
-    {
-        subject: "General studies 1",
-        thumbnail: "course_3.png",
-        number_of_lessons: "120",
-        about_course: "Exploring economic growth, agriculture, science, environment, security, and disaster management to promote sustainable development and safety.",
-        tutor: "Ananta Shroff",
-        prev_institude: "Edukemy IAS",
-        student_enrolled: "200",
-        rating: 5
-    },
-    {
-        subject: "General studies 1",
-        thumbnail: "course_1.png",
-        number_of_lessons: "120",
-        about_course: "Examining ethical principles, attitudes, and values, illustrated through case studies to promote probity in governance and decision-making.",
-        tutor: "Himanshu Kandpal",
-        prev_institude: "TestBook",
-        student_enrolled: "200",
-        rating: 5
-    },
-    {
-        subject: "CSAT",
-        thumbnail: "course_2.png",
-        number_of_lessons: "120",
-        about_course: "Studying diverse art, modern &world history, post-Independence India, world & Indian geography, and Indian society's culture and structure.",
-        tutor: "Samriti talk",
-        prev_institude: "Drishti IAS",
-        student_enrolled: "160",
-        rating: 5
-    }
-]
 
 testimonials = [
     {
@@ -188,17 +136,29 @@ app.get('/course_detail/:course/:id', async (req, res) => {
         // console.log("🚀 ~ file: index.js:161 ~ saveData:", saveData)
     }
     const parser = new edjsParser();
-    console.log("🚀 ~ file: index.js:190 ~ app.get ~ req.params.course:", req.query)
+    console.log("🚀 ~ file: index.js:190 ~ app.get ~ req.params.course:", req.params, req.query)
     // console.log("🚀 ~ file: index.js:191 ~ app.get ~ saveData:", saveData)
+    // console.log("🚀 ~ file: index.js:190 ~ app.get ~ data:", saveData)
     let data = saveData[req.params.course].filter(i => i.id == req.query.id)[0]
-    // console.log("🚀 ~ file: index.js:190 ~ app.get ~ data:", data)
-    let syllabusData = data.course_infos[0].Syllabus.weeks
-    let StudyMaterial = parser.parse(data.course_infos[0].StudyMaterial)
-    let CourseOutline = parser.parse(data.course_infos[0].CourseOutline)
-    res.render('course_detail.ejs', { menu: menu, url: req.url, syllabusData: syllabusData, CourseOutline, StudyMaterial, })
+    console.log("🚀 ~ file: index.js:143 ~ app.get ~ data:", data)
+    let syllabusData = data.Syllabus.weeks
+    let StudyMaterial = parser.parse(data.StudyMaterial)
+    let CourseOutline = parser.parse(data.CourseOutline)
+    let Assignments = parser.parse(data.AIAssessmentsAndAssignments)
+    let mentorship = parser.parse(data.Mentorship)
+    let extras = parser.parse(data.Extras)
+    res.render('course_detail.ejs', {
+        menu: menu, url: req.url,
+        courseInfo: data,
+        syllabusData: syllabusData,
+        CourseOutline, StudyMaterial,
+        Assignments: Assignments,
+        mentorship: mentorship,
+        extras: extras
+    })
 })
 
-app.get('/course',  async (req, res) => {
+app.get('/course', async (req, res) => {
     let response;
     let saveData;
     if (saveData == null) {

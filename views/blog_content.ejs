@@ -43,11 +43,14 @@
             <img src="/assets/blogs/avatar.jpg" alt="" class="w-[40px] h-[40px]">
             <div class="flex flex-col">
               <div class="flex flex-row gap-x-5">
-                <p>Erik Brown</p>
+                <p>
+                  <%= blog.author.name %>
+                </p>
                 <!-- <p class="text-[#6065DA] font-semibold">Follow</p> -->
               </div>
               <div class="flex flex-row gap-x-5 font-semibold">
-                <p><span class="text-gray-500">Published </span>in UPSC </p>
+                <p><span class="text-gray-500">Published </span>in <%= blog.tags[0] %>
+                </p>
                 <p class="text-gray-500">
                   <%= blog.readTime %> min read
                 </p>
@@ -64,21 +67,11 @@
         </div>
 
         <div class="flex flex-row flex-wrap gap-x-4 gap-y-4 my-10">
-          <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-            UPSC
-          </div>
-          <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-            SSC
-          </div>
-          <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-            12th
-          </div>
-          <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-            10th
-          </div>
-          <div class="bg-gray-100 py-2 px-3 rounded-3xl">
-            UPSC
-          </div>
+          <% for(let j=0;j<blog.tags.length;j++){ %>
+            <div class="bg-gray-100 py-2 px-3 rounded-3xl">
+              <%= blog.tags[j] %>
+            </div>
+            <% } %>
         </div>
       </div>
 

@@ -93,13 +93,15 @@
                         <ul
                             class="font-medium flex p-4 lg:p-0 mt-4 rounded-lg flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-white max-sm:text-[10px]">
                             <% Object.keys(courses).forEach(course=> { %>
-                                <li>
-                                    <a href="?course=<%= course %>#<%= course %>" id="<%= course %>" class="block py-2 pl-3 pr-4 rounded lg:bg-transparent lg:text-gray-900 lg:p-0 
+                                <% if (courses[course].length> 0) {%>
+                                    <li>
+                                        <a href="?course=<%= course %>#<%= course %>" id="<%= course %>" class="block py-2 pl-3 pr-4 rounded lg:bg-transparent lg:text-gray-900 lg:p-0 
                                         <%= currentCourse == course ? 'lg:text-indigo-500' : '' %>">
-                                        <%= course %>
-                                    </a>
-                                </li>
-                                <% }) %>
+                                            <%= course %>
+                                        </a>
+                                    </li>
+                                    <% } %>
+                                        <% }) %>
                         </ul>
                     </div>
                 </div>
@@ -107,19 +109,22 @@
 
                     <% courses[currentCourse].forEach(course=> { %>
                         <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                            <img src="<%= course.thumbnail %>" alt="course_1" class="rounded-t-3xl" />
+                            <img src="<%= course.thumbnailUrl %>" alt="course_1" class="rounded-t-3xl" />
                             <div class="flex flex-row justify-between items-center mt-3 mx-6">
                                 <div class="flex flex-row items-center">
                                     <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                                    <%= course.length %>+ Hrs content
+                                    <%= course.completionTime %>+ Hrs content
                                 </div>
                                 <div class="text-sm rounded-[20px] p-2"
                                     style="background-color: rgba(218, 218, 247, 0.22);">
-                                    <%= course.name %>
+                                    <%= course.category %>
                                 </div>
                             </div>
                             <div>
                                 <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">
+                                    <%= course.title %>
+                                </p>
+                                <p class="text-[#676061] mt-2 mx-6 text-[16px]">
                                     <%= course.description %>
                                 </p>
                             </div>
@@ -128,25 +133,24 @@
                                     <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
                                     <div class="flex flex-col">
                                         <div class="font-semibold">
-                                            <!-- <%= course.tutor %> -->
-                                            Samriti talk
+                                            <%= course.teacher.name %>
+                                                Samriti talk
                                         </div>
                                         <div class="text-[#676061] text-sm">
-                                            <%= course.prev_institude %>
+                                            <%= course.teacher.designation %>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="text-[#676061] font-medium">
-                                    <%= course.student_enrolled %>150 Student
+                                    <%= course.Enrolled %> Student
                                 </div>
                             </div>
                             <div class="flex flex-row justify-between mx-6 my-5">
                                 <div class="flex flex-row">
-                                    <% rating=5 %>
-                                        <% for(let j=0;j<rating;j++){ %>
-                                            <img src="./assets/Popular_Courses/Star.png" alt="star"
-                                                class="w-[13px] h-[13px] mr-1">
-                                            <% } %>
+                                    <% for(let j=0;j<course.rating;j++){ %>
+                                        <img src="./assets/Popular_Courses/Star.png" alt="star"
+                                            class="w-[13px] h-[13px] mr-1">
+                                        <% } %>
                                 </div>
                                 <div><a href="/course_detail/<%= currentCourse %>/1/?id=<%= course.id %>"
                                         class="text-[#676061]">Details</a>
@@ -158,9 +162,8 @@
 
                 </div>
                 <div class="flex flex-col items-center mt-5">
-                    <div><a href="/course"
-                            class="bg-[#6065DA] rounded-[45px] px-[50px] py-4 text-white font-bold">Explore all
-                            Courses</a></div>
+                    <div><a href="/course" class="bg-[#6065DA] rounded-[45px] px-[50px] py-4 text-white font-bold">
+                            Explore all Courses</a></div>
                 </div>
             </div>
         </section>

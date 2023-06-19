@@ -4,13 +4,13 @@
 
 @layer base {
 
-    ul,
+    .editorjs ul,
     ol {
         list-style: revert;
     }
 }
 
-a {
+.editorjs a {
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     padding-left: 0.2rem;
@@ -18,25 +18,20 @@ a {
     color: #3b82f6;
     font-weight: 600;
     border: 0.5rem;
-    /* box-shasdow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
     text-decoration: none;
-    /* Add this line to remove default text decoration */
 }
 
-a:hover {
+.editorjs a:hover {
     text-decoration: underline blue;
-    /* Add this line to add underline on hover */
 }
 
-a:focus {
+.editorjs a:focus {
     outline: none;
-    /* box-shadow: 0 0 0 2px #93c5fd; */
     border-color: #93c5fd;
     text-decoration: underline blue;
-    /* Add this line to add underline on hover */
 }
 
-a:focus:not(:focus-visible) {
+.editorjs a:focus:not(:focus-visible) {
     box-shadow: none;
     border-color: transparent;
 }

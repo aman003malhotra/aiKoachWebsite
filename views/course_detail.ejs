@@ -29,31 +29,36 @@
       <div
         class="flex md:flex-row flex-col-reverse max-md:gap-y-5 bg-gradient-to-r from-[#01D5E1] from-0% to-[#6065DA] to-61.98%0] w-[100%] px-[100px] py-9 text-white gap-x-10">
         <div class="flex flex-col">
-          <span class="font-bold text-4xl">General Studies</span>
+          <span class="font-bold text-4xl">
+            <%= courseInfo.title %>
+          </span>
           <p class="mt-7">
-            Studying diverse art, modern & world history, post-Independence
-            India, world & Indian geography, and Indian society's culture and
-            structure.
+            <%= courseInfo.description %>
           </p>
           <div class="flex items-center mt-2">
-            <img src="/assets/course_content/star_yellow.svg" alt="" />
-            <img src="/assets/course_content/star_yellow.svg" alt="" />
-            <img src="/assets/course_content/star_yellow.svg" alt="" />
-            <img src="/assets/course_content/star_yellow.svg" alt="" />
-            <img src="/assets/course_content/star_gray.svg" alt="" />
-            <p class="ml-2 text-sm font-medium text-white">4.95 | 1472 Rating</ap>
+            <% for(let j=0;j<courseInfo.rating;j++){ %>
+              <img src="/assets/course_content/star_yellow.svg" alt="star" class="w-[13px] h-[13px] mr-1">
+              <% } %>
+                <p class="ml-2 text-sm font-medium text-white">
+                  <%= courseInfo.rating %>.3
+                    <!-- | 1472 Rating -->
+                </p>
           </div>
           <div class="mt-[100px]">
             <button class="text-white bg-[#6065DA] px-10 py-5 rounded-[45px]">
               Enroll Now
             </button>
           </div>
-          <span class="mt-7 font-medium">83,000 Students Enrolled</span>
+          <span class="mt-7 font-medium">
+            <%= courseInfo.Enrolled %> Students Enrolled
+          </span>
         </div>
         <!-- THUMBNAIL -->
         <div class="flex flex-col">
           <div>Offered By</div>
-          <span class="text-3xl font-bold">TriumphIAS</span>
+          <span class="text-3xl font-bold">
+            <%= courseInfo.offeredby %>
+          </span>
         </div>
       </div>
     </header>
@@ -62,13 +67,15 @@
       <a href="#course_outline" class="text-[#6065DA]">Course Outline</span>
         <a href="#syllabus">Syllabus</a>
         <a href="#StudyMaterial">Study Material</a>
-        <a href="#Assignment">Study Material</a>
+        <a href="#Assignments">AI Assessments and Assignments</a>
+        <a href="#mentorship">Mentorship</a>
+        <a href="#extras">Bonus Features</a>
     </div>
 
     <!-- Course Content -->
     <div class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
       <h2 class="font-bold text-3xl my-5">About this Course</h2>
-      <span> 39888 recent views</span>
+      <!-- <span> 39888 recent views</span> -->
       <div id="course_content" class="my-5"></div>
       <%- CourseOutline %>
     </div>
@@ -98,9 +105,7 @@
             </div>
             <div class="text-left">
               <p>
-                Studying diverse art, modern & world history, post-Independence
-                India, world & Indian geography, and Indian society's culture and
-                structure.
+                <%= syllabusData[i].weekTitle %>
               </p>
             </div>
             <% if (syllabusData[i].tests.length> 0 || syllabusData[i].videos.length > 0 ||
@@ -194,16 +199,40 @@
 
     <div id="StudyMaterial" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
       <h2 class="font-bold text-3xl my-5">Syllabus</h2>
-      <div id="StudyMaterial" class="my-5"></div>
-      <%- StudyMaterial %>
+      <div id="StudyMaterial" class="editorjs my-5">
+        <%- StudyMaterial %>
+      </div>
+
+    </div>
+
+    <div id="Assignments" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+      <h2 class="font-bold text-3xl my-5">Assignments</h2>
+      <div id="Assignments" class="editorjs my-5">
+        <%- Assignments %>
+      </div>
+
+    </div>
+
+    <div id="mentorship" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+      <h2 class="font-bold text-3xl my-5">mentorship</h2>
+      <div id="mentorship" class="editorjs my-5">
+        <%- mentorship %>
+      </div>
+
+    </div>
+
+    <div id="extras" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+      <h2 class="font-bold text-3xl my-5">extras</h2>
+      <div id="extras" class="editorjs my-5"><%- extras %></div>
+
     </div>
     <!-- Related Courses -->
-    <section id="related_course" class="flex flex-col">
+    <!-- <section id="related_course" class="flex flex-col">
       <h2 class="font-bold color-[#323232] text-4xl text-center mt-10">
         Related Course
       </h2>
       <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 justify-items-center my-10" id="course_info"></div>
-    </section>
+    </section> -->
 
     <!-- JOIN US TODAY -->
     <%- include('./partials/joinus'); %>

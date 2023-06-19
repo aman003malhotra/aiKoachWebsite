@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon -e ejs,js,json index.js"
+    "dev": "nodemon -e ejs,js,json index.js",
+    "poststart": "tailwindcss -i ./public/input.css -o ./public/output.css --watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
