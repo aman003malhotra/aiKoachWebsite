@@ -231,4 +231,4 @@ app.get('/specific_course', (req, res) => {
 })
 
 const port = process.env.PORT
-app.listen(port || 8000, () => { console.log(`server is running on the port ${port}`) })
+app.listen(port || 5500, () => { console.log(`server is running on the port ${port}`) })
