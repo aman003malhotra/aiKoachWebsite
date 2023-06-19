@@ -5,19 +5,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="<%= courseInfo.description %>" />
   <title>AI Koach</title>
   <link rel="icon" type="image/x-icon" href="/assets/small_logo.png" />
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" /> -->
-  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
-  <!-- tailwind elements -->
-
   <link href="/output.css" rel="stylesheet" />
-
-  <!-- swiper slider -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <script src="browserParser.js"></script>
 </head>
 
 <body>
@@ -241,132 +233,6 @@
       <footer><%- include('./partials/footer'); %></footer>
       <!-- swiper -->
 
-      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-      <script src="./main.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/editorjs-parser@1/build/Parser.node.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-      <script>
-        let course_data = null;
-        if (!course_data) {
-          fetch(`https://aikoachwebsite.onrender.com/courses/general_studies`)
-            .then((response) => {
-              if (response.ok) {
-                return response.json();
-              } else {
-                throw new Error("Request failed with status: " + response.status);
-              }
-            })
-            .then((data) => {
-              document.getElementById("course_info").innerHTML = "";
-              if (data.courses.length == 0) {
-                document.getElementById("course_info").innerHTML =
-                  "<div>No Courses Uploaded yet <br /> Working on it</div>";
-              }
-              for (const course of data.courses) {
-                document.getElementById(
-                  "course_info"
-                ).innerHTML += `<div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                                <img src="./assets/Popular_Courses/${course.thumbnail}" alt="course_1" class="rounded-t-3xl" />
-                                <div class="flex flex-row justify-between items-center mt-3 mx-6">
-                                    <div class="flex flex-row items-center">
-                                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                                        ${course.number_of_lessons}+ Lesson
-                                    </div>
-                                    <div class="text-sm rounded-[20px] p-2"
-                                        style="background-color: rgba(218, 218, 247, 0.22);">${course.subject}</div>
-                                </div>
-                                <div>
-                                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">${course.about_course}</p>
-                                </div>
-                                <div class="flex flex-row justify-between items-center mt-5 mx-6">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
-                                        <div class="flex flex-col">
-                                            <div class="font-semibold">${course.tutor}</div>
-                                            <div class="text-[#676061] text-sm">Ex ${course.prev_institude}</div>
-                                        </div>
-                                    </div>
-                                    <div class="text-[#676061] font-medium">${course.student_enrolled}+ Student</div>
-                                </div>
-                                <div class="flex flex-row justify-between mx-6 my-5">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                    </div>
-                                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
-                                </div>
-                            </div>`;
-              }
-            })
-            .catch((error) => {
-              console.log("Request failed:", error);
-            });
-        }
-        function courseChange(course_name) {
-          // document.getElementById(course_name).addEventListener('click', function(event) {  event.preventDefault(); });
-          fetch(`https://aikoachwebsite.onrender.com/courses/${course_name}`)
-            .then((response) => {
-              if (response.ok) {
-                return response.json();
-              } else {
-                throw new Error("Request failed with status: " + response.status);
-              }
-            })
-            .then((data) => {
-              document.getElementById("course_info").innerHTML = "";
-              if (data.courses.length == 0) {
-                document.getElementById("course_info").classList.remove("grid");
-                document.getElementById("course_info").innerHTML =
-                  '<div class="block text-3xl text-center py-10">No Courses Uploaded yet <br /> Working on it</div>';
-              } else {
-                document.getElementById("course_info").classList.add("grid");
-              }
-              for (const course of data.courses) {
-                document.getElementById(
-                  "course_info"
-                ).innerHTML += `<div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                                <img src="./assets/Popular_Courses/${course.thumbnail}" alt="course_1" class="rounded-t-3xl" />
-                                <div class="flex flex-row justify-between items-center mt-3 mx-6">
-                                    <div class="flex flex-row items-center">
-                                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                                        ${course.number_of_lessons}+ Lesson
-                                    </div>
-                                    <div class="text-sm rounded-[20px] p-2"
-                                        style="background-color: rgba(218, 218, 247, 0.22);">${course.subject}</div>
-                                </div>
-                                <div>
-                                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">${course.about_course}</p>
-                                </div>
-                                <div class="flex flex-row justify-between items-center mt-5 mx-6">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
-                                        <div class="flex flex-col">
-                                            <div class="font-semibold">${course.tutor}</div>
-                                            <div class="text-[#676061] text-sm">Ex ${course.prev_institude}</div>
-                                        </div>
-                                    </div>
-                                    <div class="text-[#676061] font-medium">${course.student_enrolled}+ Student</div>
-                                </div>
-                                <div class="flex flex-row justify-between mx-6 my-5">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                                    </div>
-                                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
-                                </div>
-                            </div>`;
-              }
-            })
-            .catch((error) => {
-              console.log("Request failed:", error);
-            });
-        }
-      </script>
       <script>
         function expand(expandable_content_class) {
           let toggleButton = document.querySelector(".button_" + expandable_content_class);

@@ -62,14 +62,14 @@ const menu = [
     // },
     {
         name: 'About',
-        url: '#about'
+        url: '/#about'
     },
     {
         name: 'Contact',
         url: '/contact'
     }
 ]
-
+console.log = () => { }
 
 testimonials = [
     {

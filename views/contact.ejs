@@ -1,54 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Koach</title>
-    <link rel="icon" type="image/x-icon" href="./assets/small_logo.png" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="output.css" />
-    <link rel="stylesheet" href="style.css" />
 
-    <!-- swiper slider -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Koach</title>
+  <link rel="icon" type="image/x-icon" href="./assets/small_logo.png" />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="style.css" />
 
-  <body>
-    <!-- NAVBAR -->
-    <%- include('./partials/navbar'); %>
+  <!-- swiper slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <%- include('./partials/navbar'); %>
 
     <header>
       <div
-        class="flex bg-gradient-to-r from-[#01D5E1] from-0% to-[#6065DA] to-61.98%0] w-[100%] py-[150px] text-white gap-x-10 items-center justify-center"
-      >
+        class="flex bg-gradient-to-r from-[#01D5E1] from-0% to-[#6065DA] to-61.98%0] w-[100%] py-[150px] text-white gap-x-10 items-center justify-center">
         <span class="text-5xl font-bold text-white">Contact us</span>
       </div>
     </header>
 
     <section id="contact">
-      <div
-        class="flex lg:flex-row flex-col max-sm:px-[30px] px-[100px] py-[60px] lg:gap-x-7 gap-y-10"
-      >
+      <div class="flex lg:flex-row flex-col max-sm:px-[30px] px-[100px] py-[60px] lg:gap-x-7 gap-y-10">
         <div class="flex flex-col lg:w-[50%]">
           <p class="text-3xl font-medium">Contact Details</p>
           <div class="flex flex-row my-3">
-            <img
-              src="./assets/contact/address.gif"
-              alt=""
-              class="w-[30px] h-[30px]"
-            />
+            <img src="./assets/contact/address.gif" alt="" class="w-[30px] h-[30px]" />
             <div>
               - 19, Pusa Road, 2nd Floor. IAPL House, Opposite Metro •Delhi -
               Karol Bagh Pillar 95-96, Karol Bagh, New Delhi-110005 - ForumIAS
@@ -69,40 +54,24 @@
             </div>
           </div>
           <div class="flex flex-row my-3 items-center gap-x-2">
-            <img
-              src="./assets/contact/phone.gif"
-              alt=""
-              class="w-[30px] h-[30px]"
-            />
+            <img src="./assets/contact/phone.gif" alt="" class="w-[30px] h-[30px]" />
             <div class="flex flex-col">
               <span class="font-semibold">Phone</span>
               <span><a href="tel:+919311740400">+91 9311740400</a></span>
             </div>
           </div>
           <div class="flex flex-row my-3 items-center gap-x-2">
-            <img
-              src="./assets/contact/whatsapp.svg"
-              alt=""
-              class="w-[30px] h-[30px]"
-            />
+            <img src="./assets/contact/whatsapp.svg" alt="" class="w-[30px] h-[30px]" />
             <div class="flex flex-col">
               <span class="font-semibold">Whatsapp</span>
               <span><a href="#">+91 9311740400</a></span>
             </div>
           </div>
           <div class="flex flex-row my-3 items-center gap-x-2">
-            <img
-              src="./assets/contact/mail.png"
-              alt=""
-              class="w-[30px] h-[30px]"
-            />
+            <img src="./assets/contact/mail.png" alt="" class="w-[30px] h-[30px]" />
             <div class="flex flex-col">
               <span class="font-semibold">Mail</span>
-              <span
-                ><a href="mailto: contact@aikoach.com"
-                  >contact@aikoach.com</a
-                ></span
-              >
+              <span><a href="mailto: contact@aikoach.com">contact@aikoach.com</a></span>
             </div>
           </div>
         </div>
@@ -110,84 +79,43 @@
           <p class="text-3xl font-medium">Enquire Now</p>
           <div class="py-8 lg:py-16 px-4">
             <form action="#" class="space-y-8">
-                <div class="flex sm:flex-row max-sm:gap-y-5 flex-col sm:gap-x-10">
-                    <div class="sm:w-[50%] w-[100%]">
-                        <label
-                          for="name"
-                          class="block mb-2 text-sm font-medium text-gray-900"
-                          >Your Name</label
-                        >
-                        <input
-                          type="text"
-                          id="name"
-                          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6065DA] focus:border-[#6065DA] block w-full p-2.5"
-                          placeholder="Roman Saini"
-                          required
-                        />
-                    </div>
-                      <div class="sm:w-[50%] w-[100%]">
-                        <label
-                          for="email"
-                          class="block mb-2 text-sm font-medium text-gray-900"
-                          >Your email</label
-                        >
-                        <input
-                          type="email"
-                          id="email"
-                          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6065DA] focus:border-[#6065DA] block w-full p-2.5"
-                          placeholder="roman@gmail.com"
-                          required
-                        />
-                      </div>
+              <div class="flex sm:flex-row max-sm:gap-y-5 flex-col sm:gap-x-10">
+                <div class="sm:w-[50%] w-[100%]">
+                  <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
+                  <input type="text" id="name"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6065DA] focus:border-[#6065DA] block w-full p-2.5"
+                    placeholder="Roman Saini" required />
                 </div>
-                <div class="flex sm:flex-row flex-col max-sm:gap-y-5 sm:gap-x-10">
-                    <div class="sm:w-[50%] w-[100%]">
-                        <label
-                          for="number"
-                          class="block mb-2 text-sm font-medium text-gray-900"
-                          >Contact Number</label
-                        >
-                        <input
-                          type="text"
-                          id="number"
-                          class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#6065DA] focus:border-[#6065DA]"
-                          placeholder="+91 "
-                          required
-                        />
-                      </div>
-                      <div class="sm:w-[50%] w-[100%]">
-                        <label
-                          for="subject"
-                          class="block mb-2 text-sm font-medium text-gray-900"
-                          >Subject</label
-                        >
-                        <input
-                          type="text"
-                          id="subject"
-                          class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#6065DA] focus:border-[#6065DA]"
-                          placeholder="The Subject"
-                          required
-                        />
-                      </div>
+                <div class="sm:w-[50%] w-[100%]">
+                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                  <input type="email" id="email"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6065DA] focus:border-[#6065DA] block w-full p-2.5"
+                    placeholder="roman@gmail.com" required />
                 </div>
-              
-              <div class="sm:col-span-2">
-                <label
-                  for="message"
-                  class="block mb-2 text-sm font-medium text-gray-900"
-                  >Your message</label
-                >
-                <textarea
-                  id="message"
-                  rows="6"
-                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#6065DA] focus:border-[#6065DA]"
-                  placeholder="Leave a comment..."
-                ></textarea>
               </div>
-              <button
-                type="submit"
-                class="py-3 px-5 text-sm font-medium bg-[#6065DA] text-center text-white rounded-lg sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-focus:ring-[#6065DA] focus:border-[#6065DA]"
-              >
+              <div class="flex sm:flex-row flex-col max-sm:gap-y-5 sm:gap-x-10">
+                <div class="sm:w-[50%] w-[100%]">
+                  <label for="number" class="block mb-2 text-sm font-medium text-gray-900">Contact Number</label>
+                  <input type="text" id="number"
+                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#6065DA] focus:border-[#6065DA]"
+                    placeholder="+91 " required />
+                </div>
+                <div class="sm:w-[50%] w-[100%]">
+                  <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Subject</label>
+                  <input type="text" id="subject"
+                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#6065DA] focus:border-[#6065DA]"
+                    placeholder="The Subject" required />
+                </div>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your message</label>
+                <textarea id="message" rows="6"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#6065DA] focus:border-[#6065DA]"
+                  placeholder="Leave a comment..."></textarea>
+              </div>
+              <button type="submit"
+                class="py-3 px-5 text-sm font-medium bg-[#6065DA] text-center text-white rounded-lg sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-focus:ring-[#6065DA] focus:border-[#6065DA]">
                 Send message
               </button>
             </form>
@@ -202,7 +130,7 @@
 
     <footer><%- include('./partials/footer'); %></footer>
     <!-- swiper -->
-    <script src="./main.js"></script>
+    <script src="/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>
       function myMap() {
@@ -218,5 +146,6 @@
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-  </body>
+</body>
+
 </html>
