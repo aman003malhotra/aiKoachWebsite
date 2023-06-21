@@ -1,5 +1,5 @@
 const { default: axios } = require("axios");
-const edjsParser = require("editorjs-parser");
+const edjsParser = require("./ParserNode");
 // const EDITOR_JS_TOOLS = require('../config/editor/constant')
 require('dotenv').config()
 
