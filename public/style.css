@@ -1,12 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Caladea&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap');
+
+html {
+  font-family: 'Poppins', sans-serif !important;
+}
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: 'Caladea', serif;
+h6,
+p,
+a {
+  font-family: 'Poppins', sans-serif;
 }
 
 fieldset {

@@ -6,7 +6,7 @@ module.exports = {
     "./views/*.{html,js,ejs}",
     "./views/**/*.{html,js,ejs}",
     "./node_modules/tw-elements/dist/js/**/*.js",
-    "./node_modules/editorjs-parser/build/Parser.node.js",
+    "./config/ParserNode.js",
   ],
   plugins: [require("tw-elements/dist/plugin.cjs")],
   corePlugins: {

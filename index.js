@@ -67,7 +67,8 @@ const menu = [
     {
         name: 'Contact',
         url: '/contact'
-    }
+    },
+
 ]
 console.log = () => { }
 
@@ -111,13 +112,16 @@ testimonials = [
 ]
 
 let saveData = null
+let lastRefreshedTime = null;
+const cacheExpirationTime = 20 * 60 * 1000;
 let currentCourse = "General Studies";
 
 app.get('/', async function (req, res) {
     let response;
-    if (saveData == null) {
+    if (saveData === null || lastRefreshedTime === null || Date.now() - lastRefreshedTime > cacheExpirationTime) {
         response = await Client.get('course-categories')
         saveData = response.data
+        lastRefreshedTime = Date.now();
         // console.log("🚀 ~ file: index.js:161 ~ saveData:", saveData)
     }
     console.log("🚀 ~ file: index.js:162 ~ req.query:", req.query);
@@ -130,9 +134,10 @@ app.get('/', async function (req, res) {
 });
 
 app.get('/course_detail/:course/:id', async (req, res) => {
-    if (saveData == null) {
+    if (saveData === null || lastRefreshedTime === null || Date.now() - lastRefreshedTime > cacheExpirationTime) {
         response = await Client.get('course-categories')
         saveData = response.data
+        lastRefreshedTime = Date.now();
         // console.log("🚀 ~ file: index.js:161 ~ saveData:", saveData)
     }
     const parser = new edjsParser();
@@ -159,10 +164,8 @@ app.get('/course_detail/:course/:id', async (req, res) => {
 })
 
 app.get('/course', async (req, res) => {
-    let response;
-    let saveData;
     if (saveData == null) {
-        response = await Client.get('course-categories')
+        const response = await Client.get('course-categories')
         saveData = response.data
         console.log(saveData)
         // console.log("🚀 ~ file: index.js:161 ~ saveData:", saveData)
@@ -171,7 +174,10 @@ app.get('/course', async (req, res) => {
 });
 
 
-
+app.get('/clearcache', async (req, res) => {
+    saveData = null;
+    res.redirect('/')
+})
 
 
 // COURSE DATA LINKS

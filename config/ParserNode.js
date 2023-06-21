@@ -54,6 +54,12 @@ var defaultParsers = {
             </div>`
   },
 
+  warning: function (data, config) {
+    return `<div class="cdx-alert cdx-alert-warning cdx-alert-align-${data.align}">
+              <div class="cdx-alert__message">${data.message}</div>
+            </div>`
+  },
+
   attaches: function (data, config) {
     const { url, size } = data.file;
     const { title } = data;
@@ -95,11 +101,16 @@ var defaultParsers = {
   },
 
   quote: function (data, config) {
+
     let alignment = "";
     if (config.quote.applyAlignment) {
       alignment = `style="text-align: ${data.alignment};"`;
     }
-    return `<blockquote ${alignment}><p>${data.text}</p><cite>${data.caption}</cite></blockquote>`;
+    return `<blockquote class="p-4 my-4 border-l-4 border-gray-300 bg-gray-100" ${alignment}>
+    <p class="text-lg my-2 italic font-medium font-semibold text-gray-900">${data.text}</p>
+    <cite>${data.caption}</cite>
+    </blockquote>`;
+
   },
 
   table: function (data) {
