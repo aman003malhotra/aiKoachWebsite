@@ -113,7 +113,7 @@ testimonials = [
 
 let saveData = null
 let lastRefreshedTime = null;
-const cacheExpirationTime = 20 * 60 * 1000;
+const cacheExpirationTime = 1 * 60 * 1000;
 let currentCourse = "General Studies";
 
 app.get('/', async function (req, res) {
