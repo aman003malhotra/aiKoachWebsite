@@ -35,7 +35,7 @@ app.use(session({
 
 
 app.use(express.static('public'));
-const edjsParser = require("editorjs-parser");
+const edjsParser = require('./config/ParserNode');
 
 app.set('view engine', 'ejs');
 
