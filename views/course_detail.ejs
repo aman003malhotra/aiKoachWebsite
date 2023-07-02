@@ -65,187 +65,196 @@
     </div>
 
     <!-- Course Content -->
-    <div class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
-      <h2 class="font-bold text-3xl my-5">About this Course</h2>
-      <!-- <span> 39888 recent views</span> -->
-      <div id="course_content" class="my-5"></div>
-      <%- CourseOutline %>
-    </div>
+    <% if(CourseOutline){ %>
+      <div class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+        <h2 class="font-bold text-3xl my-5">About this Course</h2>
+        <!-- <span> 39888 recent views</span> -->
+        <div id="course_content" class="my-5"></div>
+        <%- CourseOutline %>
+      </div>
+      <% } %>
 
-    <!-- Syllabus -->
+        <!-- Syllabus -->
 
-    <section id="syllabus" class="flex flex-col text-center justify-items-center">
-      <h2 class="text-3xl my-10">
-        Syllabus - What you will learn from this course
-      </h2>
-      <% for (let i=0; i < syllabusData.length; i++) { %>
-        <div class="flex flex-row items-center gap-x-10 justify-center max-md:flex-col max-md:gap-y-10 max-lg:px-10">
-          <div class="flex flex-col text-3xl max-md:flex-row max-md:gap-x-2 self-start">
-            <div>
-              <p class="">Week</p>
-            </div>
-            <div>
-              <p>
-                <%= syllabusData[i].weekNumber %>
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col w-[72%]">
-            <div class="flex flex-row items-center">
-              <img src="/assets/course_content/ri_time-line.svg" alt="timer" class="w-[50px] h-[50px]" />
-              <span class="text-[#676061] text-2xl ml-5">4 hours to complete</span>
-            </div>
-            <div class="text-left">
-              <p>
-                <%= syllabusData[i].weekTitle %>
-              </p>
-            </div>
-            <% if (syllabusData[i].tests.length> 0 || syllabusData[i].videos.length > 0 ||
-              syllabusData[i].readings.length > 0) {%>
-              <div class="flex flex-row font-medium gap-x-3 items-center mt-2 w-[70%]">
-                <img src="/assets/course_content/syllabus.svg" alt="syllabus" class="w-[25px] h-[25px]">
-                <% if (syllabusData[i].readings.length> 0) {%>
-                  <p>
-                    <%= syllabusData[i].readings.length %> Resources,
-                  </p>
-                  <% }%>
-                    <% if (syllabusData[i].videos.length> 0) {%>
-                      <p>
-                        <%= syllabusData[i].videos.length %> Videos,
-                      </p>
-                      <% }%>
-                        <% if (syllabusData[i].tests.length> 0) {%>
-                          <p>
-                            <%= syllabusData[i].tests.length %> tests,
-                          </p>
-                          <% }%>
-                            <div>
-                              <button class="toggle-button button_<%= syllabusData[i].weekNumber %> text-[#6065DA]"
-                                onclick="expand('<%= syllabusData[i].weekNumber %>')">see more</button>
-                            </div>
-              </div>
-              <hr class="text-center mt-10" />
-              <% if (syllabusData[i].videos.length> 0) {%>
-                <div
-                  class="expandable-content transition-all ease-in-out duration-300 content_<%= syllabusData[i].weekNumber %> hidden">
-                  <div class="content flex flex-col my-3 text-left gap-y-2">
-                    <div class="flex flex-row gap-x-2 items-center">
-                      <img src="/assets/course_content/video.svg" alt="video" class="w-[25px] h-[25px]">
-                      <p class="font-bold ">
-                        <%= syllabusData[i].videos.length %> Videos
-                      </p>
-                    </div>
-                    <% for (let j=0; j < syllabusData[i].videos.length; j++) { %>
-                      <div>
-                        <%= syllabusData[i].videos[j].title %>
-                          <%= syllabusData[i].videos[j].time %>
-                      </div>
-                      <% } %>
-                        <hr class="my-2" />
+        <% if(syllabusData){ %>
+          <section id="syllabus" class="flex flex-col text-center justify-items-center">
+            <h2 class="text-3xl my-10">
+              Syllabus - What you will learn from this course
+            </h2>
+            <% for (let i=0; i < syllabusData.length; i++) { %>
+              <div
+                class="flex flex-row items-center gap-x-10 justify-center max-md:flex-col max-md:gap-y-10 max-lg:px-10">
+                <div class="flex flex-col text-3xl max-md:flex-row max-md:gap-x-2 self-start">
+                  <div>
+                    <p class="">Week</p>
                   </div>
-                  <% }%>
-
-                    <% if (syllabusData[i].readings.length> 0) {%>
-                      <div class="content flex flex-col my-3 text-left gap-y-2">
-                        <div class="flex flex-row gap-x-2 items-center">
-                          <img src="/assets/course_content/notes.svg" alt="video" class="w-[25px] h-[25px]">
-                          <p class="font-bold ">
-                            <%= syllabusData[i].readings.length %> Notes
-                          </p>
-                        </div>
-                        <% for (let j=0; j < syllabusData[i].readings.length; j++) { %>
-                          <div>
-                            <%= syllabusData[i].readings[j].title %>
-                              <%= syllabusData[i].readings[j].time %>
+                  <div>
+                    <p>
+                      <%= syllabusData[i].weekNumber %>
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-col w-[72%]">
+                  <div class="flex flex-row items-center">
+                    <img src="/assets/course_content/ri_time-line.svg" alt="timer" class="w-[50px] h-[50px]" />
+                    <span class="text-[#676061] text-2xl ml-5">4 hours to complete</span>
+                  </div>
+                  <div class="text-left">
+                    <p>
+                      <%= syllabusData[i].weekTitle %>
+                    </p>
+                  </div>
+                  <% if (syllabusData[i].tests.length> 0 || syllabusData[i].videos.length > 0 ||
+                    syllabusData[i].readings.length > 0) {%>
+                    <div class="flex flex-row font-medium gap-x-3 items-center mt-2 w-[70%]">
+                      <img src="/assets/course_content/syllabus.svg" alt="syllabus" class="w-[25px] h-[25px]">
+                      <% if (syllabusData[i].readings.length> 0) {%>
+                        <p>
+                          <%= syllabusData[i].readings.length %> Resources,
+                        </p>
+                        <% }%>
+                          <% if (syllabusData[i].videos.length> 0) {%>
+                            <p>
+                              <%= syllabusData[i].videos.length %> Videos,
+                            </p>
+                            <% }%>
+                              <% if (syllabusData[i].tests.length> 0) {%>
+                                <p>
+                                  <%= syllabusData[i].tests.length %> tests,
+                                </p>
+                                <% }%>
+                                  <div>
+                                    <button
+                                      class="toggle-button button_<%= syllabusData[i].weekNumber %> text-[#6065DA]"
+                                      onclick="expand('<%= syllabusData[i].weekNumber %>')">see more</button>
+                                  </div>
+                    </div>
+                    <hr class="text-center mt-10" />
+                    <% if (syllabusData[i].videos.length> 0) {%>
+                      <div
+                        class="expandable-content transition-all ease-in-out duration-300 content_<%= syllabusData[i].weekNumber %> hidden">
+                        <div class="content flex flex-col my-3 text-left gap-y-2">
+                          <div class="flex flex-row gap-x-2 items-center">
+                            <img src="/assets/course_content/video.svg" alt="video" class="w-[25px] h-[25px]">
+                            <p class="font-bold ">
+                              <%= syllabusData[i].videos.length %> Videos
+                            </p>
                           </div>
-                          <% } %>
-                            <hr class="my-2" />
+                          <% for (let j=0; j < syllabusData[i].videos.length; j++) { %>
+                            <div>
+                              <%= syllabusData[i].videos[j].title %>
+                                <%= syllabusData[i].videos[j].time %>
+                            </div>
+                            <% } %>
+                              <hr class="my-2" />
+                        </div>
+                        <% }%>
+
+                          <% if (syllabusData[i].readings.length> 0) {%>
+                            <div class="content flex flex-col my-3 text-left gap-y-2">
+                              <div class="flex flex-row gap-x-2 items-center">
+                                <img src="/assets/course_content/notes.svg" alt="video" class="w-[25px] h-[25px]">
+                                <p class="font-bold ">
+                                  <%= syllabusData[i].readings.length %> Notes
+                                </p>
+                              </div>
+                              <% for (let j=0; j < syllabusData[i].readings.length; j++) { %>
+                                <div>
+                                  <%= syllabusData[i].readings[j].title %>
+                                    <%= syllabusData[i].readings[j].time %>
+                                </div>
+                                <% } %>
+                                  <hr class="my-2" />
+                            </div>
+                            <% }%>
+
+                              <% if (syllabusData[i].tests.length> 0) {%>
+                                <div class="content flex flex-col my-3 text-left gap-y-2">
+                                  <div class="flex flex-row gap-x-2 items-center">
+                                    <img src="/assets/course_content/tests.svg" alt="video" class="w-[25px] h-[25px]">
+                                    <p class="font-bold ">
+                                      <%= syllabusData[i].tests.length %> Test
+                                    </p>
+                                  </div>
+                                  <% for (let j=0; j < syllabusData[i].tests.length; j++) { %>
+                                    <div class="">
+                                      <%= syllabusData[i].tests[j].title %>
+                                        <%= syllabusData[i].tests[j].time %>
+                                    </div>
+                                    <% } %>
+                                      <hr class="my-2" />
+                                </div>
                       </div>
                       <% }%>
+                        <% } %>
 
-                        <% if (syllabusData[i].tests.length> 0) {%>
-                          <div class="content flex flex-col my-3 text-left gap-y-2">
-                            <div class="flex flex-row gap-x-2 items-center">
-                              <img src="/assets/course_content/tests.svg" alt="video" class="w-[25px] h-[25px]">
-                              <p class="font-bold ">
-                                <%= syllabusData[i].tests.length %> Test
-                              </p>
-                            </div>
-                            <% for (let j=0; j < syllabusData[i].tests.length; j++) { %>
-                              <div class="">
-                                <%= syllabusData[i].tests[j].title %>
-                                  <%= syllabusData[i].tests[j].time %>
-                              </div>
-                              <% } %>
-                                <hr class="my-2" />
-                          </div>
                 </div>
-                <% }%>
+              </div>
+              <% } %>
+          </section>
+          <% } %>
+
+
+            <% if(StudyMaterial){ %>
+              <div id="StudyMaterial" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+                <h2 class="font-bold text-3xl my-5">Study Material</h2>
+                <div id="StudyMaterial" class="editorjs my-5">
+                  <%- StudyMaterial %>
+                </div>
+              </div>
+              <% } %>
+                <% if(Assignments){ %>
+                  <div id="Assignments" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+                    <h2 class="font-bold text-3xl my-5">Assignments</h2>
+                    <div id="Assignments" class="editorjs my-5">
+                      <%- Assignments %>
+                    </div>
+                  </div>
                   <% } %>
 
-          </div>
-        </div>
-        <% } %>
-    </section>
+                    <% if(mentorship){ %>
+                      <div id="mentorship" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+                        <h2 class="font-bold text-3xl my-5">mentorship</h2>
+                        <div id="mentorship" class="editorjs my-5">
+                          <%- mentorship %>
+                        </div>
+                      </div>
+                      <% } %>
 
-
-    <div id="StudyMaterial" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
-      <h2 class="font-bold text-3xl my-5">Syllabus</h2>
-      <div id="StudyMaterial" class="editorjs my-5">
-        <%- StudyMaterial %>
-      </div>
-
-    </div>
-
-    <div id="Assignments" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
-      <h2 class="font-bold text-3xl my-5">Assignments</h2>
-      <div id="Assignments" class="editorjs my-5">
-        <%- Assignments %>
-      </div>
-
-    </div>
-
-    <div id="mentorship" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
-      <h2 class="font-bold text-3xl my-5">mentorship</h2>
-      <div id="mentorship" class="editorjs my-5">
-        <%- mentorship %>
-      </div>
-
-    </div>
-
-    <div id="extras" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
-      <h2 class="font-bold text-3xl my-5">extras</h2>
-      <div id="extras" class="editorjs my-5"><%- extras %></div>
-
-    </div>
-    <!-- Related Courses -->
-    <!-- <section id="related_course" class="flex flex-col">
+                        <% if(extras){ %>
+                          <div id="extras" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+                            <h2 class="font-bold text-3xl my-5">extras</h2>
+                            <div id="extras" class="editorjs my-5"><%- extras %></div>
+                          </div>
+                          <% } %>
+                            <!-- Related Courses -->
+                            <!-- <section id="related_course" class="flex flex-col">
       <h2 class="font-bold color-[#323232] text-4xl text-center mt-10">
         Related Course
       </h2>
       <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 justify-items-center my-10" id="course_info"></div>
     </section> -->
 
-    <!-- JOIN US TODAY -->
-    <%- include('./partials/joinus'); %>
+                            <!-- JOIN US TODAY -->
+                            <%- include('./partials/joinus'); %>
 
-      <!-- Footer -->
-      <footer><%- include('./partials/footer'); %></footer>
-      <!-- swiper -->
+                              <!-- Footer -->
+                              <footer><%- include('./partials/footer'); %></footer>
+                              <!-- swiper -->
 
-      <script>
-        function expand(expandable_content_class) {
-          let toggleButton = document.querySelector(".button_" + expandable_content_class);
-          let expandableContent = document.querySelector(".content_" + expandable_content_class);
-          expandableContent.classList.toggle("hidden");
+                              <script>
+                                function expand(expandable_content_class) {
+                                  let toggleButton = document.querySelector(".button_" + expandable_content_class);
+                                  let expandableContent = document.querySelector(".content_" + expandable_content_class);
+                                  expandableContent.classList.toggle("hidden");
 
-          if (expandableContent.classList.contains("hidden")) {
-            toggleButton.innerHTML = 'see more'
-          } else {
-            toggleButton.innerHTML = 'see less'
-          }
-        }
-      </script>
+                                  if (expandableContent.classList.contains("hidden")) {
+                                    toggleButton.innerHTML = 'see more'
+                                  } else {
+                                    toggleButton.innerHTML = 'see less'
+                                  }
+                                }
+                              </script>
 </body>
 
 </html>

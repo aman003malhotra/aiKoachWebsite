@@ -147,11 +147,11 @@ app.get('/course_detail/:course/:id', async (req, res) => {
     let data = saveData[req.params.course].filter(i => i.id == req.query.id)[0]
     console.log("🚀 ~ file: index.js:143 ~ app.get ~ data:", data)
     let syllabusData = data.Syllabus.weeks
-    let StudyMaterial = parser.parse(data.StudyMaterial)
-    let CourseOutline = parser.parse(data.CourseOutline)
-    let Assignments = parser.parse(data.AIAssessmentsAndAssignments)
-    let mentorship = parser.parse(data.Mentorship)
-    let extras = parser.parse(data.Extras)
+    let StudyMaterial = data?.StudyMaterial != undefined && parser.parse(data.StudyMaterial)
+    let CourseOutline = data?.CourseOutline != undefined && parser.parse(data.CourseOutline)
+    let Assignments = data?.AIAssessmentsAndAssignments != undefined && parser.parse(data.AIAssessmentsAndAssignments)
+    let mentorship = data?.Mentorship != undefined && parser.parse(data.Mentorship)
+    let extras = data?.Extras != undefined && parser.parse(data.Extras)
     res.render('course_detail.ejs', {
         menu: menu, url: req.url,
         courseInfo: data,
