@@ -35,7 +35,6 @@ app.use(session({
 
 
 app.use(express.static('public'));
-const edjsParser = require('./config/ParserNode');
 
 app.set('view engine', 'ejs');
 
@@ -140,18 +139,18 @@ app.get('/course_detail/:course/:id', async (req, res) => {
         lastRefreshedTime = Date.now();
         // console.log("🚀 ~ file: index.js:161 ~ saveData:", saveData)
     }
-    const parser = new edjsParser();
+    // const parser = new edjsParser();
     console.log("🚀 ~ file: index.js:190 ~ app.get ~ req.params.course:", req.params, req.query)
     // console.log("🚀 ~ file: index.js:191 ~ app.get ~ saveData:", saveData)
     // console.log("🚀 ~ file: index.js:190 ~ app.get ~ data:", saveData)
     let data = saveData[req.params.course].filter(i => i.id == req.query.id)[0]
     console.log("🚀 ~ file: index.js:143 ~ app.get ~ data:", data)
     let syllabusData = data.Syllabus.weeks
-    let StudyMaterial = data?.StudyMaterial != undefined && parser.parse(data.StudyMaterial)
-    let CourseOutline = data?.CourseOutline != undefined && parser.parse(data.CourseOutline)
-    let Assignments = data?.AIAssessmentsAndAssignments != undefined && parser.parse(data.AIAssessmentsAndAssignments)
-    let mentorship = data?.Mentorship != undefined && parser.parse(data.Mentorship)
-    let extras = data?.Extras != undefined && parser.parse(data.Extras)
+    let StudyMaterial = data?.StudyMaterial != undefined && editorJsParse(data.StudyMaterial)
+    let CourseOutline = data?.CourseOutline != undefined && editorJsParse(data.CourseOutline)
+    let Assignments = data?.AIAssessmentsAndAssignments != undefined && editorJsParse(data.AIAssessmentsAndAssignments)
+    let mentorship = data?.Mentorship != undefined && editorJsParse(data.Mentorship)
+    let extras = data?.Extras != undefined && editorJsParse(data.Extras)
     res.render('course_detail.ejs', {
         menu: menu, url: req.url,
         courseInfo: data,
