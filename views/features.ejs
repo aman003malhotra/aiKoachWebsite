@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Features
+  </title>
+  
+  <link rel="icon" type="image/x-icon" href="/assets/small_logo.png" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/output.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <%- include('./partials/navbar'); %>
+    <div class="flex justify-center">
+      <div class="flex flex-col  sm:w-[60%] w-[90%]">
+        <!-- HEADING -->
+
+        <div class="flex justify-center text-center">
+          <span class="text-3xl font-extrabold">
+            <%= filteredFeatures.title %>
+            <!-- MaatSaab: Revolutionizing Education  -->
+          </span>
+        </div>
+        <!-- DESCRIPTION -->
+        <div class="flex flex-col items-center text-center mt-5">
+            <video width="80%" height="240" controls>
+                <source src='<%= filteredFeatures.video_link %>' type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        <div class=" my-[50px]">
+          <%- filteredFeatures.about %>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <footer><%- include('./partials/footer'); %></footer>
+</body>
+
+</html>
