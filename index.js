@@ -370,6 +370,12 @@ testimonials = [
     }
   ];
 
+colors = [
+  "linear-gradient(142deg, #A762FF 13.17%, #8ED1ED 82.88%)",
+  "linear-gradient(141deg, #D563FD 11.92%, #F2A839 94.96%)",
+  "linear-gradient(142deg, #4679FD 0%, #BA23EF 100%)"
+]
+
 let saveData = null
 let lastRefreshedTime = null;
 const cacheExpirationTime = 1 * 60 * 1000;
@@ -389,7 +395,7 @@ app.get('/', async function (req, res) {
     }
     req.session.data = saveData[currentCourse]
     // Set the initial currentCourse value
-    res.render('index.ejs', { menu: menu, url: req.url, courses: saveData, currentCourse });
+    res.render('index.ejs', { menu: menu, url: req.url, courses: saveData, currentCourse, colors:colors });
 });
 
 app.get('/course_detail/:course/:id', async (req, res) => {

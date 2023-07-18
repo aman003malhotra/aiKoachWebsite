@@ -57,150 +57,25 @@
             </div>
         </section>
 
-        <!-- Courses
-    <div class="my-10">
-        <span class="bg-[#01D5E1] text-2xl font-semibold text-white p-2 sm:mx-[60px]">General Studies Foundation</span>
-        <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center" id="course_info">            
-            <% for(let i=0;i<courses.length;i++){ %>
-            <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                <img src="/assets/Popular_Courses/<%=courses[i].thumbnailUrl %>" alt="course_1" class="rounded-t-3xl" />
-                <div class="flex flex-row justify-between items-center mt-3 mx-6">
-                    <div class="flex flex-row items-center">
-                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                        <%= courses[i].number_of_lessons %>+ Lesson
-                    </div>
-                    <div class="text-sm rounded-[20px] p-2"
-                        style="background-color: rgba(218, 218, 247, 0.22);"><%= courses[i].subject %></div>
-                </div>
-                <div>
-                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]"><%= courses[i].about_course %></p>
-                </div>
-                <div class="flex flex-row justify-between items-center mt-5 mx-6">
-                    <div class="flex flex-row">
-                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
-                        <div class="flex flex-col">
-                            <div class="font-semibold"><%= courses[i].tutor %></div>
-                            <div class="text-[#676061] text-sm"><%= courses[i].prev_institude %></div>
-                        </div>
-                    </div>
-                    <div class="text-[#676061] font-medium"><%= courses[i].student_enrolled %> Student</div>
-                </div>
-                <div class="flex flex-row justify-between mx-6 my-5">
-                    <div class="flex flex-row">
-                        <% for(let j=0;j<courses[i].rating;j++){ %>
-                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                        <% } %>
-                    </div>
-                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
-                </div>
-            </div>
-            <% } %>
-        </div>
-    </div>
-
-    <hr class="sm:w-[90%] mx-auto my-[70px]"/>
-
-    <div class="my-10">
-        <span class="bg-[#01D5E1] text-2xl font-semibold text-white p-2 sm:mx-[60px]">IAS Prelims</span>
-        <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center" id="course_info">            
-            <% for(let i=0;i<courses.length;i++){ %>
-            <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                <img src="/assets/Popular_Courses/<%=courses[i].thumbnailUrl %>" alt="course_1" class="rounded-t-3xl" />
-                <div class="flex flex-row justify-between items-center mt-3 mx-6">
-                    <div class="flex flex-row items-center">
-                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                        <%= courses[i].number_of_lessons %>+ Lesson
-                    </div>
-                    <div class="text-sm rounded-[20px] p-2"
-                        style="background-color: rgba(218, 218, 247, 0.22);"><%= courses[i].subject %></div>
-                </div>
-                <div>
-                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]"><%= courses[i].about_course %></p>
-                </div>
-                <div class="flex flex-row justify-between items-center mt-5 mx-6">
-                    <div class="flex flex-row">
-                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
-                        <div class="flex flex-col">
-                            <div class="font-semibold"><%= courses[i].tutor %></div>
-                            <div class="text-[#676061] text-sm"><%= courses[i].prev_institude %></div>
-                        </div>
-                    </div>
-                    <div class="text-[#676061] font-medium"><%= courses[i].student_enrolled %> Student</div>
-                </div>
-                <div class="flex flex-row justify-between mx-6 my-5">
-                    <div class="flex flex-row">
-                        <% for(let j=0;j<courses[i].rating;j++){ %>
-                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                        <% } %>
-                    </div>
-                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
-                </div>
-            </div>
-            <% } %>
-        </div>
-    </div>
-
-    <hr class="sm:w-[90%] mx-auto my-[70px]"/>
-
-    <div class="my-10">
-        <span class="bg-[#01D5E1] text-2xl font-semibold text-white p-2 sm:mx-[60px]">IAS Mains</span>
-        <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center" id="course_info">            
-            <% for(let i=0;i<courses.length;i++){ %>
-            <div class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                <img src="/assets/Popular_Courses/<%=courses[i].thumbnailUrl %>" alt="course_1" class="rounded-t-3xl" />
-                <div class="flex flex-row justify-between items-center mt-3 mx-6">
-                    <div class="flex flex-row items-center">
-                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                        <%= courses[i].number_of_lessons %>+ Lesson
-                    </div>
-                    <div class="text-sm rounded-[20px] p-2"
-                        style="background-color: rgba(218, 218, 247, 0.22);"><%= courses[i].subject %></div>
-                </div>
-                <div>
-                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]"><%= courses[i].about_course %></p>
-                </div>
-                <div class="flex flex-row justify-between items-center mt-5 mx-6">
-                    <div class="flex flex-row">
-                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
-                        <div class="flex flex-col">
-                            <div class="font-semibold"><%= courses[i].tutor %></div>
-                            <div class="text-[#676061] text-sm"><%= courses[i].prev_institude %></div>
-                        </div>
-                    </div>
-                    <div class="text-[#676061] font-medium"><%= courses[i].student_enrolled %> Student</div>
-                </div>
-                <div class="flex flex-row justify-between mx-6 my-5">
-                    <div class="flex flex-row">
-                        <% for(let j=0;j<courses[i].rating;j++){ %>
-                        <img src="./assets/Popular_Courses/Star.png" alt="star" class="w-[13px] h-[13px] mr-1">
-                        <% } %>
-                    </div>
-                    <div><a href="/course_detail" class="text-[#676061]">Details</a></div>
-                </div>
-            </div>
-            <% } %>
-        </div>
-    </div> -->
-
-
-
         <div class="my-10">
             <% Object.keys(courses).forEach(currentCourse=> { %>
                 <% if (courses[currentCourse].length> 0) {%>
-                    <span class="bg-[#01D5E1] text-2xl font-semibold text-white p-2 sm:mx-[60px]">
+                    <span class="bg-[#01D5E1] text-2xl font-semibold text-white p-2 sm:mx-[60px]" style="margin-bottom: 20px;">
                         <%= currentCourse %>
                     </span>
 
-                    <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center" id="course_info">
+                    <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center gap-x-5" id="course_info">
                         <% courses[currentCourse].forEach(course=> { %>
 
-                            <div
-                                class="flex flex-col max-sm:w-[90%] w-[400px] bg-[#F3F4FF] rounded-3xl col-span-1 mt-10">
-                                <img src="<%=course.thumbnailUrl %>" alt="course_1" class="rounded-t-3xl" />
-                                <div class="flex flex-row justify-between items-center mt-3 mx-6">
+                            <% let selectedColor = colors[Math.floor(Math.random() * colors.length)]%>
+                            <div class="flex flex-col max-sm:w-[90%] text-white w-[400px]rounded-3xl col-span-1 my-10 relative rounded-3xl" style="margin-left:20px; margin-right:20px; background: <%= selectedColor %>;">
+                                <div class="absolute mx-auto bg-slate-600 p-4 rounded-2xl" style="align-self: center;background-color: #1C1D62; font-size: 18px; top:-15%; max-width:80%">
+                                    <%= course.title %>
+                                </div>
+                                <div class="flex flex-row justify-between items-center mt-10 mx-6">
                                     <div class="flex flex-row items-center">
                                         <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                                        <%= course.completionTime %>+ Lesson
+                                        <%= course.completionTime %>+ Hrs content
                                     </div>
                                     <div class="text-sm rounded-[20px] p-2"
                                         style="background-color: rgba(218, 218, 247, 0.22);">
@@ -208,28 +83,24 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <p class="text-[#676061] font-bold mt-5 mx-6 text-[18px]">
-                                        <%= course.title %>
-                                    </p>
-                                    <p class="text-[#676061] mt-3 mx-6 text-[16px]">
+                                    <p class="mt-2 mx-6 text-[16px]">
                                         <%= course.description %>
                                     </p>
                                 </div>
                                 <div class="flex flex-row justify-between items-center mt-5 mx-6">
                                     <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor"
-                                            class="w-[43px] mr-3">
+                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
                                         <div class="flex flex-col">
                                             <div class="font-semibold">
                                                 <%= course.teacher.name %>
                                             </div>
-                                            <div class="text-[#676061] text-sm">
+                                            <div class="text-sm">
                                                 <%= course.teacher.designation %>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-[#676061] font-medium">
-                                        <%= course.Enrolled %> + Student
+                                    <div class="font-medium">
+                                        <%= course.Enrolled %> Student
                                     </div>
                                 </div>
                                 <div class="flex flex-row justify-between mx-6 my-5">
@@ -240,7 +111,8 @@
                                             <% } %>
                                     </div>
                                     <div><a href="/course_detail/<%= currentCourse %>/1/?id=<%= course.id %>"
-                                            class="text-[#676061]">Details</a></div>
+                                            class="">Details</a>
+                                    </div>
                                 </div>
                             </div>
                             <% }) %>
