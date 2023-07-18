@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Koach</title>
+    <title>IAS Skool</title>
     <link rel="icon" type="image/x-icon" href="./assets/small_logo.png">
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -218,17 +218,17 @@
 
         <section id="popular courses">
             <div class="flex flex-col sm:p-[60px]">
-                <div class="flex lg:flex-row flex-col justify-between mb-10 items-center">
+                <div class="flex lg:flex-row mt-4 flex-col justify-between mb-10 items-center">
                     <h2 class="text-[#575757] text-6xl font-bold text-center">Prime <span
                             class="text-[#6065DA]">Courses</span></h2>
-                    <div>
-                        <ul
-                            class="font-medium flex p-4 lg:p-0 mt-4 rounded-lg flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-white max-sm:text-[10px]">
+                    <div class="mt-4">
+                        <ul class="font-medium bg-[#E9E9EF] p-[10px] rounded-full flex justify-between items-center flex-row lg:space-x-8 
+                            lg:mt-0 lg:border-0 max-sm:text-[10px]">
                             <% Object.keys(courses).forEach(course=> { %>
                                 <% if (courses[course].length> 0) {%>
                                     <li>
-                                        <a href="?course=<%= course %>#<%= course %>" id="<%= course %>" class="block py-2 pl-3 pr-4 rounded lg:bg-transparent lg:text-gray-900 lg:p-0 
-                                        <%= currentCourse == course ? 'lg:text-indigo-500' : '' %>">
+                                        <a href="?course=<%= course %>#<%= course %>" id="<%= course %>" class="block text-center py-2 pl-3 pr-4 rounded text-gray-900 p-2 rounded-full 
+                                        <%= currentCourse == course ? 'bg-[#6065DA] text-white' : '' %>">
                                             <%= course %>
                                         </a>
                                     </li>
@@ -429,7 +429,7 @@
             <div id="about" class="flex flex-col ml-0 lg:ml-[100px] lg:col-span-4 col-span-1">
                 <h2 class="font-bold text-[#575757] text-6xl max-lg:text-center">What is our <span
                         class="text-[#6065DA]">difference</span></h2>
-                <p class="text-[#525252] text-xl font-medium mt-5">AI-Koach's educational platform stands out from
+                <p class="text-[#525252] text-[16px] mt-5">AI-Koach's educational platform stands out from
                     others because it offers cutting-edge features that utilize artificial intelligence to enhance the
                     learning experience for students. These features include AI-based evaluation and test series, which
                     can provide more accurate and objective assessments of students' knowledge and skills, as well as
@@ -443,26 +443,29 @@
                     education, which leverages advanced technologies to provide students with a more effective and
                     engaging learning experience.
                 </p>
-                <div class="flex sm:flex-row flex-col justify-between sm:items-center mt-4">
-                    <div class="flex flex-row items-center mt-3">
-                        <img src="./assets/Instructor.svg" alt="Instructors" class="h-[70px] w-[70px]" />
+                <div class="flex flex-row  justify-between sm:items-center mt-4">
+                    <div class="flex flex-col md:flex-row justify-center items-center mt-3">
+                        <img src="./assets/Instructor.svg" alt="Instructors"
+                            class="h-[50px] md:h-[70px] lg:h-[70px] aspect-ratio-[1/1]" />
                         <div class="flex flex-col ml-3">
-                            <h3 class="font-bold text-xl text-[#575757]">300</h3>
+                            <h3 class="font-bold text-xl text-[#575757]">50+</h3>
                             <p class="text-[#9D9D9D]">Instructor</p>
                         </div>
                     </div>
-                    <div class="flex flex-row items-center mt-3">
-                        <img src="./assets/student.svg" alt="Students" class="h-[70px] w-[70px]" />
+                    <div class="flex flex-col md:flex-row justify-center items-center mt-3">
+                        <img src="./assets/student.svg" alt="Students"
+                            class="h-[50px] md:h-[70px] lg:h-[70px] aspect-ratio-[1/1]" />
                         <div class="flex flex-col ml-3">
-                            <h3 class="font-bold text-xl text-[#575757]">20,000+</h3>
+                            <h3 class="font-bold text-xl text-[#575757]">12,000+</h3>
                             <p class="text-[#9D9D9D]">Student</p>
                         </div>
                     </div>
-                    <div class="flex flex-row items-center mt-3">
-                        <img src="./assets/video.svg" alt="video_lecture" class="h-[70px] w-[70px]" />
+                    <div class="flex flex-col md:flex-row justify-center items-center mt-3">
+                        <img src="./assets/video.svg" alt="video_lecture"
+                            class="h-[50px] md:h-[70px] lg:h-[70px] aspect-ratio-[1/1]" />
                         <div class="flex flex-col ml-3">
                             <h3 class="font-bold text-xl text-[#575757]">30,000+</h3>
-                            <p class="text-[#9D9D9D]">Videos</p>
+                            <p class="text-[#9D9D9D]">Lessons</p>
                         </div>
                     </div>
                 </div>
@@ -473,40 +476,67 @@
         <section id="testimonials">
             <div class="flex flex-col py-[100px] items-center relative">
 
-                <div class="absolute bottom-[10%] left-[200px] w-[80px] max-md:bottom-[5%] max-sm:hidden border-solid border-[#6065DA] border-8 rounded-[50%]"
-                    id="0">
-                    <img src="./assets/testimonials/man3.png" alt="people">
-                </div>
-
-                <div class="absolute left-[100px] top-[40%] w-[100px] max-lg:hidden" id="1">
-                    <img src="./assets/testimonials/man2.png" alt="people">
-                </div>
-
-                <div class="absolute md:left-[20%] left-0 max-sm:hidden " id="2">
-                    <img src="./assets/testimonials/man1.png" alt="people">
-                </div>
-
-
-                <div class="absolute md:right-[17%] top-[10%] w-[120px] right-[5%] max-sm:hidden" id="3">
-                    <img src="./assets/testimonials/man4.png" alt="people">
-                </div>
-                <div class="absolute right-[10%] top-[50%] max-lg:hidden w-[80px]" id="4">
-                    <img src="./assets/testimonials/man5.png" alt="people">
-                </div>
-                <div class="absolute bottom-[7%] right-[15%] max-sm:hidden" id="5">
-                    <img src="./assets/testimonials/man6.png" alt="people">
-                </div>
-
-
-                <h2 class="text-6xl font-bold text-[#575757] text-center">Testimonials</h2>
-                <section class="splide max-md:w-[90%] max-lg:w-[70%] w-[50%]" aria-label="Basic Structure Example"
-                    id="testimonial_carousal">
-                    <div class="splide__track">
-                        <ul class="splide__list" id="testimonial_box">
-
-                        </ul>
+                <% for (const [index, position] of positions.entries()) { %>
+                    <div class="absolute
+                        <% if (position.bottom) { %> bottom-[<%= position.bottom %>] <% } %>
+                        <% if (position.left) { %> left-[<%= position.left %>] <% } %>
+                        <% if (position.width) { %> w-[<%= position.width %>] <% } %>
+                        <% if (position.mdLeft) { %> md:left-[<%= position.mdLeft %>] <% } %>
+                        <% if (position.mdRight) { %> md:right-[<%= position.mdRight %>] <% } %>
+                        <% if (position.top) { %> top-[<%= position.top %>] <% } %>
+                        <% if (position.right) { %> right-[<%= position.right %>] <% } %>" id="<%= index %>">
+                        <img src="<%= testimonials[index].url %>" class="rounded-full h-[100p] aspect-ratio-[1/1] cover"
+                            alt="people">
                     </div>
-                </section>
+                    <% } %>
+
+
+                        <h2 class="text-6xl font-bold text-[#575757] text-center">Testimonials</h2>
+                        <section class="splide max-md:w-[90%] max-lg:w-[70%] w-[50%]"
+                            aria-label="Basic Structure Example" id="testimonial_carousal">
+                            <div class="splide__track">
+                                <ul class="splide__list" id="testimonial_box">
+                                    <% for (const one_test of testimonials) { %>
+                                        <li class="splide__slide">
+                                            <div
+                                                class="flex flex-col bg-[#F3F4FF] text-[#575757] p-7 rounded-2xl my-[100px] py-[50px]">
+                                                <div class="flex flex-row justify-between items-center">
+                                                    <div class="flex flex-row items-center">
+                                                        <img src="<%= one_test.url %>" width="100px"
+                                                            class="rounded-full" alt="person_image">
+                                                        <div class="flex flex-col ml-3">
+                                                            <div class="font-medium">
+                                                                <%= one_test.name %>
+                                                            </div>
+                                                            <div>
+                                                                <%= one_test.Designation %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <img src="./assets/testimonials/Star.png" alt="rating"
+                                                            class="w-[13px] h-[13px] mr-1">
+                                                        <img src="./assets/testimonials/Star.png" alt="rating"
+                                                            class="w-[13px] h-[13px] mr-1">
+                                                        <img src="./assets/testimonials/Star.png" alt="rating"
+                                                            class="w-[13px] h-[13px] mr-1">
+                                                        <img src="./assets/testimonials/Star.png" alt="rating"
+                                                            class="w-[13px] h-[13px] mr-1">
+                                                        <img src="./assets/testimonials/Star.png" alt="rating"
+                                                            class="w-[13px] h-[13px] mr-1">
+                                                    </div>
+                                                </div>
+                                                <hr class="w-[90%] text-[#DADAF752] mt-6 mb-10">
+                                                <div>
+                                                    <%= one_test.tesimonial %>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <% } %>
+
+                                </ul>
+                            </div>
+                        </section>
             </div>
         </section>
         <!-- JOIN US TODAY -->
@@ -532,52 +562,17 @@
 
             <script>
                 // Testimonial
-                let splideElem;
-                fetch(`https://aikoachwebsite.onrender.com/testimonials`)
-                    .then(response => {
-                        if (response.ok) {
-                            return response.json();
-                        } else {
-                            throw new Error('Request failed with status: ' + response.status);
-                        }
-                    })
-                    .then(data => {
-                        for (const one_test of data.testimonials) {
-                            document.getElementById('testimonial_box').innerHTML += `<li class="splide__slide">
-                            <div class="flex flex-col bg-[#F3F4FF] text-[#575757] p-7 rounded-2xl my-[100px] py-[50px]">
-                                <div class="flex flex-row justify-between items-center">
-                                    <div class="flex flex-row items-center">
-                                        <img src="./assets/testimonials/person.svg" alt="person_image">
-                                        <div class="flex flex-col ml-3">
-                                            <div class=" font-medium">${one_test.name}</div>
-                                            <div>${one_test.Designation}</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-row">
-                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                                        <img src="./assets/testimonials/Star.png" alt="rating" class="w-[13px] h-[13px] mr-1">
-                                    </div>
-                                </div>
-                                <hr class="w-[90%] text-[#DADAF752] mt-6 mb-10">
-                                <div>${one_test.tesimonial}</div>
-                            </div>
-                        </li>`
-                        }
-                        splideElem = new Splide('#testimonial_carousal', {
-                            rewind: false,
-                        }).mount();
+                let splideElem = new Splide('#testimonial_carousal', {
+                    rewind: false,
+                }).mount();
 
-                        splideElem.on('moved', function (newIndex) {
-                            document.getElementById(newIndex).classList.add('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
-                            if (newIndex - 1 >= -1) {
-                                document.getElementById(newIndex - 1)?.classList.remove('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
-                                document.getElementById(newIndex + 1)?.classList.remove('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
-                            }
-                        });
-                    })
+                splideElem.on('moved', function (newIndex) {
+                    document.getElementById(newIndex).classList.add('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
+                    if (newIndex - 1 >= -1) {
+                        document.getElementById(newIndex - 1)?.classList.remove('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
+                        document.getElementById(newIndex + 1)?.classList.remove('border-solid', 'border-[#6065DA]', 'border-8', 'rounded-[50%]', 'testi_img');
+                    }
+                });
             </script>
 </body>
 

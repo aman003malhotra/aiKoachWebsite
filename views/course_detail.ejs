@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="<%= courseInfo.description %>" />
-  <title>AI Koach</title>
+  <title>IAS Skool</title>
   <link rel="icon" type="image/x-icon" href="/assets/small_logo.png" />
   <link rel="stylesheet" href="/style.css" />
   <link href="/output.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
     <!-- Header  -->
     <header>
       <div
-        class="flex md:flex-row flex-col-reverse max-md:gap-y-5 bg-gradient-to-r from-[#01D5E1] from-0% to-[#6065DA] to-61.98%0] w-[100%] px-[100px] py-9 text-white gap-x-10">
+        class="flex md:flex-row flex-col-reverse max-md:gap-y-5 bg-gradient-to-r from-[#01D5E1] from-0% to-[#6065DA] to-61.98%0] w-[100%] px-[20px] md:px-[100px] py-9 text-white gap-x-10">
         <div class="flex flex-col">
           <span class="font-bold text-4xl">
             <%= courseInfo.title %>
@@ -37,8 +37,8 @@
                 </p>
           </div>
           <div class="mt-[100px]">
-            <button class="text-white bg-[#6065DA] px-10 py-5 rounded-[45px]">
-              Enroll Now
+            <button class="text-white bg-[#6065DA] px-8 py-5 rounded-[45px]">
+              Enroll Now Rs-<%= courseInfo.price %>
             </button>
           </div>
           <span class="mt-7 font-medium">
@@ -55,7 +55,8 @@
       </div>
     </header>
 
-    <div class="flex sm:flex-row max-sm:gap-y-4 flex-col font-medium gap-x-7 pl-[70px] border-b-2 py-5 text-[#2B2B2B]">
+    <div
+      class="flex sm:flex-row max-sm:gap-y-4 flex-row font-medium gap-x-2 md:gap-x-7 px-[20px] flex-wrap md:pl-[70px] border-b-2 py-5 text-[#2B2B2B]">
       <a href="#course_outline" class="text-[#6065DA]">Course Outline</span>
         <a href="#syllabus">Syllabus</a>
         <a href="#StudyMaterial">Study Material</a>
@@ -66,7 +67,7 @@
 
     <!-- Course Content -->
     <% if(CourseOutline){ %>
-      <div class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+      <div class="px-[20px] md:pl-[70px] md:pr-[100px] my-10 xl:w-[70%]" id="course_outline">
         <h2 class="font-bold text-3xl my-5">About this Course</h2>
         <!-- <span> 39888 recent views</span> -->
         <div id="course_content" class="my-5"></div>
@@ -94,7 +95,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="flex flex-col w-[72%]">
+                <div class="flex flex-col md:w-[80%]">
                   <div class="flex flex-row items-center">
                     <img src="/assets/course_content/ri_time-line.svg" alt="timer" class="w-[50px] h-[50px]" />
                     <span class="text-[#676061] text-2xl ml-5">4 hours to complete</span>
@@ -196,7 +197,7 @@
 
 
             <% if(StudyMaterial){ %>
-              <div id="StudyMaterial" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+              <div id="StudyMaterial" class="px-[20px] md:pl-[70px] md:pr-[100px] my-10 xl:w-[70%]" id="course_outline">
                 <h2 class="font-bold text-3xl my-5">Study Material</h2>
                 <div id="StudyMaterial" class="editorjs my-5">
                   <%- StudyMaterial %>
@@ -204,7 +205,8 @@
               </div>
               <% } %>
                 <% if(Assignments){ %>
-                  <div id="Assignments" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+                  <div id="Assignments" class="px-[20px] md:pl-[70px] md:pr-[100px] my-10 xl:w-[70%]"
+                    id="course_outline">
                     <h2 class="font-bold text-3xl my-5">Assignments</h2>
                     <div id="Assignments" class="editorjs my-5">
                       <%- Assignments %>
@@ -213,7 +215,8 @@
                   <% } %>
 
                     <% if(mentorship){ %>
-                      <div id="mentorship" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+                      <div id="mentorship" class="px-[20px] md:pl-[70px] md:pr-[100px] my-10 xl:w-[70%]"
+                        id="course_outline">
                         <h2 class="font-bold text-3xl my-5">mentorship</h2>
                         <div id="mentorship" class="editorjs my-5">
                           <%- mentorship %>
@@ -222,7 +225,8 @@
                       <% } %>
 
                         <% if(extras){ %>
-                          <div id="extras" class="pl-[70px] pr-[100px] my-10 xl:w-[70%]" id="course_outline">
+                          <div id="extras" class="px-[20px] md:pl-[70px] md:pr-[100px] my-10 xl:w-[70%]"
+                            id="course_outline">
                             <h2 class="font-bold text-3xl my-5">extras</h2>
                             <div id="extras" class="editorjs my-5"><%- extras %></div>
                           </div>

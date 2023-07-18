@@ -64,7 +64,7 @@ const menu = [
         url: '/#about'
     },
     {
-        name: 'Contact',
+        name: 'Contact Us',
         url: '/contact'
     },
 
@@ -73,61 +73,74 @@ console.log = () => { }
 
 testimonials = [
     {
-      name: "ABHINAV SIWACH",
-      Designation: "AIR-12 | IAS 2022",
-      tesimonial:
-        "Aikoach provided personalized guidance, mock tests, and valuable study materials, which were instrumental in my preparation. I recommend this platform to all UPSC aspirants",
-      rating: 4,
+        name: "ABHINAV SIWACH",
+        Designation: "AIR-12 | IAS 2022",
+        tesimonial:
+            "Aikoach provided personalized guidance, mock tests, and valuable study materials, which were instrumental in my preparation. I recommend this platform to all UPSC aspirants",
+        rating: 4,
+        url: "https://iasskool-wesbite.s3.ap-south-1.amazonaws.com/testimonials/Abhinav-siwach.png"
     },
     {
-      name: "KRITIKA GOYAL",
-      Designation: "AIR-14 | IAS 2022",
-      tesimonial:
-        "AIkoach acted as my mentor, providing continuous motivation and guidance throughout my UPSC journey.This platform truly made my preparation enjoyable and fruitful",
-      rating: 4,
+        name: "KRITIKA GOYAL",
+        Designation: "AIR-14 | IAS 2022",
+        tesimonial:
+            "AIkoach acted as my mentor, providing continuous motivation and guidance throughout my UPSC journey.This platform truly made my preparation enjoyable and fruitful",
+        rating: 4,
+        url: "https://iasskool-wesbite.s3.ap-south-1.amazonaws.com/testimonials/Kritika_goyal.png"
     },
     {
-      name: "SWATI SHARMA",
-      Designation: "AIR-15 | IAS 2022",
-      tesimonial:
-        "Personalized learning at its best. Aicoach unlocked my potential. I highly recommend it to anyone looking for a comprehensive and effective exam prep solution.",
-      rating: 4,
+        name: "SWATI SHARMA",
+        Designation: "AIR-15 | IAS 2022",
+        tesimonial:
+            "Personalized learning at its best. Aicoach unlocked my potential. I highly recommend it to anyone looking for a comprehensive and effective exam prep solution.",
+        rating: 4,
+        url: "https://iasskool-wesbite.s3.ap-south-1.amazonaws.com/testimonials/Swati-Sharma.png"
     },
     {
-      name: "GUNJITA AGRAWAL",
-      Designation: "AIR-26 | IAS 2022",
-      tesimonial:
-        "The mock interviews, DAF tests conducted were a game-changer in my interview preparation. Thanks to this platform, I entered the interview room with confidence. The platform transformed my exam preparation into a smart and efficient process",
-      rating: 4,
+        name: "GUNJITA AGRAWAL",
+        Designation: "AIR-26 | IAS 2022",
+        tesimonial:
+            "The mock interviews, DAF tests conducted were a game-changer in my interview preparation. Thanks to this platform, I entered the interview room with confidence. The platform transformed my exam preparation into a smart and efficient process",
+        rating: 4,
+        url: "https://iasskool-wesbite.s3.ap-south-1.amazonaws.com/testimonials/gunjita-Agrawal.png"
     },
     {
-      name: "PRIYANSHA GARG",
-      Designation: "AIR-31 | IAS 2022",
-      tesimonial:
-        "Aikoach is a complete package that exceeded my expectations. The personalized learning experience,comprehensive study materials, and AI-powered analytics provided the perfect combination to optimize my exam preparation",
-      rating: 4,
+        name: "PRIYANSHA GARG",
+        Designation: "AIR-31 | IAS 2022",
+        tesimonial:
+            "Aikoach is a complete package that exceeded my expectations. The personalized learning experience,comprehensive study materials, and AI-powered analytics provided the perfect combination to optimize my exam preparation",
+        rating: 4,
+        url: "https://iasskool-wesbite.s3.ap-south-1.amazonaws.com/testimonials/Priyansha-garg.png"
     },
+    // {
+    //     name: "ARNAV MISHRA",
+    //     Designation: "AIR-56 | IAS 2022",
+    //     tesimonial:
+    //         "The practice tests and mock exams closely simulated the actual exam, the AI-powered practice tests accurately gauged my readiness and helped me identify areas for improvement.Overall it helped me develop confidence and familiarity with the format, would for sure recommend aikoach to aspirants",
+    //     rating: 4,
+    // },
+    // {
+    //     name: "ANIRUDHA PANDEY",
+    //     Designation: "AIR-64 | IAS 2022",
+    //     tesimonial:
+    //         "The comprehensive coverage of the syllabus ensured complete preparation. Also the AI capabilities were instrumental in my success. With aikoach, I felt supported and well-equipped to achieve my exam goals",
+    //     rating: 4,
+    // }
+];
+
+const positions = [
+    { bottom: '10%', left: '200px', width: '80px', },
+    { left: '100px', top: '40%', width: '100px', },
+    { mdLeft: '20%', left: '0', width: '80px' },
+    { mdRight: '17%', top: '10%', right: '5%', width: '80px', },
+    { right: '10%', top: '50%', width: '80px', }
+];
+
+features = [
     {
-      name: "ARNAV MISHRA",
-      Designation: "AIR-56 | IAS 2022",
-      tesimonial:
-        "The practice tests and mock exams closely simulated the actual exam, the AI-powered practice tests accurately gauged my readiness and helped me identify areas for improvement.Overall it helped me develop confidence and familiarity with the format, would for sure recommend aikoach to aspirants",
-      rating: 4,
-    },
-    {
-      name: "ANIRUDHA PANDEY",
-      Designation: "AIR-64 | IAS 2022",
-      tesimonial:
-        "The comprehensive coverage of the syllabus ensured complete preparation. Also the AI capabilities were instrumental in my success. With aikoach, I felt supported and well-equipped to achieve my exam goals",
-      rating: 4,
-    }
-  ];
-  
-  features = [
-    {
-      name: "maatsaab",
-      title: "MaatSaab: Revolutionizing Education",
-      about: `In today's competitive academic landscape, students often find themselves in need of extra support to overcome challenges and achieve their full potential. That's where MaatSaab comes in - a revolutionary learning solution designed to empower students and facilitate their academic improvement. With its meticulously curated AI lectures, personalized lessons, and innovative features, MaatSaab is transforming the way students learn and succeed.
+        name: "maatsaab",
+        title: "MaatSaab: Revolutionizing Education",
+        about: `In today's competitive academic landscape, students often find themselves in need of extra support to overcome challenges and achieve their full potential. That's where MaatSaab comes in - a revolutionary learning solution designed to empower students and facilitate their academic improvement. With its meticulously curated AI lectures, personalized lessons, and innovative features, MaatSaab is transforming the way students learn and succeed.
           <br />
           <br />
   
@@ -153,12 +166,12 @@ testimonials = [
           <br/>
           <b>Are you ready to unlock your true potential? Visit www.aikoach.com today to embark on a transformative learning adventure with MaatSaab and take the first step towards academic excellence.</b>         
           `,
-      video_link: "",
+        video_link: "",
     },
     {
-      name: "aikoackcommunity",
-      title: "AiKoach Community Connect: Where Learning Meets Collaboration",
-      about: `
+        name: "aikoackcommunity",
+        title: "AiKoach Community Connect: Where Learning Meets Collaboration",
+        about: `
       Welcome to AiKoach.com, your ultimate destination for comprehensive learning and community engagement. Let's dive into the powerful features of our platform, starting with Community Connect. Discover how this unique feature fosters collaboration, support, and growth among students pursuing various educational goals.
   <br />
   <br />
@@ -201,12 +214,12 @@ testimonials = [
   
   With Community Connect, we empower students to collaborate, support each other, and conquer educational challenges together. Embrace the power of collaboration and achieve academic excellence with AiKoach.
   `,
-  video_link: "",
+        video_link: "",
     },
     {
-      name:"skill_bureaucrat",
-      title:"Skill Bureaucrat: Empowering Future Leaders for Technical Challenges",
-      about:`
+        name: "skill_bureaucrat",
+        title: "Skill Bureaucrat: Empowering Future Leaders for Technical Challenges",
+        about: `
       <b class="text-xl">Introduction:</b> <br />
       In today's competitive world, the field of bureaucracy requires individuals with a diverse skill set. With around 800 vacancies in the IAS exam every year, aspiring bureaucrats face numerous technical challenges that demand innovative solutions. The Skill Bureaucrat feature is designed to equip individuals with the necessary skills to tackle these challenges effectively. By providing a foundation in web development, full-stack development, UI/UX design, cybersecurity, AI/ML basics, and other relevant technologies, we prepare future bureaucrats to address the diverse issues faced by a country like India.
       <br />
@@ -225,12 +238,12 @@ testimonials = [
       <br />
       In the ever-evolving landscape of bureaucracy, technical skills are crucial for addressing complex challenges effectively. The Skill Bureaucrat feature aims to empower future leaders by providing them with the knowledge and skills required to navigate the diverse issues faced by the nation. By embracing this program, individuals not only become future-ready for bureaucratic roles but also open doors to exciting opportunities in the tech industry. Whether you aspire to be a bureaucrat or pursue a career in the tech field, the Skill Bureaucrat feature equips you with the tools to excel. Embrace this option and embark on a transformative journey towards becoming a skilled bureaucrat and a future leader.
       `,
-      video_link: "",
+        video_link: "",
     },
     {
-      name:"ai_evaluator",
-      title:"Enhance Your Subjective & objective Question Answering Skills with Ai Evaluator",
-      about:`
+        name: "ai_evaluator",
+        title: "Enhance Your Subjective & objective Question Answering Skills with Ai Evaluator",
+        about: `
       Welcome to the interactive learning platform! In this demonstration, we will showcase how our app/site utilizes Ai Evaluator to assist students in improving their subjective question answering skills. Through AI-based evaluation, students can receive comprehensive feedback on their performance, along with tailored suggestions for improvement.
       <br />
       <br />
@@ -266,12 +279,12 @@ testimonials = [
   
       With the Ai Evaluator feature, students can engage in subjective question answering, receive AI-based evaluation, and access tailored resources for improvement. By focusing on contextual understanding, knowledge proficiency, language proficiency, and structure and presentation skills, students can refine their subjective question answering abilities. Unlock your full potential and elevate your learning experience with this innovative app/site. Embrace the power of AI and enhance your subjective question answering skills for academic success. Happy learning!
       `,
-      video_link:""
+        video_link: ""
     },
     {
-      name:"elps",
-      title:"Elevate Your English Language Proficiency with ELPS",
-      about:`
+        name: "elps",
+        title: "Elevate Your English Language Proficiency with ELPS",
+        about: `
       Welcome to our innovative methodology, where we follow the inspiring journey of a student striving to enhance their English language proficiency. In this transformative experience, we explore the power of personalized learning and the impact it can have on one's language skills.
       <br />
       <br />
@@ -317,12 +330,12 @@ testimonials = [
       <b class="text-xl">Join the Journey:</b><br />
       Embark on this transformative journey and embrace the path of growth and excellence. Let us guide you through a personalized learning experience, where determination and educational resources intertwine to help you enhance your English language proficiency. Together, let's unlock your full potential and achieve language mastery.
       `,
-      video_link:""
+        video_link: ""
     },
     {
-      name:"aipmp",
-      title:"Master the Art of Acing Interviews with Personality Management Programme",
-      about:`
+        name: "aipmp",
+        title: "Master the Art of Acing Interviews with Personality Management Programme",
+        about: `
       In today's competitive job market, having a strong personality, exceptional communication skills, and the ability to excel in interviews are crucial for career success. At Aikoach, we offer the Personality Management Programme, a comprehensive program designed to help individuals enhance their personality, communication abilities, and interview performance. With our advanced AI-powered interface, personalized bootcamps, and real-time mock interviews, we provide the necessary tools and resources to excel in any interview scenario.
   <br />
   <br />
@@ -366,14 +379,14 @@ testimonials = [
   <b class="text-xl">Register Now and Master the Art of Acing Interviews: </b><br />
   Ready to take your interview skills to the next level? Register for the Personality Management Bootcamp today and embark on a transformative journey to master the art of acing interviews. Visit www.aikoach.com for more information and start your path to interview success with Aikoach.
       `,
-      video_link:""
+        video_link: ""
     }
-  ];
+];
 
 colors = [
-  "linear-gradient(142deg, #A762FF 13.17%, #8ED1ED 82.88%)",
-  "linear-gradient(141deg, #D563FD 11.92%, #F2A839 94.96%)",
-  "linear-gradient(142deg, #4679FD 0%, #BA23EF 100%)"
+    "linear-gradient(142deg, #A762FF 13.17%, #8ED1ED 82.88%)",
+    "linear-gradient(141deg, #D563FD 11.92%, #F2A839 94.96%)",
+    "linear-gradient(142deg, #4679FD 0%, #BA23EF 100%)"
 ]
 
 let saveData = null
@@ -395,7 +408,7 @@ app.get('/', async function (req, res) {
     }
     req.session.data = saveData[currentCourse]
     // Set the initial currentCourse value
-    res.render('index.ejs', { menu: menu, url: req.url, courses: saveData, currentCourse, colors:colors });
+    res.render('index.ejs', { menu: menu, url: req.url, courses: saveData, currentCourse, colors: colors, positions: positions, testimonials: testimonials });
 });
 
 app.get('/course_detail/:course/:id', async (req, res) => {
@@ -490,34 +503,48 @@ app.get('/contact', function (req, res) {
 
 app.get("/features/:featureName", function (req, res) {
     const filteredFeatures = features.filter(
-      (feature) => feature.name === req.params.featureName
+        (feature) => feature.name === req.params.featureName
     );
     res.render("features.ejs", {
-      menu: menu,
-      url: req.url,
-      filteredFeatures: filteredFeatures[0],
+        menu: menu,
+        url: req.url,
+        filteredFeatures: filteredFeatures[0],
     });
-  });
-  
-app.get("/valueProposition", (req,res) => {
-  res.render("valueProp.ejs", {
-    menu: menu,
-    url: req.url
-  });
+});
+
+app.get("/valueProposition", (req, res) => {
+    res.render("valueProp.ejs", {
+        menu: menu,
+        url: req.url
+    });
 })
 
-const syllabusDatas = [{ "weekNumber": "1", "readings": [{ "title": "handouts 1", "time": "120m" }, { "title": "topic pdf ", "time": "2h" }], "videos": [{ "title": "topic lecture ", "time": "2h" }, { "title": "spefic topic lecture 2", "time": "3h" }], "tests": [{ "title": "MCQ test ", "time": "20m" }, { "title": "Subjective test ", "time": "2h" }] }, { "weekNumber": "2", "readings": [{ "title": "handouts 1", "time": "120m" }, { "title": "topic pdf ", "time": "2h" }], "videos": [], "tests": [] }];
-
-
-
-
-app.get('/testimonials', (req, res) => {
-    res.send({ testimonials })
+app.get("/privacy-policy", (req, res) => {
+    res.render("termsAndonditions/privacy_policy.ejs", {
+        menu: menu,
+        url: req.url
+    });
+})
+app.get("/terms-and-Conditions", (req, res) => {
+    res.render("termsAndonditions/term_conditions.ejs", {
+        menu: menu,
+        url: req.url
+    });
+})
+app.get("/Refund-Cancellation", (req, res) => {
+    res.render("termsAndonditions/refund_cancellation.ejs", {
+        menu: menu,
+        url: req.url
+    });
+})
+app.get("/Shipping-policy", (req, res) => {
+    res.render("termsAndonditions/shipping_policy.ejs", {
+        menu: menu,
+        url: req.url
+    });
 })
 
-app.get('/specific_course', (req, res) => {
-    res.send({ message: 'ok' })
-})
+
 
 const port = process.env.PORT
 app.listen(port || 8000, () => { console.log(`server is running on the port ${port}`) })

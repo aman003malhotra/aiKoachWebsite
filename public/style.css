@@ -241,23 +241,23 @@ h6 {
 
 /* Specific Heading Styles */
 h1 {
-  font-size: 2rem !important;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.25rem !important;
+  font-size: 1.25rem;
 }
 
 h4 {
-  font-size: 1.125rem !important;
+  font-size: 1.125rem;
 }
 
 h5 {
-  font-size: 1rem !important;
+  font-size: 1rem;
 }
 
 h6 {
@@ -308,6 +308,9 @@ table tbody tr.active-row {
   color: #258ed8;
 }
 
+li {
+  margin-left: 15px;
+}
 
 .main-div {
   justify-content: space-around;
@@ -329,9 +332,12 @@ table tbody tr.active-row {
 }
 
 .splide__arrows {
-  display: none;
+  /* display: none; */
 }
 
+.splide__pagination {
+  bottom: 10px;
+}
 
 .logo_1 {
   order: 1
@@ -348,7 +354,8 @@ table tbody tr.active-row {
 
 @media screen and (max-width:767px) {
   .logo_2 {
-    order: 2
+    order: 2;
+    display: none;
   }
 
   .menu_logo {
