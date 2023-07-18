@@ -309,73 +309,78 @@ table tbody tr.active-row {
 }
 
 
-.main-div{
+.main-div {
   justify-content: space-around;
-  padding-top: 15px;
-  display:flex;
+  /* padding-top: 15px; */
+  display: flex;
   flex-direction: row;
 }
 
 
-.glass{
+.glass {
   background: linear-gradient(134deg, rgba(241, 241, 241, 0.79) 0%, rgba(233, 233, 233, 0.61) 100%);
-  /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
-  backdrop-filter: blur( 18px );
-  -webkit-backdrop-filter: blur( 18px );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 3px solid #d4d4d42f;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-radius: 30px;
+  justify-content: center;
 }
 
-.splide__arrows{
+.splide__arrows {
   display: none;
 }
 
 
-.logo_1{
-  order:1
+.logo_1 {
+  order: 1
 }
 
-.logo_2{
-  order:3
+.logo_2 {
+  order: 3
 }
 
-.menu_logo{
-  order:2
+.menu_logo {
+  order: 2
 }
 
 
 @media screen and (max-width:767px) {
-  .logo_2{
-    order:2
+  .logo_2 {
+    order: 2
   }
-  
-  .menu_logo{
-    order:3
-  } 
-  .logo_1{
-    order:1
+
+  .menu_logo {
+    order: 3
+  }
+
+  .logo_1 {
+    order: 1
   }
 }
 
-.year_program_area{
-  width:40%
+.year_program_area {
+  width: 40%
 }
 
-.carousal_img_background{
-  width:40%;
-  margin:40px 20px;
-}
-.year_program{
-  margin:30px 20px;
-  height:550px;
+.carousal_img_background {
+  width: 80%;
+  margin: 40px;
 }
 
-.year_program ul{
-  margin:20px 40px 10px 40px;
-  color:#1C1D62;
-  font-size: 20px; 
-  font-weight:600 ; 
-  text-transform: uppercase; 
-  list-style-type:disc;
+.year_program {
+  margin: 30px 20px;
+  height: 550px;
+}
+
+.year_program ul {
+  margin: 20px 40px 10px 40px;
+  color: #1C1D62;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  list-style-type: disc;
 }
 
 /* .year_program ul li{
@@ -383,10 +388,11 @@ table tbody tr.active-row {
   margin-bottom: 1px;
 } */
 
-.main_IASSKOOL{
-  margin:30px 20px;
-  height:550px;
+.main_IASSKOOL {
+  margin: 30px 20px;
+  height: 550px;
 }
+
 /* 
 @media screen and (max-width:850px) {
   .main-div{
@@ -396,79 +402,89 @@ table tbody tr.active-row {
     width:80%
   }
 } */
-.path{
-  color:#1C1D62;
+.path {
+  color: #1C1D62;
   font-size: 35px;
-  margin:20px
+  margin: 20px
 }
 
-.dreams{
-  color:#1C1D62; 
-  font-size: 25px; 
+.dreams {
+  color: #1C1D62;
+  font-size: 25px;
   font-weight: 600;
-  margin:10px 20px
+  margin: 10px 20px
 }
 
-.fee{
-  margin:0px 30px 0px 30px;
-  color:#6D6FEC; 
-  font-size: 24px; 
-  font-weight:600 ; 
+.fee {
+  margin: 0px 30px 0px 30px;
+  color: #6D6FEC;
+  font-size: 24px;
+  font-weight: 600;
   text-transform: uppercase;
 }
-@media screen and (max-width:1250px){
-  .year_program_area{
-    width:50%
+
+@media screen and (max-width:1250px) {
+  .year_program_area {
+    width: 50%
   }
-  .year_program ul{
+
+  .year_program ul {
     font-size: 18px;
   }
 }
 
-@media screen and (max-width:900px){
-  .year_program ul{
+@media screen and (max-width:900px) {
+  .year_program ul {
     /* font-size: 18px; */
-    margin:10px 40px 10px 40px;
+    margin: 10px 40px 10px 40px;
   }
 
-  .carousal_img_background{
-    width:95%;
-    height:500px;
+  .carousal_img_background {
+    width: 95%;
+    height: 500px;
   }
-  .year_program{
-    width:100%;
-    height:500px;
 
-    margin:40px 0px 0px 0px;
+  .year_program {
+    width: 100%;
+    height: 500px;
+
+    margin: 40px 0px 0px 0px;
   }
-  .main_IASSKOOL{
-    margin:40px 0px 0px 0px;
-    height:500px;
+
+  .main_IASSKOOL {
+    margin: 40px 0px 0px 0px;
+    height: 500px;
   }
-  .main-div{
+
+  .main-div {
     flex-direction: column;
   }
-  .year_program_area{
-    width:80%;
-    margin-bottom:20px
+
+  .year_program_area {
+    width: 80%;
+    margin-bottom: 20px
   }
 }
 
-@media screen and (max-width:580px){
-  .year_program_area{
-    width:95%;
+@media screen and (max-width:580px) {
+  .year_program_area {
+    width: 95%;
   }
-  .year_program ul{
+
+  .year_program ul {
     font-size: 14px;
   }
-  .path{
+
+  .path {
     font-size: 25px;
 
   }
-  .dreams{
+
+  .dreams {
     font-size: 20px;
   }
-  .fee{
+
+  .fee {
     font-size: 16px;
   }
 }
