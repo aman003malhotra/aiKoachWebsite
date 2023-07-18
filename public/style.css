@@ -308,12 +308,21 @@ table tbody tr.active-row {
   color: #258ed8;
 }
 
+
+.main-div{
+  justify-content: space-around;
+  padding-top: 15px;
+  display:flex;
+  flex-direction: row;
+}
+
+
 .glass{
-  background: rgba( 255, 255, 255, 0.25 );
+  background: linear-gradient(134deg, rgba(241, 241, 241, 0.79) 0%, rgba(233, 233, 233, 0.61) 100%);
   /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
-  backdrop-filter: blur( 12px );
-  -webkit-backdrop-filter: blur( 12px );
-  border-radius: 10px;
+  backdrop-filter: blur( 18px );
+  -webkit-backdrop-filter: blur( 18px );
+  border-radius: 30px;
 }
 
 .splide__arrows{
@@ -347,33 +356,78 @@ table tbody tr.active-row {
   }
 }
 
+.year_program_area{
+  width:40%
+}
 
 .carousal_img_background{
-  height:500px;
-  margin:40px
+  width:40%;
+  margin:40px 20px;
 }
 .year_program{
-  margin:40px;
-  height:600px;
+  margin:30px 20px;
+  height:550px;
 }
 
 .year_program ul{
-  margin:10px 40px 10px 40px;
+  margin:20px 40px 10px 40px;
   color:#1C1D62;
-  font-size: 24px; 
+  font-size: 20px; 
   font-weight:600 ; 
   text-transform: uppercase; 
   list-style-type:disc;
 }
 
+/* .year_program ul li{
+  margin-top: 1px;
+  margin-bottom: 1px;
+} */
+
 .main_IASSKOOL{
-  margin:40px 30px 40px 30px;
-  height:600px;
+  margin:30px 20px;
+  height:550px;
+}
+/* 
+@media screen and (max-width:850px) {
+  .main-div{
+    flex-direction: column;
+  }
+  .year_program_area{
+    width:80%
+  }
+} */
+.path{
+  color:#1C1D62;
+  font-size: 35px;
+  margin:20px
 }
 
-@media screen and (max-width:600px){
+.dreams{
+  color:#1C1D62; 
+  font-size: 25px; 
+  font-weight: 600;
+  margin:10px 20px
+}
+
+.fee{
+  margin:0px 30px 0px 30px;
+  color:#6D6FEC; 
+  font-size: 24px; 
+  font-weight:600 ; 
+  text-transform: uppercase;
+}
+@media screen and (max-width:1250px){
+  .year_program_area{
+    width:50%
+  }
   .year_program ul{
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width:900px){
+  .year_program ul{
+    /* font-size: 18px; */
     margin:10px 40px 10px 40px;
   }
 
@@ -390,5 +444,31 @@ table tbody tr.active-row {
   .main_IASSKOOL{
     margin:40px 0px 0px 0px;
     height:500px;
+  }
+  .main-div{
+    flex-direction: column;
+  }
+  .year_program_area{
+    width:80%;
+    margin-bottom:20px
+  }
+}
+
+@media screen and (max-width:580px){
+  .year_program_area{
+    width:95%;
+  }
+  .year_program ul{
+    font-size: 14px;
+  }
+  .path{
+    font-size: 25px;
+
+  }
+  .dreams{
+    font-size: 20px;
+  }
+  .fee{
+    font-size: 16px;
   }
 }

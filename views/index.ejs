@@ -23,7 +23,7 @@
     <!-- NAVBAR -->
     <%- include('./partials/navbar'); %>
 
-        <div class="grid lg:grid-cols-2 p-[45px] max-md:p-[30px] grid-cols-1">
+        <div class="px-[45px] py-[15px] max-md:p-[30px] items-center main-div">
 
             <!-- <div class="flex flex-col mr-10 col-span-1">
                 <div class="max-sm:text-4xl  text-5xl text-[#676061] font-black inline-block">
@@ -51,7 +51,7 @@
                     </a>
                 </div>
             </div> -->
-            <div class="relative">
+            <div class="relative year_program_area">
                 <img src="./assets/background.png" alt="" class="absolute carousal_img_background">
 
                 <section class="splide" id="course_splide" aria-labelledby="Splide Basic HTML Example"
@@ -60,19 +60,19 @@
                             <ul class="splide__list">
                                 <li class="splide__slide">
                                     <div class="relative flex flex-col glass main_IASSKOOL">
-                                        <div class="absolute px-5 py-2" style="align-self:center;color :#6D6FEC; font-weight: 600; font-size: 20px; border-radius:60px; background-color: #F4F6FF; top:-40px">
+                                        <div class="absolute px-5 py-2" style="align-self:center;color :#6D6FEC; font-weight: 600; font-size: 20px; border-radius:60px; background-color: #F4F6FF; top:-30px">
                                             IAS SKOOL
                                         </div>
-                                        <span style="color:#1C1D62; font-size: 30px;margin:20px">YOUR PATH TO SUCCESS <strong>REVOLUTIONIZING<span style="color: #FAB437;"> COMPETITIVE</span> EXAM PREPARATION</span></strong>
+                                        <span class="path">YOUR PATH TO SUCCESS <strong>REVOLUTIONIZING<span style="color: #FAB437;"> COMPETITIVE</span> EXAM PREPARATION</span></strong>
                                         <br />
                                         <br />
-                                        <span style="color:#1C1D62; font-size: 20px; font-weight: 600;margin:20px">CONQUERING DREAMS WITH  <span style="color:#7966EA">AI-DRIVEN</span> LEARNING</span>
+                                        <span class="dreams">CONQUERING DREAMS WITH  <span style="color:#7966EA"><br />AI-DRIVEN</span> LEARNING</span>
                                     </div>
                                 </li>
                                 <li class="splide__slide">
                                     <a href="/course_detail/General%20Studies/1/?id=7d6e5d34-26a7-4491-8161-5492ef2f7244">
                                     <div class="relative flex flex-col glass px-9 year_program" >
-                                        <div class="absolute px-5 py-2" style="align-self:center;color :#6D6FEC; font-weight: 600; font-size: 20px; border-radius:60px; background-color: #F4F6FF; top:-40px">
+                                        <div class="absolute px-5 py-2" style="align-self:center;color :#6D6FEC; font-weight: 600; font-size: 20px; border-radius:60px; background-color: #F4F6FF; top:-30px">
                                             2 YEARS PROGRAM
                                         </div>
                                         <ul>
@@ -88,7 +88,7 @@
                                             <li>personal mentorship</li>
                                             <li>Career Counselling</li>
                                         </ul>
-                                        <div class="mt-7"  style="margin:0px 30px 0px 30px;color:#6D6FEC; font-size: 24px; font-weight:600 ; text-transform: uppercase;">
+                                        <div class="mt-7 fee">
                                             Fees: 2.99 Lakh + GST(18%)
                                         </div>
                                     </div>
@@ -97,13 +97,12 @@
                                 <li class="splide__slide">
                                     <a href="/course_detail/General%20Studies/1/?id=99442537-1562-433d-b175-a9c508f659c1">
                                         <div class="relative flex flex-col glass year_program">
-                                            <div class="absolute px-5 py-2 text-black" style="align-self:center;color :#6D6FEC; font-weight: 600; font-size: 20px; border-radius:60px; background-color: #F4F6FF; top:-40px">
+                                            <div class="absolute px-5 py-2 text-black" style="align-self:center;color :#6D6FEC; font-weight: 600; font-size: 20px; border-radius:60px; background-color: #F4F6FF; top:-30px">
                                                 3 YEARS PROGRAM
                                             </div>
                                             <ul>
                                                 <li>GS PAPER (1 2 3 4)</li>
-                                                <li>Current Affair classes</li>
-                                                <li>Test Series</li>
+                                                <li>Current Affair classes & Test Series</li>
                                                 <li>Technical Interview Guidance</li>
                                                 <li>Interview Panel Discussion</li>
                                                 <li>Essay practive & test series</li>
@@ -116,7 +115,7 @@
                                                 <li>personal mentorship</li>
                                                 <li>Career Counselling</li>
                                             </ul>
-                                            <div class="mt-7"  style="margin:0px 30px 0px 30px;color:#6D6FEC; font-size: 24px; font-weight:600 ; text-transform: uppercase;">
+                                            <div class="mt-7 fee">
                                                 Fees: 3.99 Lakh + GST(18%)
                                             </div>
                                         </div>
@@ -177,8 +176,8 @@
                     </div>
                 </div> -->
             </div>
-            <div class="col-span-1">
-                <video height="auto" autoplay loop muted class="md:w-[650px] w-[100%] max-w-none max-md:mt-4">
+            <div class="col-span-2">
+                <video height="auto" autoplay loop muted class=" w-[100%] max-w-none max-md:mt-4">
                     <source
                         src="https://res.cloudinary.com/dqemlno5f/video/upload/c_scale,q_auto:good,vc_h264,w_928/v1684064766/a_koch_1_ltxv4l.mp4"
                         type="video/mp4">
@@ -189,7 +188,7 @@
 
 
         <!-- Partners -->
-        <section id="partners">
+        <!-- <section id="partners">
             <div class="flex items-center w-[90%] mx-auto">
                 <fieldset>
                     <legend>Our Partners</legend>
@@ -207,7 +206,7 @@
                     </section>
                 </fieldset>
             </div>
-        </section>
+        </section> -->
 
         <!-- Popular Courses -->
 
