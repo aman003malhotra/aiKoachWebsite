@@ -7,6 +7,8 @@ require("dotenv").config();
 const bodyparser = require('body-parser');
 const cookieparser = require('cookie-parser');
 const cors = require('cors');
+const enquireRoute = require('./routes/enquire.Routers'); // Assuming the router file is named "userRouter" in a "routes" directory
+const { default: mongoose } = require('mongoose');
 
 var app = express();
 
@@ -38,6 +40,11 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+
+
+
 const menu = [
     {
         name: 'Home',
@@ -65,7 +72,7 @@ const menu = [
     },
     {
         name: 'Contact Us',
-        url: '/contact'
+        url: '/contact#Enquire-Now'
     },
 
 ]
@@ -136,7 +143,7 @@ const positions = [
     { right: '10%', top: '50%', width: '80px', }
 ];
 
-features = [
+const features = [
     {
         name: "maatsaab",
         title: "MaatSaab: Revolutionizing Education",
@@ -382,7 +389,6 @@ features = [
         video_link: ""
     }
 ];
-
 colors = [
     "linear-gradient(142deg, #A762FF 13.17%, #8ED1ED 82.88%)",
     "linear-gradient(141deg, #D563FD 11.92%, #F2A839 94.96%)",
@@ -544,7 +550,24 @@ app.get("/Shipping-policy", (req, res) => {
     });
 })
 
+const uri = "mongodb+srv://manishBajpai:0QgSoxXpOb21782h@cluster0.350bvou.mongodb.net/iasskoolWebsite?retryWrites=true&w=majority";
 
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+    .then(() => {
+        console.log('DB CONNECTED SUCCESSFULLY');
+    })
+    .catch(err => {
+        console.log('PROBLEM CONNECTING DB', err);
+    });
 
-const port = process.env.PORT
-app.listen(port || 8000, () => { console.log(`server is running on the port ${port}`) })
+app.use('/', enquireRoute);
+
+const port = process.env.PORT || 8000
+app.listen(port, () => {
+    console.log(`Listening to port ${port}`);
+}).on('error', error => {
+    console.error('Error starting server:', error);
+});

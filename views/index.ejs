@@ -476,67 +476,67 @@
         <section id="testimonials">
             <div class="flex flex-col py-[100px] items-center relative">
 
-                <% for (const [index, position] of positions.entries()) { %>
+                <!-- <% for (const [index, position] of positions.entries()) { %>
                     <div class="absolute
                         <% if (position.bottom) { %> bottom-[<%= position.bottom %>] <% } %>
                         <% if (position.left) { %> left-[<%= position.left %>] <% } %>
                         <% if (position.width) { %> w-[<%= position.width %>] <% } %>
-                        <% if (position.mdLeft) { %> md:left-[<%= position.mdLeft %>] <% } %>
-                        <% if (position.mdRight) { %> md:right-[<%= position.mdRight %>] <% } %>
-                        <% if (position.top) { %> top-[<%= position.top %>] <% } %>
-                        <% if (position.right) { %> right-[<%= position.right %>] <% } %>" id="<%= index %>">
-                        <img src="<%= testimonials[index].url %>" class="rounded-full h-[100p] aspect-ratio-[1/1] cover"
-                            alt="people">
-                    </div>
-                    <% } %>
-
-
-                        <h2 class="text-6xl font-bold text-[#575757] text-center">Testimonials</h2>
-                        <section class="splide max-md:w-[90%] max-lg:w-[70%] w-[50%]"
-                            aria-label="Basic Structure Example" id="testimonial_carousal">
-                            <div class="splide__track">
-                                <ul class="splide__list" id="testimonial_box">
-                                    <% for (const one_test of testimonials) { %>
-                                        <li class="splide__slide">
-                                            <div
-                                                class="flex flex-col bg-[#F3F4FF] text-[#575757] p-7 rounded-2xl my-[100px] py-[50px]">
-                                                <div class="flex flex-row justify-between items-center">
-                                                    <div class="flex flex-row items-center">
-                                                        <img src="<%= one_test.url %>" width="100px"
-                                                            class="rounded-full" alt="person_image">
-                                                        <div class="flex flex-col ml-3">
-                                                            <div class="font-medium">
-                                                                <%= one_test.name %>
-                                                            </div>
-                                                            <div>
-                                                                <%= one_test.Designation %>
-                                                            </div>
-                                                        </div>
+                <% if (position.mdLeft) { %> md:left-[<%= position.mdLeft %>] <% } %>
+                            <% if (position.mdRight) { %> md:right-[<%= position.mdRight %>] <% } %>
+                                        <% if (position.top) { %> top-[<%= position.top %>] <% } %>
+                                                    <% if (position.right) { %> right-[<%= position.right %>] <% } %>"
+                                                                id="<%= index %>">
+                                                                    <img src="<%= testimonials[index].url %>"
+                                                                        class="rounded-full h-[100px] aspect-ratio-[1/1] cover"
+                                                                        alt="people">
+            </div>
+            <% } %> -->
+                <h2 class="text-6xl font-bold text-[#575757] text-3xl text-center">Testimonials</h2>
+                <section class="splide max-md:w-[90%] max-lg:w-[70%] w-[50%]" aria-label="Basic Structure Example"
+                    id="testimonial_carousal">
+                    <div class="splide__track">
+                        <ul class="splide__list" id="testimonial_box">
+                            <% for (const one_test of testimonials) { %>
+                                <li class="splide__slide">
+                                    <div
+                                        class="flex flex-col bg-[#F3F4FF] text-[#575757] p-7 rounded-2xl my-[100px] py-[50px]">
+                                        <div class="flex flex-row justify-between items-center">
+                                            <div class="flex flex-row items-center">
+                                                <img src="<%= one_test.url %>" width="100px" class="rounded-full"
+                                                    alt="person_image">
+                                                <div class="flex flex-col ml-3">
+                                                    <div class="font-medium">
+                                                        <%= one_test.name %>
                                                     </div>
-                                                    <div class="flex flex-row">
-                                                        <img src="./assets/testimonials/Star.png" alt="rating"
-                                                            class="w-[13px] h-[13px] mr-1">
-                                                        <img src="./assets/testimonials/Star.png" alt="rating"
-                                                            class="w-[13px] h-[13px] mr-1">
-                                                        <img src="./assets/testimonials/Star.png" alt="rating"
-                                                            class="w-[13px] h-[13px] mr-1">
-                                                        <img src="./assets/testimonials/Star.png" alt="rating"
-                                                            class="w-[13px] h-[13px] mr-1">
-                                                        <img src="./assets/testimonials/Star.png" alt="rating"
-                                                            class="w-[13px] h-[13px] mr-1">
+                                                    <div>
+                                                        <%= one_test.Designation %>
                                                     </div>
-                                                </div>
-                                                <hr class="w-[90%] text-[#DADAF752] mt-6 mb-10">
-                                                <div>
-                                                    <%= one_test.tesimonial %>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <% } %>
+                                            <div class="flex flex-row">
+                                                <img src="./assets/testimonials/Star.png" alt="rating"
+                                                    class="w-[13px] h-[13px] mr-1">
+                                                <img src="./assets/testimonials/Star.png" alt="rating"
+                                                    class="w-[13px] h-[13px] mr-1">
+                                                <img src="./assets/testimonials/Star.png" alt="rating"
+                                                    class="w-[13px] h-[13px] mr-1">
+                                                <img src="./assets/testimonials/Star.png" alt="rating"
+                                                    class="w-[13px] h-[13px] mr-1">
+                                                <img src="./assets/testimonials/Star.png" alt="rating"
+                                                    class="w-[13px] h-[13px] mr-1">
+                                            </div>
+                                        </div>
+                                        <hr class="w-[90%] text-[#DADAF752] mt-6 mb-10">
+                                        <div>
+                                            <%= one_test.tesimonial %>
+                                        </div>
+                                    </div>
+                                </li>
+                                <% } %>
 
-                                </ul>
-                            </div>
-                        </section>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </section>
         <!-- JOIN US TODAY -->

@@ -30,3 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //   },
   }).mount();
 });
+
+
+function onClickCourseDetails(url) {
+  window.location.href = url;
+}

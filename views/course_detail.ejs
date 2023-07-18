@@ -37,7 +37,8 @@
                 </p>
           </div>
           <div class="mt-[100px]">
-            <button class="text-white bg-[#6065DA] px-8 py-5 rounded-[45px]">
+            <button onclick="onClickCourseDetails('/contact#Enquire-Now')"
+              class="text-white bg-[#6065DA] px-8 py-5 rounded-[45px]">
               Enroll Now Rs-<%= courseInfo.price %>
             </button>
           </div>
@@ -231,13 +232,7 @@
                             <div id="extras" class="editorjs my-5"><%- extras %></div>
                           </div>
                           <% } %>
-                            <!-- Related Courses -->
-                            <!-- <section id="related_course" class="flex flex-col">
-      <h2 class="font-bold color-[#323232] text-4xl text-center mt-10">
-        Related Course
-      </h2>
-      <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 justify-items-center my-10" id="course_info"></div>
-    </section> -->
+
 
                             <!-- JOIN US TODAY -->
                             <%- include('./partials/joinus'); %>
@@ -259,6 +254,9 @@
                                   }
                                 }
                               </script>
+
+                              <script src="main.js"></script>
+
 </body>
 
 </html>
