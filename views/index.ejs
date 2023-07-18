@@ -242,13 +242,14 @@
 
                     <% courses[currentCourse].forEach(course=> { %>
                         <% let selectedColor=colors[Math.floor(Math.random() * colors.length)]%>
-                            <div class="flex flex-col max-sm:w-[90%] text-white w-[400px]rounded-3xl col-span-1 my-10 relative rounded-3xl"
+                            <div onclick="onClickCourseDetails('/course_detail/<%= currentCourse %>/1/?id=<%= course.id %>')"
+                                class="cursor-pointer transform transition duration-500 hover:scale-110 flex flex-col max-sm:w-[90%] text-white w-[400px]rounded-3xl col-span-1 my-10 relative rounded-3xl"
                                 style="background: <%= selectedColor %>;">
-                                <div class="absolute mx-auto bg-slate-600 p-4 rounded-2xl"
-                                    style="align-self: center;background-color: #1C1D62; font-size: 18px; top:-15%; max-width:80%">
+                                <div class="flex absolute mx-auto bg-slate-600 p-4 rounded-2xl min-h-[72px] max-w-[80%] text-center items-center justify-center"
+                                    style="align-self: center;background-color: #1C1D62; font-size: 18px; top:-36px; ">
                                     <%= course.title %>
                                 </div>
-                                <div class="flex flex-row justify-between items-center mt-10 mx-6">
+                                <div class="flex flex-row justify-between items-center mt-14 mx-6">
                                     <div class="flex flex-row items-center">
                                         <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
                                         <%= course.completionTime %>+ Hrs content
@@ -288,7 +289,7 @@
                                             <% } %>
                                     </div>
                                     <div><a href="/course_detail/<%= currentCourse %>/1/?id=<%= course.id %>"
-                                            class="">Details</a>
+                                            class="">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -522,6 +523,12 @@
             <script src="/main.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
+
+            <script>
+                function onClickCourseDetails(url) {
+                    window.location.href = url;
+                }
+            </script>
 
             <script>
                 // Testimonial

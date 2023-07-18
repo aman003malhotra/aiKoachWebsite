@@ -26,7 +26,7 @@
         </h1>
     </div> -->
         <!-- Carousal -->
-        <section class="splide mx-auto sm:w-[70%]" id="courseBanner_carousal">
+        <!-- <section class="splide mx-auto sm:w-[70%]" id="courseBanner_carousal">
             <div class="splide__track">
                 <ul class="splide__list" id="course_carousal_box">
                     <li class="splide__slide">
@@ -36,11 +36,11 @@
                         <img id="2" src="./assets/course/carousalBanner2.png" alt="triumphIfgS" />
                     </li>
                 </ul>
-        </section>
+        </section> -->
         </div>
 
         <!-- Search bar -->
-        <section id="course_search_bar">
+        <!-- <section id="course_search_bar">
             <div class="flex items-center sm:w-[80%] mx-auto mt-10">
                 <fieldset>
                     <legend class="text-[16px]">Courses</legend>
@@ -55,75 +55,89 @@
                     </div>
                 </fieldset>
             </div>
-        </section>
+        </section> -->
 
-        <div class="my-10">
+        <div class="m-4 sm:m-4 md:m-8 lg:m-10 xl:m-14 ">
             <% Object.keys(courses).forEach(currentCourse=> { %>
                 <% if (courses[currentCourse].length> 0) {%>
-                    <span class="bg-[#01D5E1] text-2xl font-semibold text-white p-2 sm:mx-[60px]" style="margin-bottom: 20px;">
+                    <span class="bg-[#01D5E1] text-2xl font-semibold text-white p-2 sm:mx-[30px]
+                    m-4 sm:mx-2 md:mx-2 lg:mx-4 xl:mx-8 my-[20px]">
                         <%= currentCourse %>
                     </span>
 
-                    <div class="grid xl:grid-cols-3  lg:grid-cols-2  grid-cols-1 justify-items-center gap-x-5" id="course_info">
+                    <div class="grid xl:grid-cols-3 mt-10 lg:grid-cols-2  grid-cols-1 justify-items-center gap-x-5"
+                        id="course_info">
                         <% courses[currentCourse].forEach(course=> { %>
 
-                            <% let selectedColor = colors[Math.floor(Math.random() * colors.length)]%>
-                            <div class="flex flex-col max-sm:w-[90%] text-white w-[400px]rounded-3xl col-span-1 my-10 relative rounded-3xl" style="margin-left:20px; margin-right:20px; background: <%= selectedColor %>;">
-                                <div class="absolute mx-auto bg-slate-600 p-4 rounded-2xl" style="align-self: center;background-color: #1C1D62; font-size: 18px; top:-15%; max-width:80%">
-                                    <%= course.title %>
-                                </div>
-                                <div class="flex flex-row justify-between items-center mt-10 mx-6">
-                                    <div class="flex flex-row items-center">
-                                        <img src="./assets/Popular_Courses/play.svg" alt="play_button" class="mr-2">
-                                        <%= course.completionTime %>+ Hrs content
+                            <% let selectedColor=colors[Math.floor(Math.random() * colors.length)]%>
+                                <div onclick="onClickCourseDetails('/course_detail/<%= currentCourse %>/1/?id=<%= course.id %>')"
+                                    class="cursor-pointer transform transition duration-500 hover:scale-110 flex flex-col max-sm:w-[90%] text-white w-[400px]rounded-3xl col-span-1 my-10 relative rounded-3xl"
+                                    style="margin-left:20px; margin-right:20px; background: <%= selectedColor %>;">
+                                    <div class="flex absolute mx-auto bg-slate-600 p-4 rounded-2xl min-h-[72px] max-w-[80%] text-center items-center justify-center"
+                                        style="align-self: center;background-color: #1C1D62; font-size: 18px; top:-36px; ">
+                                        <%= course.title %>
                                     </div>
-                                    <div class="text-sm rounded-[20px] p-2"
-                                        style="background-color: rgba(218, 218, 247, 0.22);">
-                                        <%= course.category %>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="mt-2 mx-6 text-[16px]">
-                                        <%= course.description %>
-                                    </p>
-                                </div>
-                                <div class="flex flex-row justify-between items-center mt-5 mx-6">
-                                    <div class="flex flex-row">
-                                        <img src="./assets/Popular_Courses/person.svg" alt="tutor" class="w-[43px] mr-3">
-                                        <div class="flex flex-col">
-                                            <div class="font-semibold">
-                                                <%= course.teacher.name %>
+                                    <div class="flex flex-col justify-between">
+                                        <div class="flex flex-row justify-between items-center mt-[80px] mx-6">
+                                            <div class="flex flex-row items-center">
+                                                <img src="./assets/Popular_Courses/play.svg" alt="play_button"
+                                                    class="mr-2">
+                                                <%= course.completionTime %>+ hrs Lessons
                                             </div>
-                                            <div class="text-sm">
-                                                <%= course.teacher.designation %>
+                                            <div class="text-sm rounded-[20px] p-2"
+                                                style="background-color: rgba(218, 218, 247, 0.22);">
+                                                <%= course.category %>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p class="my-2 mx-6 text-[16px]">
+                                                <%= course.description %>
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-row justify-between items-center mt-5 mx-6">
+                                            <div class="flex flex-row">
+                                                <img src="./assets/Popular_Courses/person.svg" alt="tutor"
+                                                    class="w-[43px] mr-3">
+                                                <div class="flex flex-col">
+                                                    <div class="font-semibold">
+                                                        <%= course.teacher.name %>
+                                                    </div>
+                                                    <div class="text-sm">
+                                                        <%= course.teacher.designation %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="font-medium">
+                                                <%= course.Enrolled %> Student
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-row justify-between mx-6 my-5">
+                                            <div class="flex flex-row">
+                                                <% for(let j=0;j<course.rating;j++){ %>
+                                                    <img src="./assets/Popular_Courses/Star.png" alt="star"
+                                                        class="w-[13px] h-[13px] mr-1">
+                                                    <% } %>
+                                            </div>
+                                            <div><a href="/course_detail/<%= currentCourse %>/1/?id=<%= course.id %>"
+                                                    class="">Read More</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="font-medium">
-                                        <%= course.Enrolled %> Student
-                                    </div>
                                 </div>
-                                <div class="flex flex-row justify-between mx-6 my-5">
-                                    <div class="flex flex-row">
-                                        <% for(let j=0;j<course.rating;j++){ %>
-                                            <img src="./assets/Popular_Courses/Star.png" alt="star"
-                                                class="w-[13px] h-[13px] mr-1">
-                                            <% } %>
-                                    </div>
-                                    <div><a href="/course_detail/<%= currentCourse %>/1/?id=<%= course.id %>"
-                                            class="">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <% }) %>
+                                <% }) %>
                     </div>
-                    <hr class="sm:w-[90%] mx-auto my-[70px]" />
+                    <hr class="sm:w-[90%] mx-auto my-[40px]" />
                     <% }%>
                         <% }) %>
         </div>
 
         <footer><%- include('./partials/footer'); %></footer>
         <!-- swiper -->
+        <script>
+            function onClickCourseDetails(url) {
+                window.location.href = url;
+            }
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>

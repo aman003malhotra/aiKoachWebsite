@@ -5,7 +5,7 @@ require('dotenv').config()
 
 const Client = axios.create({
     baseURL: process.env.APP_URL,
-    timeout: 10000,
+    timeout: 200000,
     headers: {
         'Content-type': 'application/json',
         // "Authorization": 'Bearer ' + localStorage.getItem('token')
