@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       perMove: 1,
       rewind: !0,
     //   gap: 5,
-    //   autoplay: !0,
+      autoplay: !0,
       pauseOnHover: !0,
     //   breakpoints: {
     //     640: { perPage: 1 },
